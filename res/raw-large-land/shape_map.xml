@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<scene_files>
-    <scene_file name="shape_map_common" />
-</scene_files>
-
 <shapes>
     <!--  Clock Circle -->
     <shape name="circle_time">

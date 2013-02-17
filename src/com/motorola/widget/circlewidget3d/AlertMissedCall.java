@@ -1,176 +1,165 @@
+// Decompiled by Jad v1.5.8g. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://www.kpdus.com/jad.html
+// Decompiler options: packimports(3) 
+
 package com.motorola.widget.circlewidget3d;
 
-import android.content.ComponentName;
-import android.content.ContentResolver;
-import android.content.Context;
-import android.content.Intent;
+import android.content.*;
 import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.CallLog.Calls;
-import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.telephony.PhoneNumberUtils;
 import android.text.TextUtils;
 import android.util.Log;
 
-public class AlertMissedCall
-  extends BaseAlert
-{
-  public static final String CALL_LOG_COMPONENT = "com.android.contacts.activities.DialtactsActivity";
-  public static final String CALL_LOG_PACKAGE = "com.android.contacts";
-  public static final String CALL_TYPE_INTENT = "vnd.android.cursor.dir/calls";
-  public static final String PAYPHONE_NUMBER = "-3";
-  public static final String PRIVATE_NUMBER = "-2";
-  public static final String[] PROJECTION_CALL_LOG = { "_id", "number", "type", "name", "date", "numbertype", "is_read" };
-  public static final String UNKNOWN_NUMBER = "-1";
-  public static ContentObserver mCallLogObserver = new ContentObserver(new Handler())
-  {
-    public void onChange(boolean paramAnonymousBoolean)
-    {
-      super.onChange(paramAnonymousBoolean);
-      AlertMissedCall.access$000();
-    } 
-  };
-  private static AlertMissedCall mInstance;
-  
-  private AlertMissedCall(Context paramContext)
-  {
-    mContext = paramContext;
-  } 
-  
-  private static void clearMissedCallAlert()
-  {
-    if ((CircleAlert.isAlertDisplayed()) && (CircleAlert.getAlertType() == 1)) {
-      CircleAlert.getInstance(mContext).clearAlert();
-    } 
-  } 
-  
-  public static AlertMissedCall getInstance(Context paramContext)
-  {
-    synchronized (mSyncObject)
-    {
-      if (mInstance == null) {
-        mInstance = new AlertMissedCall(paramContext);
-      } 
-      return mInstance;
-    } 
-  } 
-  
-  public static String getPrivateNumberString(String paramString)
-  {
-    Resources localResources = mContext.getResources();
-    if (paramString.equals("-1")) {
-      return localResources.getString(2131230733);
-    } 
-    if (paramString.equals("-3")) {
-      return localResources.getString(2131230755);
-    } 
-    return localResources.getString(2131230754);
-  } 
-  
-  public static boolean isDialable(String paramString)
-  {
-    char[] arrayOfChar = paramString.toCharArray();
-    int i = arrayOfChar.length;
-    for (int j = 0; j < i; j++) {
-      if (!PhoneNumberUtils.isDialable(arrayOfChar[j])) {
-        return false;
-      } 
-    } 
-    return true;
-  } 
-  
-  private static void lookCallLogDB()
-  {
-    if (!CircleAlert.isMissedCallEnabled()) {
-      return;
-    } 
-    if (mInstance != null)
-    {
-      Cursor localCursor = mContext.getContentResolver().query(CallLog.Calls.CONTENT_URI, PROJECTION_CALL_LOG, null, null, "date DESC");
-      if (localCursor != null)
-      {
-        if (localCursor.moveToFirst()) {
-          if (localCursor.getInt(localCursor.getColumnIndex("type")) == 3)
-          {
-            String str1 = localCursor.getString(localCursor.getColumnIndex("number"));
-            String str2 = localCursor.getString(localCursor.getColumnIndex("name"));
-            String str3 = localCursor.getString(localCursor.getColumnIndex("date"));
-            int i = localCursor.getInt(localCursor.getColumnIndex("numbertype"));
-            int j = localCursor.getInt(localCursor.getColumnIndex("is_read"));
-            boolean bool = TextUtils.isEmpty(str2);
-            CharSequence localCharSequence = null;
-            if (!bool) {
-              localCharSequence = ContactsContract.CommonDataKinds.Phone.getTypeLabel(mContext.getResources(), i, null);
-            } 
-            if (j == 1)
-            {
-              clearMissedCallAlert();
-              localCursor.close();
-              return;
-            } 
-            if (!isDialable(str1)) {
-              str2 = getPrivateNumberString(str1);
-            } 
-            BaseAlert.AlertInfo localAlertInfo = new BaseAlert.AlertInfo();
-            number = str1;
-            if (TextUtils.isEmpty(str2)) {
-              str2 = null;
-            } 
-            name = str2;
-            String str4 = null;
-            if (localCharSequence != null) {
-              str4 = localCharSequence.toString();
-            } 
-            description = str4;
-            imageId = Integer.valueOf(2130837540);
-            type = Integer.valueOf(1);
-            timestamp = str3;
-            CircleAlert.addItem(localAlertInfo);
-          } 
-        } 
-        for (;;)
-        {
-          localCursor.close();
-          return;
-          Log.e("Circle", "Cursor can't find first element");
-          clearMissedCallAlert();
-        } 
-      } 
-      Log.e("Circle", "Cursor is null in lookCallLogDB");
-      return;
-    } 
-    Log.e("Circle", "mInstance is NULL in lookcallLogDB");
-  } 
-  
-  public static void registerForCallLogChange(Context paramContext)
-  {
-    paramContext.getContentResolver().registerContentObserver(CallLog.Calls.CONTENT_URI, false, mCallLogObserver);
-  } 
-  
-  public static void unregisterCallLogChange(Context paramContext)
-  {
-    paramContext.getContentResolver().unregisterContentObserver(mCallLogObserver);
-  } 
-  
-  BaseAlert.AlertInfo addItem(Bundle paramBundle)
-  {
-    return null;
-  } 
-  
-  public Intent getAlertAppIntent()
-  {
-    Intent localIntent = new Intent("android.intent.action.VIEW");
-    localIntent.setType("vnd.android.cursor.dir/calls");
-    localIntent.setComponent(new ComponentName("com.android.contacts", "com.android.contacts.activities.DialtactsActivity"));
-    localIntent.setFlags(337641472);
-    return localIntent;
-  } 
-} 
+// Referenced classes of package com.motorola.widget.circlewidget3d:
+//            BaseAlert, CircleAlert
 
-/* Location:           J:\技术文档\安卓固件相关\moto\classes_dex2jar.jar
- * Qualified Name:     com.motorola.widget.circlewidget3d.AlertMissedCall
- * JD-Core Version:    0.6.2
- */
+public class AlertMissedCall extends BaseAlert {
+
+	private AlertMissedCall(Context context) {
+		mContext = context;
+	}
+
+	private static void clearMissedCallAlert() {
+		if (CircleAlert.isAlertDisplayed() && CircleAlert.getAlertType() == 1)
+			CircleAlert.getInstance(mInstance.mContext).clearAlert();
+	}
+
+	public static AlertMissedCall getInstance(Context context) {
+		synchronized (mSyncObject) {
+			if (mInstance == null)
+				mInstance = new AlertMissedCall(context);
+		}
+		return mInstance;
+	}
+
+	public static String getPrivateNumberString(String s) {
+		Resources resources = mInstance.mContext.getResources();
+		if (s.equals("-1"))
+			return resources.getString(0x7f08000d);
+		if (s.equals("-3"))
+			return resources.getString(0x7f080023);
+		else
+			return resources.getString(0x7f080022);
+	}
+
+	public static boolean isDialable(String s) {
+		char ac[] = s.toCharArray();
+		int i = ac.length;
+		for (int j = 0; j < i; j++)
+			if (!PhoneNumberUtils.isDialable(ac[j]))
+				return false;
+
+		return true;
+	}
+
+	private static void lookCallLogDB() {
+		if (!CircleAlert.isMissedCallEnabled())
+			return;
+		if (mInstance != null) {
+			Cursor cursor = mInstance.mContext.getContentResolver().query(
+					android.provider.CallLog.Calls.CONTENT_URI,
+					PROJECTION_CALL_LOG, null, null, "date DESC");
+			if (cursor != null) {
+				if (cursor.moveToFirst()) {
+					if (cursor.getInt(cursor.getColumnIndex("type")) == 3) {
+						String s = cursor.getString(cursor
+								.getColumnIndex("number"));
+						String s1 = cursor.getString(cursor
+								.getColumnIndex("name"));
+						String s2 = cursor.getString(cursor
+								.getColumnIndex("date"));
+						int i = cursor.getInt(cursor
+								.getColumnIndex("numbertype"));
+						int j = cursor.getInt(cursor.getColumnIndex("is_read"));
+						boolean flag = TextUtils.isEmpty(s1);
+						CharSequence charsequence = null;
+						if (!flag)
+							charsequence = android.provider.ContactsContract.CommonDataKinds.Phone
+									.getTypeLabel(
+											mInstance.mContext.getResources(),
+											i, null);
+						if (j == 1) {
+							clearMissedCallAlert();
+							cursor.close();
+							return;
+						}
+						if (!isDialable(s))
+							s1 = getPrivateNumberString(s);
+						BaseAlert.AlertInfo alertinfo = new BaseAlert.AlertInfo();
+						alertinfo.number = s;
+						if (TextUtils.isEmpty(s1))
+							s1 = null;
+						alertinfo.name = s1;
+						String s3 = null;
+						if (charsequence != null)
+							s3 = charsequence.toString();
+						alertinfo.description = s3;
+						alertinfo.imageId = Integer.valueOf(0x7f020024);
+						alertinfo.type = Integer.valueOf(1);
+						alertinfo.timestamp = s2;
+						CircleAlert.addItem(alertinfo);
+					}
+				} else {
+					Log.e("Circle", "Cursor can't find first element");
+					clearMissedCallAlert();
+				}
+				cursor.close();
+				return;
+			} else {
+				Log.e("Circle", "Cursor is null in lookCallLogDB");
+				return;
+			}
+		} else {
+			Log.e("Circle", "mInstance is NULL in lookcallLogDB");
+			return;
+		}
+	}
+
+	public static void registerForCallLogChange(Context context) {
+		context.getContentResolver().registerContentObserver(
+				android.provider.CallLog.Calls.CONTENT_URI, false,
+				mCallLogObserver);
+	}
+
+	public static void unregisterCallLogChange(Context context) {
+		context.getContentResolver()
+				.unregisterContentObserver(mCallLogObserver);
+	}
+
+	BaseAlert.AlertInfo addItem(Bundle bundle) {
+		return null;
+	}
+
+	public Intent getAlertAppIntent() {
+		Intent intent = new Intent("android.intent.action.VIEW");
+		intent.setType("vnd.android.cursor.dir/calls");
+		intent.setComponent(new ComponentName("com.android.contacts",
+				"com.android.contacts.activities.DialtactsActivity"));
+		intent.setFlags(0x14200000);
+		return intent;
+	}
+
+	public static final String CALL_LOG_COMPONENT = "com.android.contacts.activities.DialtactsActivity";
+	public static final String CALL_LOG_PACKAGE = "com.android.contacts";
+	public static final String CALL_TYPE_INTENT = "vnd.android.cursor.dir/calls";
+	public static final String PAYPHONE_NUMBER = "-3";
+	public static final String PRIVATE_NUMBER = "-2";
+	public static final String PROJECTION_CALL_LOG[] = { "_id", "number",
+			"type", "name", "date", "numbertype", "is_read" };
+	public static final String UNKNOWN_NUMBER = "-1";
+	public static ContentObserver mCallLogObserver = new ContentObserver(
+			new Handler()) {
+
+		public void onChange(boolean flag) {
+			super.onChange(flag);
+			AlertMissedCall.lookCallLogDB();
+		}
+
+	};
+	private static AlertMissedCall mInstance;
+
+}
