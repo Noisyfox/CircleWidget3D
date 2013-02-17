@@ -51,9 +51,9 @@ public class AlertVoicemail extends BaseAlert {
 					localAlertInfo.number = str1;
 					localAlertInfo.name = null;
 					localAlertInfo.description = str2;
-					localAlertInfo.imageId = Integer.valueOf(0x7f020027);
+					localAlertInfo.imageId = Integer.valueOf(R.drawable.ic_circle_widget_alert_voicemail);
 					if (Utility.isVerizonCarrier(mInstance.mContext)) {
-						localAlertInfo.imageId = Integer.valueOf(0x7f020028);
+						localAlertInfo.imageId = Integer.valueOf(R.drawable.ic_circle_widget_alert_voicemail_vzw);
 					}
 					localAlertInfo.type = Integer.valueOf(2);
 					localAlertInfo.timestamp = null;

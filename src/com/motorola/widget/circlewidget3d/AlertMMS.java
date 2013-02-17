@@ -106,9 +106,9 @@ public class AlertMMS extends BaseAlert {
 				.getContactName(str1);
 		localAlertInfo.timestamp = Long.toString(new Date().getTime());
 		localAlertInfo.type = Integer.valueOf(4);
-		localAlertInfo.imageId = Integer.valueOf(2130837541);
+		localAlertInfo.imageId = Integer.valueOf(R.drawable.ic_circle_widget_alert_text);
 		if (Utility.isVerizonCarrier(mInstance.mContext))
-			localAlertInfo.imageId = Integer.valueOf(2130837542);
+			localAlertInfo.imageId = Integer.valueOf(R.drawable.ic_circle_widget_alert_text_vzw);
 		CircleAlert.addItem(localAlertInfo);
 		return localAlertInfo;
 
@@ -131,7 +131,7 @@ public class AlertMMS extends BaseAlert {
 	}
 
 	public void retrieveStrings(Context paramContext) {
-		this.mMMSString = paramContext.getResources().getString(2131230752);
+		this.mMMSString = paramContext.getResources().getString(R.string.multimedia_message);
 	}
 }
 

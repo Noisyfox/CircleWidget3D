@@ -8,7 +8,7 @@ public class NotificationSummaryPreference extends Preference {
 	public NotificationSummaryPreference(Context paramContext,
 			AttributeSet paramAttributeSet) {
 		super(paramContext, paramAttributeSet);
-		setWidgetLayoutResource(2130903059);
+		setWidgetLayoutResource(R.layout.notification_summary);
 	}
 }
 

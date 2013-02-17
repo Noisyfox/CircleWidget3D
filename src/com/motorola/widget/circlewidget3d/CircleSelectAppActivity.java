@@ -13,13 +13,13 @@ public class CircleSelectAppActivity extends ListActivity {
 
 	private void setupAdapter() {
 		Resources resources = getResources();
-		mAppList = resources.getStringArray(0x7f060001);
+		mAppList = resources.getStringArray(R.array.circle_app_names);
 		int i = mAppList.length;
 		ArrayList<String> arraylist = new ArrayList<String>();
 		for (int j = 0; j < i; j++) {
 			String s = mAppList[j];
 			boolean flag = true;
-			if (s.equals(resources.getString(0x7f080029))
+			if (s.equals(resources.getString(R.string.data))
 					&& !CircleWidget3DProvider.isDataServiceAvail())
 				flag = false;
 			if (flag)
@@ -37,7 +37,7 @@ public class CircleSelectAppActivity extends ListActivity {
 
 	protected void onCreate(Bundle paramBundle) {
 		super.onCreate(paramBundle);
-		setContentView(2130903060);
+		setContentView(R.layout.select_app);
 		setupAdapter();
 	}
 
@@ -46,15 +46,15 @@ public class CircleSelectAppActivity extends ListActivity {
 		String str = this.mAppList[paramInt];
 		Resources localResources = getResources();
 
-		if (str.equals(localResources.getString(0x7f080026)))
+		if (str.equals(localResources.getString(R.string.clock)))
 			CircleClock.getInstance(this).startClockApp();
-		else if (str.equals(localResources.getString(0x7f080027)))
+		else if (str.equals(localResources.getString(R.string.weather)))
 			CircleWeather.getInstance(this).handleSingleTap(null);
-		else if (str.equals(localResources.getString(0x7f080028)))
+		else if (str.equals(localResources.getString(R.string.battery)))
 			CircleBattery.getInstance(this).startBatteryApp();
-		else if (str.equals(localResources.getString(0x7f080015)))
+		else if (str.equals(localResources.getString(R.string.settings)))
 			Utility.startCircleSettings(this);
-		else if (str.equals(localResources.getString(0x7f080029)))
+		else if (str.equals(localResources.getString(R.string.data)))
 			CircleData.getInstance(this).startDataUsageApp();
 
 		finish();

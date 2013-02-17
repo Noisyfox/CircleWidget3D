@@ -41,7 +41,7 @@ public class CircleTest extends Circle {
 			alertinfo.number = "408-421-3633";
 			alertinfo.timestamp = "342424234";
 			alertinfo.description = "This is demo of text msg";
-			alertinfo.imageId = Integer.valueOf(0x7f020025);
+			alertinfo.imageId = Integer.valueOf(R.drawable.ic_circle_widget_alert_text);
 			alertinfo.type = Integer.valueOf(3);
 			int i = 0 + 1;
 			alertinfo.id = Integer.valueOf(0);
@@ -50,7 +50,7 @@ public class CircleTest extends Circle {
 			alertinfo1.name = "Charles Mcbrian";
 			alertinfo1.number = "510-342-3423";
 			alertinfo1.timestamp = "342424234";
-			alertinfo1.imageId = Integer.valueOf(0x7f020025);
+			alertinfo1.imageId = Integer.valueOf(R.drawable.ic_circle_widget_alert_text);
 			alertinfo1.type = Integer.valueOf(3);
 			alertinfo1.description = "You need to work harder.";
 			int j = i + 1;
@@ -60,7 +60,7 @@ public class CircleTest extends Circle {
 			alertinfo2.name = "Michael Jackson";
 			alertinfo2.number = "510-342-3423";
 			alertinfo2.timestamp = "342424234";
-			alertinfo2.imageId = Integer.valueOf(0x7f020025);
+			alertinfo2.imageId = Integer.valueOf(R.drawable.ic_circle_widget_alert_text);
 			alertinfo2.type = Integer.valueOf(3);
 			alertinfo2.description = "Wanna watch my dance?";
 			int k = j + 1;
@@ -70,7 +70,7 @@ public class CircleTest extends Circle {
 			alertinfo3.name = "Nate Fortin";
 			alertinfo3.number = "510-342-3423";
 			alertinfo3.timestamp = "342424234";
-			alertinfo3.imageId = Integer.valueOf(0x7f020025);
+			alertinfo3.imageId = Integer.valueOf(R.drawable.ic_circle_widget_alert_text);
 			alertinfo3.type = Integer.valueOf(3);
 			alertinfo3.description = "Do you think we are ready for demo?";
 			int l = k + 1;
@@ -80,7 +80,7 @@ public class CircleTest extends Circle {
 			alertinfo4.name = "Lady Gaga";
 			alertinfo4.number = "510-342-3423";
 			alertinfo4.timestamp = "342424234";
-			alertinfo4.imageId = Integer.valueOf(0x7f020025);
+			alertinfo4.imageId = Integer.valueOf(R.drawable.ic_circle_widget_alert_text);
 			alertinfo4.type = Integer.valueOf(3);
 			alertinfo4.description = "Don't miss my conert this weekend...";
 			int i1 = l + 1;
@@ -90,7 +90,7 @@ public class CircleTest extends Circle {
 			alertinfo5.name = "IRS says..";
 			alertinfo5.number = "510-342-3423";
 			alertinfo5.timestamp = "342424234";
-			alertinfo5.imageId = Integer.valueOf(0x7f020025);
+			alertinfo5.imageId = Integer.valueOf(R.drawable.ic_circle_widget_alert_text);
 			alertinfo5.type = Integer.valueOf(3);
 			alertinfo5.description = "You will be paying more taxes this year...";
 			// int _tmp = i1 + 1;

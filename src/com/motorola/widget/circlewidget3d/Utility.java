@@ -148,7 +148,7 @@ public class Utility {
 			s1 = "";
 		if (i == 0 && !flag1)
 			i = 12;
-		s2 = context.getResources().getString(0x7f08000b);
+		s2 = context.getResources().getString(R.string.time_colon);
 		return (new StringBuilder()).append(s1).append(Integer.toString(i))
 				.append(s2).append(s).append(Integer.toString(j)).toString();
 	}
@@ -266,13 +266,13 @@ public class Utility {
 	}
 
 	public static void prepareCircles(Context paramContext) {
-		CircleBattery.getInstance(paramContext).prepareCircle(2130903042,
+		CircleBattery.getInstance(paramContext).prepareCircle(R.layout.battery_circle,
 				CircleConsts.BATTERY_BITMAP_SIZE.intValue());
-		CircleClock.getInstance(paramContext).prepareCircle(2130903046,
+		CircleClock.getInstance(paramContext).prepareCircle(R.layout.clock_circle,
 				CircleConsts.CLOCK_BITMAP_SIZE.intValue());
-		CircleWeather.getInstance(paramContext).prepareCircle(2130903062,
+		CircleWeather.getInstance(paramContext).prepareCircle(R.layout.weather_circle,
 				CircleConsts.WEATHER_BITMAP_SIZE.intValue());
-		CircleAlert.getInstance(paramContext).prepareCircle(2130903040,
+		CircleAlert.getInstance(paramContext).prepareCircle(R.layout.alert_circle,
 				CircleConsts.CLOCK_BITMAP_SIZE.intValue());
 		if ((CircleAlert.isAlertDisplayed())
 				&& (CircleAlert.getAlertType() == 2)) {
@@ -284,7 +284,7 @@ public class Utility {
 		AlertMMS.getInstance(paramContext).retrieveStrings(paramContext);
 		if ((CircleWidget3DProvider.isDataServiceAvail())
 				|| (Config.isDeviceDataSupported()))
-			CircleData.getInstance(paramContext).prepareCircle(2130903048,
+			CircleData.getInstance(paramContext).prepareCircle(R.layout.data_circle,
 					CircleConsts.BATTERY_BITMAP_SIZE.intValue());
 	}
 

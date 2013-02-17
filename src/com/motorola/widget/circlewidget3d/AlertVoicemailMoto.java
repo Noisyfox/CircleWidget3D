@@ -126,9 +126,9 @@ public class AlertVoicemailMoto extends BaseAlert {
 		alertinfo.description = s;
 		alertinfo.timestamp = Long.toString((new Date()).getTime());
 		alertinfo.type = Integer.valueOf(2);
-		alertinfo.imageId = Integer.valueOf(0x7f020027);
+		alertinfo.imageId = Integer.valueOf(R.drawable.ic_circle_widget_alert_voicemail);
 		if (Utility.isVerizonCarrier(mInstance.mContext))
-			alertinfo.imageId = Integer.valueOf(0x7f020028);
+			alertinfo.imageId = Integer.valueOf(R.drawable.ic_circle_widget_alert_voicemail_vzw);
 		if (i == 0) {
 			clearVoicemailAlert();
 			return null;
@@ -148,9 +148,9 @@ public class AlertVoicemailMoto extends BaseAlert {
 
 	public void retrieveStrings(Context paramContext) {
 		Resources localResources = paramContext.getResources();
-		this.mNewVoicemailString = localResources.getString(2131230751);
-		this.mDialString = localResources.getString(2131230753);
-		this.mUnknownString = localResources.getString(2131230733);
+		this.mNewVoicemailString = localResources.getString(R.string.new_voicemail);
+		this.mDialString = localResources.getString(R.string.dial);
+		this.mUnknownString = localResources.getString(R.string.unknown);
 	}
 }
 

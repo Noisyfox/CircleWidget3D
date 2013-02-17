@@ -127,9 +127,9 @@ public class AlertMessages extends BaseAlert {
 			localAlertInfo.name = mInstance.getContactName(str1);
 			localAlertInfo.timestamp = Long.toString(l);
 			localAlertInfo.type = Integer.valueOf(3);
-			localAlertInfo.imageId = Integer.valueOf(2130837541);
+			localAlertInfo.imageId = Integer.valueOf(R.drawable.ic_circle_widget_alert_text);
 			if (Utility.isVerizonCarrier(mInstance.mContext)) {
-				localAlertInfo.imageId = Integer.valueOf(2130837542);
+				localAlertInfo.imageId = Integer.valueOf(R.drawable.ic_circle_widget_alert_text_vzw);
 			}
 			CircleAlert.addItem(localAlertInfo);
 			mThreadId = localLong;

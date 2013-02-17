@@ -28,7 +28,7 @@ public class CircleHelp extends Circle {
 	private CircleHelp(Context paramContext) {
 		mContext = paramContext;
 		mCurrentId = 0;
-		prepareCircle(0x7f03000f, CircleConsts.CLOCK_BITMAP_SIZE.intValue());
+		prepareCircle(R.layout.help_circle, CircleConsts.CLOCK_BITMAP_SIZE.intValue());
 		sDonotDisplayHelpAnyMore = PreferenceManager
 				.getDefaultSharedPreferences(mContext).getBoolean(
 						"do_not_display_help", false);

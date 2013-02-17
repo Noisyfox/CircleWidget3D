@@ -57,9 +57,9 @@ public class AlertTextMsg extends BaseAlert {
 					localAlertInfo.timestamp = Long.toString(localLong
 							.longValue());
 					localAlertInfo.type = Integer.valueOf(3);
-					localAlertInfo.imageId = Integer.valueOf(0x7f020025);
+					localAlertInfo.imageId = Integer.valueOf(R.drawable.ic_circle_widget_alert_text);
 					if (Utility.isVerizonCarrier(mInstance.mContext)) {
-						localAlertInfo.imageId = Integer.valueOf(0x7f020026);
+						localAlertInfo.imageId = Integer.valueOf(R.drawable.ic_circle_widget_alert_text_vzw);
 					}
 					CircleAlert.addItem(localAlertInfo);
 				} else {

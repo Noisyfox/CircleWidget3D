@@ -59,13 +59,13 @@ public class CircleWeather extends Circle {
 		this.mWeatherOrder = new HashMap();
 		this.mSetupFlipThreadStarted = false;
 		retrieveWeatherInfo();
-		prepareCircle(2130903062, CircleConsts.WEATHER_BITMAP_SIZE.intValue());
+		prepareCircle(R.layout.weather_circle, CircleConsts.WEATHER_BITMAP_SIZE.intValue());
 		startWeatherService();
 		Resources localResources = this.mContext.getResources();
 		this.mCurrentTempTextSize = localResources
-				.getDimensionPixelSize(2131165198);
+				.getDimensionPixelSize(R.dimen.weather_current_temp_size);
 		this.mCurrentTempSmallTextSize = localResources
-				.getDimensionPixelSize(2131165199);
+				.getDimensionPixelSize(R.dimen.weather_current_temp_size_small);
 	}
 
 	private void fetchWeatherInfoFromJSON(JSONArray paramJSONArray) {
@@ -283,7 +283,7 @@ public class CircleWeather extends Circle {
 				Log.e("Circle", "Couldn't start Weather activity"
 						+ localException);
 				Toast.makeText(this.mContext,
-						this.mContext.getResources().getString(2131230739), 1)
+						this.mContext.getResources().getString(R.string.weather_app_not_installed), 1)
 						.show();
 			} while (!isCitiesAvailable());
 			this.mWeatherInfo.clear();
@@ -304,7 +304,7 @@ public class CircleWeather extends Circle {
 		} catch (Exception localException) {
 			Log.e("Circle", "Couldn't start Weather activity" + localException);
 			Toast.makeText(this.mContext,
-					this.mContext.getResources().getString(2131230739), 1)
+					this.mContext.getResources().getString(R.string.weather_app_not_installed), 1)
 					.show();
 		}
 	}
@@ -650,19 +650,19 @@ public class CircleWeather extends Circle {
   {
     int i = 1;
     View localView = super.prepareCircle(paramInt1, paramInt2);
-    this.mFrontLayout = localView.findViewById(2131427390);
-    this.mBackLayout = localView.findViewById(2131427391);
-    this.mCurrentTemp = ((TextView)localView.findViewById(2131427393));
-    this.mCity = ((TextView)localView.findViewById(2131427402));
-    this.mTodayHigh = ((TextView)localView.findViewById(2131427398));
-    this.mTodayLow = ((TextView)localView.findViewById(2131427401));
-    this.mTodayHighLabel = ((TextView)localView.findViewById(2131427396));
-    this.mTodayLowLabel = ((TextView)localView.findViewById(2131427399));
-    this.mTodayHighImageView = ((ImageView)localView.findViewById(2131427397));
-    this.mTodayLowImageView = ((ImageView)localView.findViewById(2131427400));
+    this.mFrontLayout = localView.findViewById(R.id.weather_front);
+    this.mBackLayout = localView.findViewById(R.id.weather_setup);
+    this.mCurrentTemp = ((TextView)localView.findViewById(R.id.weather_current));
+    this.mCity = ((TextView)localView.findViewById(R.id.weather_city));
+    this.mTodayHigh = ((TextView)localView.findViewById(R.id.weather_high));
+    this.mTodayLow = ((TextView)localView.findViewById(R.id.weather_low));
+    this.mTodayHighLabel = ((TextView)localView.findViewById(R.id.weather_high_label));
+    this.mTodayLowLabel = ((TextView)localView.findViewById(R.id.weather_low_label));
+    this.mTodayHighImageView = ((ImageView)localView.findViewById(R.id.weather_high_image));
+    this.mTodayLowImageView = ((ImageView)localView.findViewById(R.id.weather_low_image));
     Resources localResources = this.mContext.getResources();
-    String str1 = localResources.getString(2131230735);
-    String str2 = localResources.getString(2131230736);
+    String str1 = localResources.getString(R.string.weather_label_high);
+    String str2 = localResources.getString(R.string.weather_label_low);
     int j;
     label215: int k;
     label236: int m;

@@ -22,7 +22,7 @@ public class CircleGuide extends Circle {
 	private CircleGuide(Context paramContext) {
 		this.mCurrentId = 0;
 		this.mContext = paramContext;
-		prepareCircle(0x7f03000e, CircleConsts.GUIDE_BITMAP_SIZE.intValue());
+		prepareCircle(R.layout.guide_circle, CircleConsts.GUIDE_BITMAP_SIZE.intValue());
 		this.mIsFlipped = true;
 		SharedPreferences localSharedPreferences = PreferenceManager
 				.getDefaultSharedPreferences(this.mContext);

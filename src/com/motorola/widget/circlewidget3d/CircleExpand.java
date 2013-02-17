@@ -20,7 +20,7 @@ public class CircleExpand extends Circle {
 	private CircleExpand(Context paramContext) {
 		this.mCurrentId = 0;
 		this.mContext = paramContext;
-		prepareCircle(0x7f03000c, CircleConsts.GUIDE_BITMAP_SIZE.intValue());
+		prepareCircle(R.layout.expand_circle, CircleConsts.GUIDE_BITMAP_SIZE.intValue());
 		this.mIsFlipped = true;
 		sExpanded = retrieveExpandState();
 	}
@@ -87,7 +87,7 @@ public class CircleExpand extends Circle {
 
 	public View prepareCircle(int paramInt1, int paramInt2) {
 		View localView = super.prepareCircle(paramInt1, paramInt2);
-		this.mExpandImage = ((ImageView) localView.findViewById(2131427363));
+		this.mExpandImage = ((ImageView) localView.findViewById(R.id.expand_image));
 		return localView;
 	}
 
@@ -97,9 +97,9 @@ public class CircleExpand extends Circle {
 	public void updateCircle() {
 		int i;
 		if (sExpanded)
-			i = 0x7f02002e;
+			i = R.drawable.ic_circle_widget_collapse;
 		else
-			i = 0x7f020032;
+			i = R.drawable.ic_circle_widget_expand;
 		Utility.updateTexture(null, "circle_expand/circlefront",
 				getCircleScreen(i));
 	}

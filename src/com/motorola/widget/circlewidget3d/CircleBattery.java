@@ -34,7 +34,7 @@ public class CircleBattery extends Circle {
 	private CircleBattery(Context paramContext) {
 		this.mCurrentId = 0;
 		this.mContext = paramContext;
-		prepareCircle(0x7f030002, CircleConsts.BATTERY_BITMAP_SIZE.intValue());
+		prepareCircle(R.layout.battery_circle, CircleConsts.BATTERY_BITMAP_SIZE.intValue());
 		try {
 			Intent localIntent = paramContext.getApplicationContext()
 					.registerReceiver(
@@ -61,15 +61,15 @@ public class CircleBattery extends Circle {
 	private Bitmap getPercentageScreen() {
 		this.mLevelText.setVisibility(0);
 		TextView localTextView = this.mLevelText;
-		String str = this.mContext.getString(0x7f08002f);
+		String str = this.mContext.getString(R.string.battery_level_format);
 		Object[] arrayOfObject = new Object[1];
 		arrayOfObject[0] = Integer.valueOf(this.mBatteryLevel);
 		localTextView.setText(String.format(str, arrayOfObject));
-		int i = 0x7f02002b;
+		int i = R.drawable.ic_circle_widget_battery;
 		if ((this.mChargeInfo == 0) && (this.mBatteryLevel <= 5)) {
-			i = 0x7f02002d;
+			i = R.drawable.ic_circle_widget_battery_plug;
 		} else if (this.mChargeInfo != 0) {
-			i = 0x7f02002c;
+			i = R.drawable.ic_circle_widget_battery_charging;
 		}
 		this.mBatteryStatusImage.setImageResource(i);
 		this.mFrontLayout.setVisibility(0);
@@ -217,11 +217,11 @@ public class CircleBattery extends Circle {
 
 	public View prepareCircle(int paramInt1, int paramInt2) {
 		View localView = super.prepareCircle(paramInt1, paramInt2);
-		this.mLevelText = ((TextView) localView.findViewById(2131427336));
-		this.mFrontLayout = localView.findViewById(2131427334);
-		this.mBackLayout = localView.findViewById(2131427335);
+		this.mLevelText = ((TextView) localView.findViewById(R.id.battery_level));
+		this.mFrontLayout = localView.findViewById(R.id.battery_front);
+		this.mBackLayout = localView.findViewById(R.id.battery_back);
 		this.mBatteryStatusImage = ((ImageView) localView
-				.findViewById(2131427337));
+				.findViewById(R.id.battery_status_image));
 		return localView;
 	}
 

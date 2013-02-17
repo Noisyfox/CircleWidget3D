@@ -75,7 +75,7 @@ public class CircleData extends Circle {
 	private CircleData(Context paramContext) {
 		this.mCurrentId = 0;
 		this.mContext = paramContext;
-		prepareCircle(2130903048, CircleConsts.BATTERY_BITMAP_SIZE.intValue());
+		prepareCircle(R.layout.data_circle, CircleConsts.BATTERY_BITMAP_SIZE.intValue());
 		sIsDataCircleEnabled = retrieveDataPref("show_mobile_data");
 		sIsFrontSideIsDataCircle = retrieveDataPref("front_side_data_circle");
 		boolean bool1 = sIsDataCircleEnabled;
@@ -123,13 +123,13 @@ public class CircleData extends Circle {
 			}
 
 			paramDataInfo.unitStr = paramContext.getResources().getStringArray(
-					0x7f060000)[paramDataInfo.unit];
+					R.array.data_units)[paramDataInfo.unit];
 			if (paramDataInfo.data.floatValue() >= 0.1D) {
 				paramDataInfo.dataStr = getFormattedLimitStr(
 						paramDataInfo.data, paramDataInfo.unit);
 			} else {
 				paramDataInfo.dataStr = paramContext.getResources().getString(
-						0x7f080000);
+						R.string.less_then_1);
 			}
 		}
 		return paramDataInfo;
@@ -180,7 +180,7 @@ public class CircleData extends Circle {
 			}
 		}
 		localDataInfo.unitStr = paramContext.getResources().getStringArray(
-				2131099648)[localDataInfo.unit];
+				R.array.data_units)[localDataInfo.unit];
 		localDataInfo.data = paramFloat;
 		if (localDataInfo.data.floatValue() != -1.0F)
 			localDataInfo.dataStr = getFormattedLimitStr(localDataInfo.data,
@@ -524,16 +524,16 @@ public class CircleData extends Circle {
 
 	public View prepareCircle(int paramInt1, int paramInt2) {
 		View localView = super.prepareCircle(paramInt1, paramInt2);
-		this.mFrontLayout = localView.findViewById(2131427344);
-		this.mBackLayout = localView.findViewById(2131427345);
-		this.mCurrentUsageView = ((TextView) localView.findViewById(2131427353));
-		this.mMaxLimitView = ((TextView) localView.findViewById(2131427355));
-		this.mLineView = localView.findViewById(2131427354);
+		this.mFrontLayout = localView.findViewById(R.id.data_front);
+		this.mBackLayout = localView.findViewById(R.id.data_error);
+		this.mCurrentUsageView = ((TextView) localView.findViewById(R.id.data_current_usage));
+		this.mMaxLimitView = ((TextView) localView.findViewById(R.id.data_max_limit));
+		this.mLineView = localView.findViewById(R.id.data_line);
 		this.mErrorMaxLimitView = ((TextView) localView
-				.findViewById(2131427348));
-		this.mLayoutSetup = localView.findViewById(2131427349);
-		this.mLayoutUsage = localView.findViewById(2131427352);
-		this.mLayoutDataOff = localView.findViewById(2131427356);
+				.findViewById(R.id.data_error_max_limit));
+		this.mLayoutSetup = localView.findViewById(R.id.layout_data_setup);
+		this.mLayoutUsage = localView.findViewById(R.id.layout_data_usage);
+		this.mLayoutDataOff = localView.findViewById(R.id.layout_data_off);
 		return localView;
 	}
 

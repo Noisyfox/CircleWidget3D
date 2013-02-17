@@ -47,9 +47,9 @@ public class CircleMusic extends Circle {
 	private CircleMusic(Context paramContext) {
 		this.mContext = paramContext;
 		this.mCurrentId = 0;
-		prepareCircle(0x7f030012, CircleConsts.WEATHER_BITMAP_SIZE.intValue());
+		prepareCircle(R.layout.music_circle, CircleConsts.WEATHER_BITMAP_SIZE.intValue());
 		this.mAlbumPodStationName = this.mContext.getResources().getString(
-				0x7f08000d);
+				R.string.unknown);
 		// ((AudioManager)paramContext.getSystemService("audio"));
 		this.mIsMusicInFront = false;
 	}
@@ -254,7 +254,7 @@ public class CircleMusic extends Circle {
 							if (bitmap2 != null)
 								mAlbumArt.setImageBitmap(bitmap2);
 						} else {
-							mAlbumArt.setImageResource(0x7f020042);
+							mAlbumArt.setImageResource(R.drawable.music_circle_mp3_no_artwork);
 						}
 					}
 				}
@@ -406,10 +406,10 @@ public class CircleMusic extends Circle {
 
 	public View prepareCircle(int paramInt1, int paramInt2) {
 		View localView = super.prepareCircle(paramInt1, paramInt2);
-		this.mAlbumArt = ((ImageView) localView.findViewById(2131427376));
+		this.mAlbumArt = ((ImageView) localView.findViewById(R.id.album_art));
 		this.mAlbumNameTextView = ((TextView) localView
-				.findViewById(2131427378));
-		this.mTrackTxtView = ((TextView) localView.findViewById(2131427379));
+				.findViewById(R.id.album_pod_station_name));
+		this.mTrackTxtView = ((TextView) localView.findViewById(R.id.song_episode_name));
 		return localView;
 	}
 

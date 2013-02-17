@@ -328,7 +328,7 @@ public class CircleWidget3DProvider extends AppWidgetProvider {
 		int i = paramArrayOfInt.length;
 		for (int j = 0; j < i; j++) {
 			paramAppWidgetManager.updateAppWidget(paramArrayOfInt[j],
-					new RemoteViews(paramContext.getPackageName(), 2130903056));
+					new RemoteViews(paramContext.getPackageName(), R.layout.main));
 		}
 	}
 

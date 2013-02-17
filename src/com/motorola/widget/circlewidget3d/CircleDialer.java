@@ -29,9 +29,9 @@ public class CircleDialer extends Circle {
 	private CircleDialer(Context paramContext) {
 		this.mContext = paramContext;
 		this.mCurrentId = 0;
-		prepareCircle(0x7f03000b, CircleConsts.WEATHER_BITMAP_SIZE.intValue());
+		prepareCircle(R.layout.dialer_circle, CircleConsts.WEATHER_BITMAP_SIZE.intValue());
 		this.mUnknownContact = this.mContext.getResources().getString(
-				0x7f08000d);
+				R.string.unknown);
 	}
 
 	private Bitmap getDialerScreen() {
@@ -46,7 +46,7 @@ public class CircleDialer extends Circle {
 		if (mContactImage != null)
 			mCallerImageView.setImageBitmap(mContactImage);
 		else
-			mCallerImageView.setImageResource(0x7f02003a);
+			mCallerImageView.setImageResource(R.drawable.ic_circle_widget_phone);
 		mBitmap.eraseColor(0);
 		mLayout.draw(mCanvas);
 		return mBitmap;
@@ -139,10 +139,10 @@ public class CircleDialer extends Circle {
 
 	public View prepareCircle(int paramInt1, int paramInt2) {
 		View localView = super.prepareCircle(paramInt1, paramInt2);
-		this.mCallerImageView = ((ImageView) localView.findViewById(2131427359));
+		this.mCallerImageView = ((ImageView) localView.findViewById(R.id.caller_image));
 		this.mCallerNameNumberView = ((TextView) localView
-				.findViewById(2131427360));
-		this.mFrontLayout = localView.findViewById(2131427358);
+				.findViewById(R.id.caller_namenumber));
+		this.mFrontLayout = localView.findViewById(R.id.dialer_front);
 		return localView;
 	}
 

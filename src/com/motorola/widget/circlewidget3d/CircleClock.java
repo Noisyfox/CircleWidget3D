@@ -41,7 +41,7 @@ public class CircleClock extends Circle {
 		this.mContext = paramContext;
 		this.mCurrentId = 0;
 		this.mAnalogClockState = -1;
-		prepareCircle(0x7f030006, CircleConsts.CLOCK_BITMAP_SIZE.intValue());
+		prepareCircle(R.layout.clock_circle, CircleConsts.CLOCK_BITMAP_SIZE.intValue());
 		this.mIsFlipped = retrieveSidePref("clock_side_front");
 	}
 
@@ -62,9 +62,9 @@ public class CircleClock extends Circle {
 		int i;
 		String s;
 		if (mIsAlarmset)
-			i = 0x7f020021;
+			i = R.drawable.ic_circle_widget_alarm_indicator;
 		else
-			i = 0x7f020022;
+			i = R.drawable.ic_circle_widget_alarm_indicator_off;
 		imageview.setImageResource(i);
 		s = DateUtils.formatDateTime(mContext, l, 0x8001a);
 		mDateView.setText(s);
@@ -186,12 +186,12 @@ public class CircleClock extends Circle {
 
 	public View prepareCircle(int paramInt1, int paramInt2) {
 		View localView = super.prepareCircle(paramInt1, paramInt2);
-		this.mDateView = ((TextView) localView.findViewById(2131427340));
-		this.mTimeView = ((TextView) localView.findViewById(2131427341));
-		this.mAlarmImageView = ((ImageView) localView.findViewById(2131427342));
-		this.mFrontLayout = localView.findViewById(2131427338);
-		this.mBackLayout = localView.findViewById(2131427339);
-		this.mTimeFormat = this.mContext.getResources().getString(2131230730);
+		this.mDateView = ((TextView) localView.findViewById(R.id.clock_date));
+		this.mTimeView = ((TextView) localView.findViewById(R.id.clock_time));
+		this.mAlarmImageView = ((ImageView) localView.findViewById(R.id.clock_alarm_image));
+		this.mFrontLayout = localView.findViewById(R.id.clock_front);
+		this.mBackLayout = localView.findViewById(R.id.clock_back);
+		this.mTimeFormat = this.mContext.getResources().getString(R.string.format_time);
 		Typeface localTypeface = Typeface.createFromAsset(
 				this.mContext.getAssets(), "fonts/Chulho_Neue_v09.ttf");
 		if (localTypeface != null)
@@ -230,8 +230,8 @@ public class CircleClock extends Circle {
 	public void setTheme(String s) {
 		mThemePackage = s;
 		if (s.equals("com.motorola.widget.circlewidget3d")) {
-			mFrontLayout.setBackgroundResource(0x7f020012);
-			mBackLayout.setBackgroundResource(0x7f020010);
+			mFrontLayout.setBackgroundResource(R.drawable.clock_front);
+			mBackLayout.setBackgroundResource(R.drawable.clock_back);
 			mDateView.setTextColor(-1);
 			mTimeView.setTextColor(-1);
 			Utility.updateTexture(null, "circle_time/hourhand", "clock_hands");
@@ -264,8 +264,8 @@ public class CircleClock extends Circle {
 		Intent intent = new Intent("android.intent.action.MAIN");
 		intent.addCategory("android.intent.category.LAUNCHER");
 		Resources resources = mContext.getResources();
-		intent.setComponent(new ComponentName(resources.getString(0x7f080004),
-				resources.getString(0x7f080005)));
+		intent.setComponent(new ComponentName(resources.getString(R.string.clock_pkg),
+				resources.getString(R.string.clock_component)));
 		intent.setFlags(0x14200000);
 		try {
 			mContext.startActivity(intent);

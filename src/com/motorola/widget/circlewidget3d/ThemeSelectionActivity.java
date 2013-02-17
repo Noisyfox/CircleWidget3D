@@ -44,7 +44,7 @@ public class ThemeSelectionActivity extends Activity implements
 	}
 
 	private void createGalleryItems() {
-		Gallery localGallery = (Gallery) findViewById(2131427384);
+		Gallery localGallery = (Gallery) findViewById(R.id.theme_gallery);
 		localGallery.setCallbackDuringFling(false);
 		localGallery.setOnItemSelectedListener(this);
 		localGallery.setAdapter(new ThemeImageAdapter(this));
@@ -82,11 +82,11 @@ public class ThemeSelectionActivity extends Activity implements
 
 	protected void onCreate(Bundle paramBundle) {
 		super.onCreate(paramBundle);
-		setContentView(2130903061);
-		this.mThemePreviewView = ((ImageView) findViewById(2131427389));
+		setContentView(R.layout.theme_selection);
+		this.mThemePreviewView = ((ImageView) findViewById(R.id.theme_preview_image));
 		prepareThemeInfo();
 		createGalleryItems();
-		((Button) findViewById(2131427387))
+		((Button) findViewById(R.id.theme_select_button))
 				.setOnClickListener(new View.OnClickListener() {
 					public void onClick(View paramAnonymousView) {
 						ThemeSelectionActivity.this
@@ -94,7 +94,7 @@ public class ThemeSelectionActivity extends Activity implements
 						ThemeSelectionActivity.this.finish();
 					}
 				});
-		((Button) findViewById(2131427386))
+		((Button) findViewById(R.id.theme_cancel))
 				.setOnClickListener(new View.OnClickListener() {
 					public void onClick(View paramAnonymousView) {
 						ThemeSelectionActivity.this.finish();
@@ -148,17 +148,17 @@ public class ThemeSelectionActivity extends Activity implements
 			String s1;
 			TextView textview;
 			if (view == null)
-				view1 = mLayoutInflater.inflate(0x7f03000d, viewgroup, false);
+				view1 = mLayoutInflater.inflate(R.layout.gallery_item, viewgroup, false);
 			else
 				view1 = view;
-			imageview = (ImageView) view1.findViewById(0x7f0b0024);
+			imageview = (ImageView) view1.findViewById(R.id.gallery_image);
 			s = (String) mThemePackages.get(i);
 			drawable = ThemeInfo.getDrawable(mContext, s,
 					"theme_preview_circle_widget");
 			if (drawable != null)
 				imageview.setImageDrawable(drawable);
 			s1 = ThemeInfo.getText(mContext, s, "theme_name");
-			textview = (TextView) view1.findViewById(0x7f0b0025);
+			textview = (TextView) view1.findViewById(R.id.gallery_text);
 			if (s1 == null)
 				s1 = "";
 			textview.setText(s1);

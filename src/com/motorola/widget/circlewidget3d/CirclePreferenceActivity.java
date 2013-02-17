@@ -57,10 +57,10 @@ public class CirclePreferenceActivity extends PreferenceActivity {
 		if (Utility.isVerizonCarrier(this)) {
 			Preference localPreference1 = findPreference("enable_text_notification");
 			if (localPreference1 != null)
-				localPreference1.setIcon(0x7f020026);
+				localPreference1.setIcon(R.drawable.ic_circle_widget_alert_text_vzw);
 			Preference localPreference2 = findPreference("enable_voicemail_notification");
 			if (localPreference2 != null)
-				localPreference2.setIcon(0x7f020028);
+				localPreference2.setIcon(R.drawable.ic_circle_widget_alert_voicemail_vzw);
 		}
 	}
 
@@ -118,8 +118,8 @@ public class CirclePreferenceActivity extends PreferenceActivity {
 
 	protected void onCreate(Bundle paramBundle) {
 		super.onCreate(paramBundle);
-		setContentView(0x7f030004);
-		addPreferencesFromResource(0x7f040000);
+		setContentView(R.layout.circle_setting);
+		addPreferencesFromResource(R.xml.circle_preferences);
 		if (!Config.isDeviceDataSupported())
 			hideDataCircleOptionsIfNeeded();
 		if (CircleWidget3DProvider.isConfigAvail())

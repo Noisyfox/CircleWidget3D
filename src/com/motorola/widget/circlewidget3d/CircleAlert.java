@@ -51,7 +51,7 @@ public class CircleAlert extends Circle {
 		this.mContext = paramContext;
 		this.mCurrentId = 0;
 		sAlertSide = -1;
-		prepareCircle(2130903040, CircleConsts.CLOCK_BITMAP_SIZE.intValue());
+		prepareCircle(R.layout.alert_circle, CircleConsts.CLOCK_BITMAP_SIZE.intValue());
 		SharedPreferences localSharedPreferences = PreferenceManager
 				.getDefaultSharedPreferences(this.mContext);
 		sEnableTextMsg = localSharedPreferences.getBoolean(
@@ -444,10 +444,10 @@ public class CircleAlert extends Circle {
 
 	public View prepareCircle(int paramInt1, int paramInt2) {
 		View localView = super.prepareCircle(paramInt1, paramInt2);
-		this.mTypeImageView = ((ImageView) localView.findViewById(2131427329));
-		this.mNameNumberView = ((TextView) localView.findViewById(2131427330));
-		this.mDescriptionView = ((TextView) localView.findViewById(2131427331));
-		this.mTimeStampView = ((TextView) localView.findViewById(2131427332));
+		this.mTypeImageView = ((ImageView) localView.findViewById(R.id.alert_type_image));
+		this.mNameNumberView = ((TextView) localView.findViewById(R.id.alert_namenumber));
+		this.mDescriptionView = ((TextView) localView.findViewById(R.id.alert_description));
+		this.mTimeStampView = ((TextView) localView.findViewById(R.id.alert_timestamp));
 		return localView;
 	}
 

@@ -39,11 +39,11 @@ public class AlertMissedCall extends BaseAlert {
 	public static String getPrivateNumberString(String s) {
 		Resources resources = mInstance.mContext.getResources();
 		if (s.equals("-1"))
-			return resources.getString(0x7f08000d);
+			return resources.getString(R.string.unknown);
 		if (s.equals("-3"))
-			return resources.getString(0x7f080023);
+			return resources.getString(R.string.pay_phone);
 		else
-			return resources.getString(0x7f080022);
+			return resources.getString(R.string.private_number);
 	}
 
 	public static boolean isDialable(String s) {
@@ -98,7 +98,7 @@ public class AlertMissedCall extends BaseAlert {
 						if (charsequence != null)
 							s3 = charsequence.toString();
 						alertinfo.description = s3;
-						alertinfo.imageId = Integer.valueOf(0x7f020024);
+						alertinfo.imageId = Integer.valueOf(R.drawable.ic_circle_widget_alert_missed);
 						alertinfo.type = Integer.valueOf(1);
 						alertinfo.timestamp = s2;
 						CircleAlert.addItem(alertinfo);
