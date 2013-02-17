@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">KB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">圓圈</string>
+    <string name="time_colon">:</string>
+    <string name="off">關閉</string>
+    <string name="unknown">未知</string>
+    <string name="cancel">取消</string>
+    <string name="weather_label_high">高溫</string>
+    <string name="weather_label_low">低溫</string>
+    <string name="add_city">新增城市</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">未安裝天氣應用程式。</string>
+    <string name="circles_settings">圓圈設定</string>
+    <string name="settings">設定</string>
+    <string name="notifications">通知</string>
+    <string name="notifications_summary">選擇要在圓圈小工具中顯示哪些通知。</string>
+    <string name="show_text">訊息</string>
+    <string name="show_missed_call">未接來電</string>
+    <string name="show_voicemail">語音郵件</string>
+    <string name="set_theme">設定主題</string>
+    <string name="show_mobile_data">顯示行動資料使用</string>
+    <string name="show_mobile_data_summary">在小圓圈中顯示資料使用率</string>
+    <string name="show_guideme_circle">顯示 Guide Me</string>
+    <string name="new_voicemail">新語音郵件</string>
+    <string name="multimedia_message">多媒體訊息</string>
+    <string name="dial">撥打</string>
+    <string name="private_number">私人號碼</string>
+    <string name="pay_phone">公共電話</string>
+    <string name="help_flip_circle">下滑以瞭解更多</string>
+    <string name="select_app">選取一個圓圈</string>
+    <string name="clock">時鐘</string>
+    <string name="weather">天氣</string>
+    <string name="battery">電池</string>
+    <string name="data">資料</string>
+    <string name="not_supported_widget">第三方首頁畫面不支援圓圈小工具。</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">設定</string>
+</resources>

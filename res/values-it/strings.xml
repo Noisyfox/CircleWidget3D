@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">" KB"</string>
+    <string name="mb">" MB"</string>
+    <string name="gb">" GB"</string>
+    <string name="app_name">Cerchi</string>
+    <string name="time_colon">:</string>
+    <string name="off">DISATTIVATO</string>
+    <string name="unknown">Sconosciuta</string>
+    <string name="cancel">Annulla</string>
+    <string name="weather_label_high">Max</string>
+    <string name="weather_label_low">Min</string>
+    <string name="add_city">Aggiungi città</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Applicazione Meteo non installata.</string>
+    <string name="circles_settings">Impostazioni Cerchi</string>
+    <string name="settings">Impostazioni</string>
+    <string name="notifications">NOTIFICHE</string>
+    <string name="notifications_summary">Scegli quali notifiche visualizzare nel widget Cerchi.</string>
+    <string name="show_text">SMS/MMS</string>
+    <string name="show_missed_call">Chiamata persa</string>
+    <string name="show_voicemail">Segreteria</string>
+    <string name="set_theme">Imposta tema</string>
+    <string name="show_mobile_data">Mostra uso dati mobili</string>
+    <string name="show_mobile_data_summary">Visualizza trasferimento dati nel cerchio piccolo</string>
+    <string name="show_guideme_circle">Mostra Guide Me</string>
+    <string name="new_voicemail">Nuovi messaggi in segreteria</string>
+    <string name="multimedia_message">MMS</string>
+    <string name="dial">Chiama</string>
+    <string name="private_number">Numero privato</string>
+    <string name="pay_phone">Telefono pubblico</string>
+    <string name="help_flip_circle">Scorri verso il basso per visualizzare altro</string>
+    <string name="select_app">Seleziona un cerchio</string>
+    <string name="clock">Orologio</string>
+    <string name="weather">Meteo</string>
+    <string name="battery">Batteria</string>
+    <string name="data">Dati</string>
+    <string name="not_supported_widget">Il widget Cerchi non è supportato sulle schermate iniziali di terze parti.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Imposta</string>
+</resources>

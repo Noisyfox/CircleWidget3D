@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">" ko"</string>
+    <string name="mb">" Mo"</string>
+    <string name="gb">" Go"</string>
+    <string name="app_name">Cercles</string>
+    <string name="time_colon">:</string>
+    <string name="off">Désactivé</string>
+    <string name="unknown">Inconnu</string>
+    <string name="cancel">Annuler</string>
+    <string name="weather_label_high">Max</string>
+    <string name="weather_label_low">Min</string>
+    <string name="add_city">Ajouter des villes</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">"L'application Météo n'est pas installée."</string>
+    <string name="circles_settings">Paramètres Cercles</string>
+    <string name="settings">Paramètres</string>
+    <string name="notifications">NOTIFICATIONS</string>
+    <string name="notifications_summary">Sélectionnez les notifications à afficher dans le widget Cercles.</string>
+    <string name="show_text">SMS/MMS</string>
+    <string name="show_missed_call">Appel manqué</string>
+    <string name="show_voicemail">Messagerie vocale</string>
+    <string name="set_theme">Définir un thème</string>
+    <string name="show_mobile_data">"Affiche l'utilisation de données mobiles"</string>
+    <string name="show_mobile_data_summary">"Affiche l'utilisation de données dans le petit cercle"</string>
+    <string name="show_guideme_circle">Afficher Guide Me</string>
+    <string name="new_voicemail">Nouvelle messagerie vocale</string>
+    <string name="multimedia_message">Message multimédia</string>
+    <string name="dial">Composer</string>
+    <string name="private_number">Numéro privé</string>
+    <string name="pay_phone">Cabine téléphonique</string>
+    <string name="help_flip_circle">Faites glisser votre doigt vers le bas pour plus de fonctionnalités</string>
+    <string name="select_app">Sélectionner un cercle</string>
+    <string name="clock">Horloge</string>
+    <string name="weather">Météo</string>
+    <string name="battery">Batterie</string>
+    <string name="data">Données</string>
+    <string name="not_supported_widget">"Le widget Cercles n'est pas pris en charge sur l'écran d'accueil d'appareils tiers."</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Définir</string>
+</resources>

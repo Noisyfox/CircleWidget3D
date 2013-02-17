@@ -1,0 +1,4 @@
+<shader
+	features="VertexNormals,VertexColors,TexCoords,Texture0,Texture1,Texture2,ModelViewMatrix,ModelViewITMatrix,Material,Lighting"
+	vertex="specmask_vertex"
+	fragment="specmaskfont_fragment"/>

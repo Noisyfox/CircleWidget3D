@@ -1,0 +1,4 @@
+<shader
+	features="VertexNormals,TexCoords,Texture0,Texture1,Texture2,ModelViewMatrix,ModelViewITMatrix,Material,Lighting,UVMatrix"
+	vertex="weather_vertex"
+	fragment="weather_fragment"/>      

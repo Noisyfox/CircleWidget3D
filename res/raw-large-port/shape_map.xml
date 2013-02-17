@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scene_files>
+	<scene_file name="shape_map_common" />
+</scene_files>
+
+<shapes>
+	<!--  Clock Circle -->
+	<shape name="circle_time">
+		<transform>
+			<translate x="50" y="60" z="0"/>
+		</transform>
+	</shape>
+
+	<!--  Battery Circle -->
+	<shape name="circle_battery">
+		<transform>
+			<translate x="-115" y="190" z="0"/>
+		</transform>
+	</shape>
+
+	<!-- Weather Circle -->
+	<shape name="circle_weather">
+		<transform>
+			<translate x="-4" y="0" z="0"/>
+		</transform>
+	</shape>
+
+	<!-- Music Circle -->
+	<!--shape_map name="circle_music" visible="false" transform="-75, -35, 0, 1, 0, 0, 0, 1"/-->
+	
+	<!-- Dialer Circle -->
+	<!--shape_map name="circle_dialer" visible="false" transform="-75, -35, 0, 1, 0, 0, 0, 1"/-->
+</shapes>

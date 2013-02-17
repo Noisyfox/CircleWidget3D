@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/theme_gallery_layout" android:background="@drawable/theme_picker_thumbnail_bg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <Gallery android:id="@id/theme_gallery" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/theme_gallery_margin_top" android:spacing="@dimen/theme_gallery_spacing" />
+        <RelativeLayout android:gravity="center" android:id="@id/theme_commands" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/theme_commands_margin_top" android:layout_below="@id/theme_gallery">
+            <Button android:id="@id/theme_cancel" android:text="@string/cancel" style="@style/ThemeButton" />
+            <Button android:id="@id/theme_select_button" android:text="@string/set_theme" android:layout_toRightOf="@id/theme_cancel" style="@style/ThemeButton" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/theme_preview_image_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/theme_gallery_layout">
+        <ImageView android:id="@id/theme_preview_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" android:contentDescription="@string/empty" />
+    </RelativeLayout>
+</RelativeLayout>

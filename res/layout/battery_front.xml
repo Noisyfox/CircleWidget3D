@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/battery_level_size" android:textStyle="bold" android:gravity="center" android:id="@id/battery_level" android:paddingLeft="3.0px" android:layout_width="fill_parent" android:layout_marginTop="@dimen/battery_level_percentage_margin_top" style="@style/CircleText" />
+    <ImageView android:id="@id/battery_status_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_circle_widget_battery_charging" android:layout_below="@id/battery_level" android:layout_centerHorizontal="true" android:contentDescription="@string/empty" />
+</RelativeLayout>

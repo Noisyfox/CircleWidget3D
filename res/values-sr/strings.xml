@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0,1</string>
+    <string name="kb">" kB"</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">Кругови</string>
+    <string name="time_colon">:</string>
+    <string name="off">Искључено</string>
+    <string name="unknown">Непознато</string>
+    <string name="cancel">Откажи</string>
+    <string name="weather_label_high">макс.</string>
+    <string name="weather_label_low">мин.</string>
+    <string name="add_city">Додајте градове</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Апликација за временску прогнозу није инсталирана.</string>
+    <string name="circles_settings">Подешавања кругова</string>
+    <string name="settings">Подешавања</string>
+    <string name="notifications">ОБАВЕШТЕЊА</string>
+    <string name="notifications_summary">Одаберите обавештења која ће се појављивати у виџету \"Кругови\".</string>
+    <string name="show_text">Текстуална порука</string>
+    <string name="show_missed_call">Пропуштен позив</string>
+    <string name="show_voicemail">Говорна пошта</string>
+    <string name="set_theme">Постави тему</string>
+    <string name="show_mobile_data">Прикажи коришћење мобилних података</string>
+    <string name="show_mobile_data_summary">Приказивање коришћења података у малом кругу</string>
+    <string name="show_guideme_circle">Прикажи Guide Me</string>
+    <string name="new_voicemail">Нова говорна пошта</string>
+    <string name="multimedia_message">Мултимедијална порука</string>
+    <string name="dial">Позови</string>
+    <string name="private_number">Приватан број</string>
+    <string name="pay_phone">Јавна говорница</string>
+    <string name="help_flip_circle">Превуците надоле за још ставки</string>
+    <string name="select_app">Изаберите круг</string>
+    <string name="clock">Сат</string>
+    <string name="weather">Време</string>
+    <string name="battery">Батерија</string>
+    <string name="data">Подаци</string>
+    <string name="not_supported_widget">Виџет \"Кругови\" није подржан на почетним екранима треће стране.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Подеси</string>
+</resources>

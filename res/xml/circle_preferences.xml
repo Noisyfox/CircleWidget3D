@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/circles_settings" android:key="CircleWidget3D"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:persistent="true" android:title="@string/show_mobile_data" android:key="show_mobile_data" android:summary="@string/show_mobile_data_summary" android:defaultValue="true" />
+    <PreferenceCategory android:persistent="true" android:title="@string/notifications" android:key="enable_notifications" android:defaultValue="true">
+        <com.motorola.widget.circlewidget3d.NotificationSummaryPreference android:selectable="false" android:key="notification_summary" />
+        <CheckBoxPreference android:icon="@drawable/ic_circle_widget_alert_text" android:persistent="true" android:title="@string/show_text" android:key="enable_text_notification" android:defaultValue="true" />
+        <CheckBoxPreference android:icon="@drawable/ic_circle_widget_alert_missed" android:persistent="true" android:title="@string/show_missed_call" android:key="enable_missed_call_notification" android:defaultValue="true" />
+        <CheckBoxPreference android:icon="@drawable/ic_circle_widget_alert_voicemail" android:persistent="true" android:title="@string/show_voicemail" android:key="enable_voicemail_notification" android:defaultValue="true" />
+    </PreferenceCategory>
+</PreferenceScreen>

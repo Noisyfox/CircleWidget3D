@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">КБ</string>
+    <string name="mb">МБ</string>
+    <string name="gb">ГБ</string>
+    <string name="app_name">Круги</string>
+    <string name="time_colon">:</string>
+    <string name="off">Выкл.</string>
+    <string name="unknown">Неизвестно</string>
+    <string name="cancel">Отмена</string>
+    <string name="weather_label_high">В</string>
+    <string name="weather_label_low">Н</string>
+    <string name="add_city">Добавить города</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Приложение погоды не установлено.</string>
+    <string name="circles_settings">Настройки приложения \"Круги\"</string>
+    <string name="settings">Настройки</string>
+    <string name="notifications">УВЕДОМЛЕНИЯ</string>
+    <string name="notifications_summary">Выберите, какие уведомления появляются в виджете \"Круги\".</string>
+    <string name="show_text">Текстовое сообщение</string>
+    <string name="show_missed_call">Пропущенный вызов</string>
+    <string name="show_voicemail">Голосовая почта</string>
+    <string name="set_theme">Установить тему</string>
+    <string name="show_mobile_data">Показывать использование мобильной передачи данных</string>
+    <string name="show_mobile_data_summary">Отображать использование данных в маленьком круге</string>
+    <string name="show_guideme_circle">Показать Guide Me</string>
+    <string name="new_voicemail">Новое сообщение голосовой почты</string>
+    <string name="multimedia_message">Мультимедийное сообщение</string>
+    <string name="dial">Набор номера</string>
+    <string name="private_number">Частный номер</string>
+    <string name="pay_phone">Телефон-автомат</string>
+    <string name="help_flip_circle">Проведите пальцем вниз для получения подробностей</string>
+    <string name="select_app">Выбрать круг</string>
+    <string name="clock">Часы</string>
+    <string name="weather">Погода</string>
+    <string name="battery">Батарея</string>
+    <string name="data">Данные</string>
+    <string name="not_supported_widget">Виджет \"Круги\" не поддерживается на главных экранах сторонних разработчиков.</string>
+    <string name="battery_level_format">%1$d %%</string>
+    <string name="set">Установить</string>
+</resources>

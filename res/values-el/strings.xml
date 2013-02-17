@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">KB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">Κύκλοι</string>
+    <string name="time_colon">:</string>
+    <string name="off">Απενεργοποίηση</string>
+    <string name="unknown">Άγνωστο</string>
+    <string name="cancel">Άκυρο</string>
+    <string name="weather_label_high">Y</string>
+    <string name="weather_label_low">X</string>
+    <string name="add_city">Προσθήκη πόλεων</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Η εφαρμογή καιρού δεν έχει εγκατασταθεί.</string>
+    <string name="circles_settings">Ρυθμίσεις κύκλων</string>
+    <string name="settings">Ρυθμίσεις</string>
+    <string name="notifications">ΕΙΔΟΠΟΙΗΣΕΙΣ</string>
+    <string name="notifications_summary">Επιλέξτε ποιες ειδοποιήσεις θα εμφανίζονται στο γραφικό στοιχείο \"Κύκλοι\".</string>
+    <string name="show_text">Μήνυμα κειμένου</string>
+    <string name="show_missed_call">Αναπάντητη κλήση</string>
+    <string name="show_voicemail">Τηλεφωνητής</string>
+    <string name="set_theme">Ορισμός θέματος</string>
+    <string name="show_mobile_data">Εμφάνιση δεδομένων κινητής τηλεφωνίας</string>
+    <string name="show_mobile_data_summary">Εμφάνιση χρήσης δεδομένων στον μικρό κύκλο</string>
+    <string name="show_guideme_circle">Εμφάνιση του Guide Me</string>
+    <string name="new_voicemail">Νέο μήνυμα στον τηλεφωνητή</string>
+    <string name="multimedia_message">Μήνυμα πολυμέσων</string>
+    <string name="dial">Κλήση</string>
+    <string name="private_number">Απόκρυψη</string>
+    <string name="pay_phone">Καρτοτηλέφωνο</string>
+    <string name="help_flip_circle">Σύρετε προς τα κάτω για περισσότερα</string>
+    <string name="select_app">Επιλέξτε έναν κύκλο</string>
+    <string name="clock">Ρολόι</string>
+    <string name="weather">Καιρός</string>
+    <string name="battery">Μπαταρία</string>
+    <string name="data">Δεδομένα</string>
+    <string name="not_supported_widget">Το γραφικό στοιχείο \"Κύκλοι\" δεν υποστηρίζεται σε αρχικές οθόνες άλλων κατασκευαστών.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Ορισμός</string>
+</resources>

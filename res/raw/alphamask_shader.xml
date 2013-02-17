@@ -1,0 +1,4 @@
+<shader
+	features="VertexColors,TexCoords,Texture0,Material,UVMatrix"
+	vertex="alphamask_vertex"
+	fragment="alphamask_fragment"/> 

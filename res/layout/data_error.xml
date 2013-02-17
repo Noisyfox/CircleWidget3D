@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:gravity="center" android:id="@id/data_error_image" android:paddingBottom="2.0px" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/data_current_usage_margin_top" android:src="@drawable/ic_circle_widget_data_error" android:layout_centerHorizontal="true" android:contentDescription="@string/empty" />
+    <View android:id="@id/data_error_line" android:background="#ccffffff" android:layout_width="fill_parent" android:layout_height="2.0px" android:layout_marginLeft="@dimen/data_line_margin" android:layout_marginRight="@dimen/data_line_margin" android:layout_below="@id/data_error_image" />
+    <TextView android:textSize="@dimen/data_max_usage_size" android:textStyle="bold" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/data_error_max_limit" android:layout_width="fill_parent" android:layout_below="@id/data_error_line" style="@style/CircleText" />
+</RelativeLayout>

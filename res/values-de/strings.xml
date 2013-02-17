@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">KB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">Kreise</string>
+    <string name="time_colon">:</string>
+    <string name="off">Aus</string>
+    <string name="unknown">Unbekannt</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="weather_label_high">H</string>
+    <string name="weather_label_low">T</string>
+    <string name="add_city">Städte hinzufügen</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Die Wetter-App ist nicht installiert.</string>
+    <string name="circles_settings">Einstellungen für \"Kreise\"</string>
+    <string name="settings">Einstellungen</string>
+    <string name="notifications">BENACHRICHTIGUNGEN</string>
+    <string name="notifications_summary">Wählen Sie, welche Benachrichtigungen im Widget \"Kreise\" angezeigt werden.</string>
+    <string name="show_text">SMS/MMS</string>
+    <string name="show_missed_call">Verpasster Anruf</string>
+    <string name="show_voicemail">Mailbox</string>
+    <string name="set_theme">Design einstellen</string>
+    <string name="show_mobile_data">Mobildatennutzung anzeigen</string>
+    <string name="show_mobile_data_summary">Datennutzung in kleinem Kreis anzeigen</string>
+    <string name="show_guideme_circle">\"Guide Me\" anzeigen</string>
+    <string name="new_voicemail">Neue Sprachnachricht</string>
+    <string name="multimedia_message">Multimedia-Nachricht</string>
+    <string name="dial">Wählen</string>
+    <string name="private_number">Private Nummer</string>
+    <string name="pay_phone">Telefonzelle</string>
+    <string name="help_flip_circle">Fahren Sie mit Finger nach unten, um weitere Informationen zu erhalten.</string>
+    <string name="select_app">Kreis auswählen</string>
+    <string name="clock">Uhr</string>
+    <string name="weather">Wetter</string>
+    <string name="battery">Akku</string>
+    <string name="data">Daten</string>
+    <string name="not_supported_widget">Das Widget \"Kreise\" wird nicht auf Startbildschirmen von Drittanbietern unterstützt.</string>
+    <string name="battery_level_format">%1$d %%</string>
+    <string name="set">Festlegen</string>
+</resources>

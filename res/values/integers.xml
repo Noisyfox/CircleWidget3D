@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="pod_scale">1</integer>
+    <integer name="auto_play">0</integer>
+    <integer name="pod_animation_duration">3000</integer>
+    <integer name="pod_animation_repeat_count">0</integer>
+    <integer name="pod_animation_repeat_mode">2</integer>
+    <integer name="push_back_distance_z">0</integer>
+    <integer name="push_back_duration">20</integer>
+    <integer name="rotate_threshold_x">20</integer>
+    <integer name="autoflip_threshold_y">120</integer>
+    <integer name="focus_plane_z">-1500</integer>
+    <integer name="touch_reset_duration">50</integer>
+</resources>

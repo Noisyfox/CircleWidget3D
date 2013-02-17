@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/weather_add_city_size" android:textStyle="bold" android:gravity="center" android:id="@id/weather_add_city" android:layout_width="fill_parent" android:layout_marginLeft="@dimen/weather_add_city_margin" android:layout_marginTop="@dimen/weather_add_city_margin_top" android:layout_marginRight="@dimen/weather_add_city_margin" android:text="@string/add_city" android:includeFontPadding="false" style="@style/CircleText" />
+    <TextView android:textSize="@dimen/weather_add_sign_size" android:layout_gravity="center" android:id="@id/weather_add_sign" android:layout_marginTop="@dimen/weather_add_sign_margin_top" android:text="@string/add_sign" android:includeFontPadding="false" style="@style/CircleText" />
+</LinearLayout>

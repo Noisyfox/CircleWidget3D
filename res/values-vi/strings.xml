@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">KB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">Vòng kết nối</string>
+    <string name="time_colon">:</string>
+    <string name="off">Tắt</string>
+    <string name="unknown">Không xác định</string>
+    <string name="cancel">Hủy</string>
+    <string name="weather_label_high">C</string>
+    <string name="weather_label_low">T</string>
+    <string name="add_city">Thêm thành phố</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Ứng dụng thời tiết chưa được cài đặt.</string>
+    <string name="circles_settings">Cài đặt vòng kết nối</string>
+    <string name="settings">Cài đặt</string>
+    <string name="notifications">THÔNG BÁO</string>
+    <string name="notifications_summary">Chọn cho phép thông báo nào sẽ hiện trên trình tiện ích Vòng tròn.</string>
+    <string name="show_text">Tin nhắn văn bản</string>
+    <string name="show_missed_call">Cuộc gọi nhỡ</string>
+    <string name="show_voicemail">Thư thoại</string>
+    <string name="set_theme">Đặt chủ đề</string>
+    <string name="show_mobile_data">Xem mức sử dụng dữ liệu di động</string>
+    <string name="show_mobile_data_summary">Hiển thị mức độ sử dụng dịch vụ dữ liệu trong vòng tròn nhỏ</string>
+    <string name="show_guideme_circle">Hiển thị mục hướng dẫn tôi</string>
+    <string name="new_voicemail">Thư thoại mới</string>
+    <string name="multimedia_message">Tin nhắn MMS</string>
+    <string name="dial">Quay số</string>
+    <string name="private_number">Số cá nhân</string>
+    <string name="pay_phone">Điện thoại tự động</string>
+    <string name="help_flip_circle">Vuốt xuống để xem thêm</string>
+    <string name="select_app">Chọn vòng tròn</string>
+    <string name="clock">Đồng hồ</string>
+    <string name="weather">Thời tiết</string>
+    <string name="battery">Pin</string>
+    <string name="data">Dữ liệu</string>
+    <string name="not_supported_widget">Không hỗ trợ tiện ích Vòng kết nối trên màn hình chính của bên thứ 3.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Đặt</string>
+</resources>

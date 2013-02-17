@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0,1</string>
+    <string name="kb">kB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">Cirklar</string>
+    <string name="time_colon">:</string>
+    <string name="off">AV</string>
+    <string name="unknown">Okänd</string>
+    <string name="cancel">Avbryt</string>
+    <string name="weather_label_high">H</string>
+    <string name="weather_label_low">L</string>
+    <string name="add_city">Lägg till orter</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Väderprogrammet har inte installerats.</string>
+    <string name="circles_settings">Cirkelinställningar</string>
+    <string name="settings">Inställningar</string>
+    <string name="notifications">AVISERINGAR</string>
+    <string name="notifications_summary">Välj vilka meddelanden som ska visas i cirkelwidgeten.</string>
+    <string name="show_text">SMS</string>
+    <string name="show_missed_call">Missat samtal</string>
+    <string name="show_voicemail">Röstmeddelande</string>
+    <string name="set_theme">Ange tema</string>
+    <string name="show_mobile_data">Visa mobildataanvändning</string>
+    <string name="show_mobile_data_summary">Visa dataanvändning i den lilla cirkeln</string>
+    <string name="show_guideme_circle">Visa Guide Me</string>
+    <string name="new_voicemail">Nytt röstmeddelande</string>
+    <string name="multimedia_message">MMS</string>
+    <string name="dial">Ring</string>
+    <string name="private_number">Privat nummer</string>
+    <string name="pay_phone">Telefonautomat</string>
+    <string name="help_flip_circle">Dra nedåt för att visa mer</string>
+    <string name="select_app">Välj cirkel</string>
+    <string name="clock">Klocka</string>
+    <string name="weather">Väder</string>
+    <string name="battery">Batteri</string>
+    <string name="data">Data</string>
+    <string name="not_supported_widget">Cirkelwidgeten kan inte användas på startskärmar från tredje part.</string>
+    <string name="battery_level_format">%1$d %%</string>
+    <string name="set">Ställ in</string>
+</resources>

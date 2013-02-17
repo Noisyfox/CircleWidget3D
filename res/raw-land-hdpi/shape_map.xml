@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scene_files>
+	<scene_file name="shape_map_common" />
+</scene_files>
+
+<shapes>
+	<!--  Clock Circle -->
+	<shape name="circle_time">
+		<transform>
+			<translate x="-25" y="-41" z="-152"/>
+			<scale value="0.65"/>
+		</transform>
+	</shape>
+	<shape name="circle_time/halo">
+        <shader name="NO_TEXTURE" />
+		<property_map attribute="material" follow="circle_time">
+			<mapping attribute="alpha" index="5">
+				<input low="0.4875" high="0.6175"/>
+				<output low="0" high="1"/>
+			</mapping>
+			<mapping attribute="alpha2" index="0">
+				<input low="0.624" high="0.6435"/>
+				<output low="0" high="1"/>
+			</mapping>
+		</property_map>
+	</shape>
+		
+	 <shape name="circle_help" visible="false">
+        <transform>
+            <translate x="85" y="-290" z="0"/>
+            <scale value="0.65"/>
+        </transform>
+    </shape>	
+    
+     <shape name="circle_expand">
+        <transform>
+            <translate x="10" y="-290" z="0"/>
+            <scale value="0.80"/>
+        </transform>
+    </shape>
+    
+    <shape name="circle_help/halo">
+        <shader name="NO_TEXTURE" />
+        <property_map attribute="material" follow="circle_help">
+            <mapping attribute="alpha" index="5">
+                <input low="0.4875" high="0.6175"/>
+                <output low="0" high="1"/>
+            </mapping>
+            <mapping attribute="alpha2" index="0">
+                <input low="0.624" high="0.6435"/>
+                <output low="0" high="1"/>
+            </mapping>
+        </property_map>
+    </shape>
+		
+	<!-- Weather Circle -->
+	<shape name="circle_weather">
+		<transform>
+			<translate x="-40" y="114" z="-145"/>
+			<scale value="0.75"/>
+		</transform>
+	</shape>
+	<shape name="circle_weather/halo">
+        <shader name="NO_TEXTURE" />
+		<property_map attribute="material"  follow="circle_weather">
+			<mapping attribute="alpha" index="5">
+				<input low="0.56" high="0.72"/>
+				<output low="0" high="1"/>
+			</mapping>
+			<mapping attribute="alpha2" index="0">
+				<input low="0.72" high="0.75"/>
+				<output low="0" high="1"/>
+			</mapping>
+		</property_map>
+	</shape>
+
+	<!--  Battery Circle -->
+	<shape name="circle_battery">
+		<transform>
+			<translate x="110" y="-140" z="-598"/>
+		</transform>
+	</shape>
+
+	<!-- fade the conditions when weather rotates -->
+	<shape name="Cloud1_opacity">
+		<property_map follow="circle_weather">
+			<mapping attribute="13" index="5">
+				<input low="0.375" high="0.75"/>
+				<output low="-100" high="0"/>
+			</mapping>
+		</property_map>
+	</shape>
+	<shape name="Cloud2_oopacity">
+		<property_map follow="circle_weather">
+			<mapping attribute="13" index="5">
+				<input low="0.375" high="0.75"/>
+				<output low="-100" high="0"/>
+			</mapping>
+		</property_map>
+	</shape>
+	<shape name="planet_opacity">
+		<property_map follow="circle_weather">
+			<mapping attribute="13" index="5">
+				<input low="0.375" high="0.75"/>
+				<output low="-100" high="0"/>
+			</mapping>
+		</property_map>
+	</shape>
+
+	<!-- Music Circle -->
+	<!--shape_map name="circle_music" visible="false" transform="-100, 80, 0, 0.70, 0, 0, 0, 1"/-->
+	
+	<!-- Dialer Circle -->
+	<!--shape_map name="circle_dialer" visible="false" transform="-100, 80, 0, 0.70, 0, 0, 0, 1"/-->
+</shapes>

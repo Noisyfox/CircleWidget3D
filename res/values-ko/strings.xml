@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">KB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">서클 위젯</string>
+    <string name="time_colon">:</string>
+    <string name="off">사용 안 함</string>
+    <string name="unknown">번호정보없음</string>
+    <string name="cancel">취소</string>
+    <string name="weather_label_high">최고</string>
+    <string name="weather_label_low">최저</string>
+    <string name="add_city">도시 추가</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">날씨 앱이 설치되어 있지 않음.</string>
+    <string name="circles_settings">서클 위젯 설정</string>
+    <string name="settings">설정</string>
+    <string name="notifications">알림</string>
+    <string name="notifications_summary">서클 위젯으로 확인하고자 하는 알림을 선택하세요.</string>
+    <string name="show_text">메시지</string>
+    <string name="show_missed_call">부재중 전화</string>
+    <string name="show_voicemail">보이스메일</string>
+    <string name="set_theme">테마 설정</string>
+    <string name="show_mobile_data">모바일 데이터 사용 표시</string>
+    <string name="show_mobile_data_summary">작은 원 안에 데이터 사용량을 표시합니다.</string>
+    <string name="show_guideme_circle">안내 표시</string>
+    <string name="new_voicemail">새 음성메일</string>
+    <string name="multimedia_message">멀티미디어 메시지</string>
+    <string name="dial">다이얼</string>
+    <string name="private_number">발신번호표시제한</string>
+    <string name="pay_phone">공중전화</string>
+    <string name="help_flip_circle">더 보려면 아래로 밀어내리세요</string>
+    <string name="select_app">원 선택</string>
+    <string name="clock">시계</string>
+    <string name="weather">날씨</string>
+    <string name="battery">배터리</string>
+    <string name="data">데이터</string>
+    <string name="not_supported_widget">서클 위젯은 타사 홈 화면에서 지원되지 않습니다.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">설정</string>
+</resources>

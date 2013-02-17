@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/anim_data_text" android:tag="anim_data" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <TextView android:textSize="14.0sp" android:gravity="center" android:id="@id/image_3d" android:tag="ImageView3D" android:background="#33000000" android:padding="24.0dip" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/not_supported_widget" style="@style/CircleText" />
+    <ImageView android:id="@id/guideme_image" android:tag="guideme_image" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/guideme_image_margin_left" android:layout_marginTop="@dimen/guideme_image_margin_top" android:src="@drawable/ic_circle_widget_guide_tip" android:contentDescription="@string/empty" />
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/clock_front" layout="@layout/clock_analog" />
+    <include android:id="@id/clock_back" layout="@layout/clock_digital" />
+</merge>

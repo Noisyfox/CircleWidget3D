@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shapes>
+
+	<!--  Clock Circle -->
+	<shape name="circle_time/circlefront">
+		<touch-enabled value="true"/>
+		<shader name="specmaskfade_shader">
+			<uniform1f name="u_Texture0Alpha" value="0"/>
+		</shader>
+		<texture unit="2" name="clock_front"/>
+		<property_map attribute="uniform1f" follow="alert_alpha">
+			<mapping attribute="u_Texture0Alpha" index="13">
+				<input low="0" high="10" />
+				<output low="1" high="0" />
+			</mapping>
+		</property_map>
+	</shape>
+	<shape name="circle_time/circleback">
+		<touch-enabled value="true"/>
+		<shader name="specmaskfade_shader">
+			<uniform1f name="u_Texture0Alpha" value="0"/>
+		</shader>
+		<texture unit="2" name="clock_back"/>
+		<property_map attribute="uniform1f" follow="alert_alpha">
+			<mapping attribute="u_Texture0Alpha" index="13">
+				<input low="0" high="10" />
+				<output low="1" high="0" />
+			</mapping>
+		</property_map>
+	</shape>
+
+	<shape name="circle_time/hourhand">
+		<shader name="fontshadow_shader"/>
+		<render_state>
+			<depth_test enabled="false" mode="GL_LESS"/>
+		</render_state>
+	</shape>
+	<shape name="circle_time/minutehand">
+		<shader name="fontshadow_shader"/>
+		<render_state>
+			<depth_test enabled="false" mode="GL_LESS"/>
+		</render_state>
+	</shape>
+	<shape name="circle_time/hourhandshadow">
+		<shader name="DEFAULT"/>
+		<render_state>
+			<depth_test enabled="false" mode="GL_LESS"/>
+		</render_state>
+	</shape>
+	<shape name="circle_time/minutehandshadow">
+		<shader name="DEFAULT"/>
+			<depth_test enabled="false" mode="GL_LESS"/>
+		<render_state>
+		</render_state>
+	</shape>
+	<shape name="circle_time/halo">
+		<shader name="NO_TEXTURE" />
+		<property_map attribute="material" follow="circle_time">
+			<mapping attribute="alpha" index="5">
+				<input low="0.75" high="0.95" />
+				<output low="0" high="1"/>
+			</mapping>
+			<mapping attribute="alpha2" index="0">
+				<input low="0.96" high="0.99" />
+				<output low="0" high="1"/>
+			</mapping>
+		</property_map>
+	</shape>
+
+	<!--  Alert Circle -->
+	<!-- shape_map name="circle_time/alert" shader="NO_TEXTURE"/>
+	<shape name="circle_time/alertdismiss" shader="DEFAULT"/>
+	<shape_map name="circle_time/alertnexttouch" shader="NO_TEXTURE" touch_only="true"/>
+	<shape_map name="circle_time/alertprevtouch" shader="NO_TEXTURE" touch_only="true"/>
+	<shape_map name="circle_time/alertnextbutton" shader="NO_TEXTURE"/>
+	<shape_map name="circle_time/alertprevbutton" shader="NO_TEXTURE"/-->
+
+	<!--  Battery Circle -->
+	<shape name="circle_battery/circlefront">
+		<touch-enabled value="true"/>
+		<shader name="specmaskfont_shader"/>
+		<texture unit="2" name="battery_front"/>
+	</shape>
+	<shape name="circle_battery/circleback">
+		<touch-enabled value="true"/>
+		<shader name="specmaskfont_shader"/>
+		<texture unit="2" name="battery_back"/>
+	</shape>
+	<shape name="circle_battery/level">
+		<shader name="DEFAULT"/>
+	</shape>
+	<shape name="circle_battery/halo">
+		<shader name="NO_TEXTURE"/>
+		<property_map attribute="material" follow="circle_battery">
+			<mapping attribute="alpha" index="5">
+				<input low="0.75" high="0.95" />
+				<output low="0" high="1"/>
+			</mapping>
+			<mapping attribute="alpha2" index="0">
+				<input low="0.96" high="0.99" />
+				<output low="0" high="1"/>
+			</mapping>
+		</property_map>
+	</shape>
+
+
+	<!-- Weather Circle -->
+	<shape name="circle_weather/circlefront">
+		<touch-enabled value="true"/>
+		<shader name="weather_shader"/>
+		<texture unit="1" name="weather_mask"/>
+		<texture unit="2" name="weather_rim_mask"/>
+	</shape>
+	<shape name="circle_weather/circleback">
+		<touch-enabled value="true"/>
+		<shader name="weather_shader"/>
+		<texture unit="1" name="weather_mask"/>
+		<texture unit="2" name="weather_rim_mask"/>
+	</shape>
+	<shape name="circle_weather/halo">
+		<shader name="NO_TEXTURE"/>
+		<property_map attribute="material" follow="circle_weather">
+			<mapping attribute="alpha" index="5">
+				<input low="0.75" high="0.95"/>
+				<output low="0" high="1"/>
+			</mapping>
+			<mapping attribute="alpha2" index="0">
+				<input low="0.96" high="0.99"/>
+				<output low="0" high="1"/>
+			</mapping>
+		</property_map>
+	</shape>
+
+	<shape name="circle_weather/textfront">
+		<shader name="fontshadow_shader"/>
+		<texture unit="1" name="weather_mask"/>
+		<render_state>
+			<depth_test enabled="false" mode="GL_LESS"/>
+		</render_state>
+	</shape>
+	<shape name="circle_weather/textback">
+		<shader name="fontshadow_shader"/>
+		<texture unit="1" name="weather_mask"/>
+		<render_state>
+			<depth_test enabled="false" mode="GL_LESS"/>
+		</render_state>
+	</shape>
+	<shape name="circle_weather/weathereffects/clouds2front">
+		<shader name="alphamask_shader"/>
+		<texture name="weather_matrix" shareable="false"/>
+		<forward_facing/>
+		<render_state>
+			<depth_test enabled="false" mode="GL_LESS"/>
+		</render_state>
+		<property_map attribute="material" follow="Cloud2_oopacity">
+			<mapping attribute="alpha" index="13">
+				<input low="0" high="100"/>
+				<output low="0" high="1"/>
+			</mapping>
+		</property_map>
+	</shape>
+
+	<shape name="circle_weather/weathereffects/conditionfront">
+		<shader name="alphamask_shader"/>
+		<texture name="weather_matrix" shareable="false"/>
+		<forward_facing/>
+		<render_state>
+			<depth_test enabled="false" mode="GL_LESS"/>
+		</render_state>
+		<property_map attribute="material" follow="Cloud1_opacity">
+			<mapping attribute="alpha" index="13">
+				<input low="0" high="100"/>
+				<output low="0" high="1"/>
+			</mapping>
+		</property_map>
+	</shape>
+
+	<shape name="circle_weather/weathereffects/planetfront">
+		<shader name="alphamask_shader"/>
+		<texture name="weather_matrix" shareable="false"/>
+		<forward_facing/>
+		<render_state>
+			<depth_test enabled="false" mode="GL_LESS"/>
+		</render_state>
+		<property_map attribute="material" follow="planet_opacity">
+			<mapping attribute="alpha" index="13">
+				<input low="0" high="100"/>
+				<output low="0" high="1"/>
+			</mapping>
+		</property_map>
+	</shape>
+
+	<shape name="circle_weather/windowfront">
+		<shader name="DEFAULT"/>
+		<render_state>
+			<color_mask r="true" g="true" b="true" a="false"/>
+		</render_state>
+		<blend_state>
+			<source rgb="GL_ONE" alpha="GL_ONE"/>
+			<destination rgb="GL_ONE" alpha="GL_ONE"/>
+			<operation rgb="GL_FUNC_ADD" alpha="GL_FUNC_ADD"/>
+		</blend_state>
+	</shape>
+	<shape name="circle_weather/windowback">
+		<shader name="DEFAULT"/>
+		<render_state>
+			<color_mask r="true" g="true" b="true" a="false"/>
+		</render_state>
+		<blend_state>
+			<source rgb="GL_ONE" alpha="GL_ONE"/>
+			<destination rgb="GL_ONE" alpha="GL_ONE"/>
+			<operation rgb="GL_FUNC_ADD" alpha="GL_FUNC_ADD"/>
+		</blend_state>
+	</shape>
+	<shape name="circle_weather/rainfront">
+		<shader name="DEFAULT"/>
+		<texture name="weather_matrix" sWrap="GL_REPEAT" shareable="false"/>
+		<render_state>
+			<color_mask r="true" g="true" b="true" a="false"/>
+		</render_state>
+		<blend_state>
+			<source rgb="GL_ONE" alpha="GL_ONE"/>
+			<destination rgb="GL_ONE" alpha="GL_ONE"/>
+			<operation rgb="GL_FUNC_ADD" alpha="GL_FUNC_ADD"/>
+		</blend_state>
+		<property_map attribute="material" follow="rainfront_opacity">
+			<mapping attribute="diffuse" index="13">
+				<input low="0" high="100"/>
+				<output low="0" high="1"/>
+			</mapping>
+		</property_map>
+	</shape>
+
+	<shape name="circle_weather/rainback">
+		<shader name="DEFAULT"/>
+		<texture name="weather_matrix" sWrap="GL_REPEAT" shareable="false"/>
+		<render_state>
+			<color_mask r="true" g="true" b="true" a="false"/>
+		</render_state>
+		<blend_state>
+			<source rgb="GL_ONE" alpha="GL_ONE"/>
+			<destination rgb="GL_ONE" alpha="GL_ONE"/>
+			<operation rgb="GL_FUNC_ADD" alpha="GL_FUNC_ADD"/>
+		</blend_state>
+		<property_map attribute="material" follow="rainfront_opacity">
+			<mapping attribute="diffuse" index="13">
+				<input low="0" high="100"/>
+				<output low="0" high="1"/>
+			</mapping>
+		</property_map>
+	</shape>
+
+
+	<!-- fade the light when the planet fades -->
+	<shape name="circle_weather/weathereffects/pointLight">
+		<property_map follow="planet_opacity">
+			<mapping  attribute="color" index="13">
+				<input low="0" high="100"/>
+				<output low="0" high="1"/>
+			</mapping>
+		</property_map>
+	</shape>
+
+	<!-- fade the conditions when weather rotates -->
+	<shape name="Cloud1_opacity">
+		<property_map follow="circle_weather">
+			<mapping attribute="13" index="5">
+				<input low="0.5" high="1"/>
+				<output low="-100" high="0"/>
+			</mapping>
+		</property_map>
+	</shape>
+	<shape name="Cloud2_oopacity">
+		<property_map follow="circle_weather">
+			<mapping attribute="13" index="5">
+				<input low="0.5" high="1"/>
+				<output low="-100" high="0"/>
+			</mapping>
+		</property_map>
+	</shape>
+	<shape name="planet_opacity">
+		<property_map follow="circle_weather">
+			<mapping attribute="13" index="5">
+				<input low="0.5" high="1"/>
+				<output low="-100" high="0"/>
+			</mapping>
+		</property_map>
+	</shape>
+	
+    <!--  Help Circle -->
+    <shape name="circle_help/circlefront" visible="false">
+        <flippable value="false"/>
+        <touch-enabled value="true"/>
+        <shader name="specmaskfont_shader"/>
+        <texture unit="2" name="help_front"/>
+    </shape>
+    <shape name="circle_help/circleback" visible="false">
+        <touch-enabled value="true"/>
+        <shader name="specmaskfont_shader"/>
+        <texture unit="2" name="help_front"/>
+    </shape>
+   
+    <shape name="circle_help/halo" visible="false">
+        <shader name="NO_TEXTURE"/>
+        <property_map attribute="material" follow="circle_help">
+            <mapping attribute="alpha" index="5">
+                <input low="0.75" high="0.95" />
+                <output low="0" high="1"/>
+            </mapping>
+            <mapping attribute="alpha2" index="0">
+                <input low="0.96" high="0.99" />
+                <output low="0" high="1"/>
+            </mapping>
+        </property_map>
+    </shape>
+    
+    <shape name="circle_expand/circlefront" visible="false">
+        <flippable value="false"/>
+        <touch-enabled value="true"/>
+        <shader name="specmaskfont_shader"/>
+        <texture unit="2" name="expand_front"/>
+    </shape>
+    
+
+	<!-- Music Circle -->
+	<!-- shape_map name="circle_music" visible="false" />
+	<shape_map name="circle_music.material" property_map="alpha=13;0-100;0-1" follow="music_opacity"/>
+	<shape_map name="circle_music" visible="false" />
+	<shape_map name="circle_music/circlefront" shader="specmask_shader" />
+	<shape_map name="circle_music/circleback" shader="specmask_shader"/>
+	
+    <shape_map name="circle_music/albumfront" shader="specmask_shader"/>
+    <shape_map name="circle_music/albumback" shader="specmask_shader"/>
+    <shape_map name="circle_music/buttonfront" shader="NO_TEXTURE"/>
+    <shape_map name="circle_music/buttonback" shader="NO_TEXTURE"/>
+    <shape_map name="circle_music/buttonfrontpause" shader="NO_TEXTURE"/>
+    <shape_map name="circle_music/buttonfrontplay" shader="NO_TEXTURE"/>
+    <shape_map name="circle_music/buttonbackpause" shader="NO_TEXTURE"/>
+    <shape_map name="circle_music/buttonbackplay" shader="NO_TEXTURE"/>
+    <shape_map name="circle_music/halo" shader="NO_TEXTURE" /-->
+	
+	
+	<!-- Dialer Circle -->
+	<!-- shape_map name="circle_dialer" visible="false" />
+	<shape_map name="circle_dialer.material" property_map="alpha=13;0-100;0-1" follow="dialer_opacity"/>
+	<shape_map name="circle_dialer/circlefront" shader="specmask_shader"/>
+	<shape_map name="circle_dialer/halo" shader="NO_TEXTURE" /-->
+
+	
+</shapes>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">KB</string>
+    <string name="mb">MB</string>
+    <string name="gb">Gb</string>
+    <string name="app_name">Cirkler</string>
+    <string name="time_colon">:</string>
+    <string name="off">Fra</string>
+    <string name="unknown">Ukendte</string>
+    <string name="cancel">Annuller</string>
+    <string name="weather_label_high">H</string>
+    <string name="weather_label_low">L</string>
+    <string name="add_city">Tilføj byer</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Vejr-app er ikke installeret.</string>
+    <string name="circles_settings">Indstillinger for cirkler</string>
+    <string name="settings">Indstillinger</string>
+    <string name="notifications">MEDDELELSER!</string>
+    <string name="notifications_summary">Vælg, hvilke beskeder der skal vises i Circles-widget.</string>
+    <string name="show_text">SMS</string>
+    <string name="show_missed_call">Mistet opkald</string>
+    <string name="show_voicemail">Voicemail</string>
+    <string name="set_theme">Angiv tema</string>
+    <string name="show_mobile_data">Vis mobildataforbrug</string>
+    <string name="show_mobile_data_summary">Vis dataforbrug i den lille cirkel</string>
+    <string name="show_guideme_circle">Vis Guide Me</string>
+    <string name="new_voicemail">Ny voicemail</string>
+    <string name="multimedia_message">MMS-besked</string>
+    <string name="dial">Ring til</string>
+    <string name="private_number">Privat nummer</string>
+    <string name="pay_phone">Betalingstelefon</string>
+    <string name="help_flip_circle">Stryg ned for mere</string>
+    <string name="select_app">Vælg en cirkel</string>
+    <string name="clock">Ur</string>
+    <string name="weather">Vejr</string>
+    <string name="battery">Batteri</string>
+    <string name="data">Data</string>
+    <string name="not_supported_widget">"Cirkel-widget'en understøttes ikke på startskærme fra tredjepart."</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Angiv</string>
+</resources>

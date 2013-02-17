@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="left" android:id="@id/layout_info" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/weather_current_temp_margin_top">
+        <TextView android:textSize="@dimen/weather_current_temp_size" android:gravity="right" android:id="@id/weather_current" android:layout_marginLeft="-20.0px" android:text="@string/dummy_weather_temp" android:includeFontPadding="false" style="@style/CircleText" />
+        <TextView android:textSize="@dimen/weather_current_temp_degree_size" android:id="@id/weather_current_degree" android:text="@string/dummy_weather_current_degree" android:layout_toRightOf="@id/weather_current" style="@style/CircleText" />
+        <RelativeLayout android:id="@id/weather_highlow_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/weather_current_degree">
+            <TextView android:textStyle="bold" android:gravity="left" android:id="@id/weather_high_label" android:layout_marginLeft="6.0px" android:layout_marginTop="5.0px" android:text="@string/dummy_weather_high_label" android:layout_toRightOf="@id/weather_current_degree" style="@style/WeatherTempText" />
+            <ImageView android:id="@id/weather_high_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0px" android:layout_marginTop="11.0px" android:src="@drawable/ic_circle_widget_arrow_high" android:layout_toRightOf="@id/weather_current_degree" />
+            <TextView android:textStyle="bold" android:gravity="left" android:id="@id/weather_high" android:paddingLeft="2.0px" android:text="@string/dummy_weather_temp" android:layout_toRightOf="@id/weather_high_label" android:layout_alignTop="@id/weather_high_label" style="@style/WeatherTempText" />
+            <TextView android:textStyle="bold" android:gravity="left" android:id="@id/weather_low_label" android:text="@string/dummy_weather_high_label" android:layout_below="@id/weather_high_label" android:layout_alignLeft="@id/weather_high_label" style="@style/WeatherTempText" />
+            <ImageView android:id="@id/weather_low_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="7.0px" android:src="@drawable/ic_circle_widget_arrow_low" android:layout_below="@id/weather_high_image" android:layout_alignLeft="@id/weather_high_image" />
+            <TextView android:textStyle="bold" android:gravity="left" android:id="@id/weather_low" android:paddingLeft="2.0px" android:text="@string/dummy_weather_temp" android:layout_alignTop="@id/weather_low_label" android:layout_alignRight="@id/weather_high" style="@style/WeatherTempText" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <TextView android:textSize="@dimen/weather_city_size" android:textStyle="bold" android:gravity="center" android:id="@id/weather_city" android:paddingLeft="@dimen/weather_city_side_padding" android:paddingRight="@dimen/weather_city_side_padding" android:layout_width="fill_parent" android:layout_height="@dimen/weather_city_height" android:layout_marginTop="@dimen/weather_city_margin_top" android:maxLines="1" android:layout_below="@id/layout_info" style="@style/CircleText" />
+</RelativeLayout>

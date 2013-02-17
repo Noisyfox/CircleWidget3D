@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:id="@id/weather_circle"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/weather_front" layout="@layout/weather_front" />
+    <include android:id="@id/weather_setup" layout="@layout/weather_setup" />
+</merge>

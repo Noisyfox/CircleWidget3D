@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0,1</string>
+    <string name="kb">kB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">Kruhy</string>
+    <string name="time_colon">:</string>
+    <string name="off">Vypnuté</string>
+    <string name="unknown">Neznáme</string>
+    <string name="cancel">Zrušiť</string>
+    <string name="weather_label_high">V</string>
+    <string name="weather_label_low">N</string>
+    <string name="add_city">Pridať mestá</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Aplikácia Počasie nie je nainštalovaná.</string>
+    <string name="circles_settings">Nastavenia aplikácie Kruhy</string>
+    <string name="settings">Nastavenia</string>
+    <string name="notifications">UPOZORNENIA</string>
+    <string name="notifications_summary">Vyberte, ktoré upozornenia sa majú zobrazovať v miniaplikácii Kruhy.</string>
+    <string name="show_text">Textová správa</string>
+    <string name="show_missed_call">Zmeškaný hovor</string>
+    <string name="show_voicemail">Hlasový odkaz</string>
+    <string name="set_theme">Nastavenie témy</string>
+    <string name="show_mobile_data">Zobrazenie využívania mobilných údajov</string>
+    <string name="show_mobile_data_summary">Zobrazenie využívania údajov v malom kruhu</string>
+    <string name="show_guideme_circle">Zobraziť aplikáciu Guide me</string>
+    <string name="new_voicemail">Nová hlasová správa</string>
+    <string name="multimedia_message">Multimediálna správa</string>
+    <string name="dial">Volič</string>
+    <string name="private_number">Súkromné číslo</string>
+    <string name="pay_phone">Verejný telefón</string>
+    <string name="help_flip_circle">Ďalšie informácie zobrazíte skĺznutím prsta nadol</string>
+    <string name="select_app">Vyberte kruh</string>
+    <string name="clock">Hodiny</string>
+    <string name="weather">Počasie</string>
+    <string name="battery">Batéria</string>
+    <string name="data">Údaje</string>
+    <string name="not_supported_widget">Miniaplikácia Kruhy nie je podporovaná na domovských obrazovkách tretích strán.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Nastaviť</string>
+</resources>

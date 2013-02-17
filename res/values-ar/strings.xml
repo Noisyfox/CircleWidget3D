@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">ك ب</string>
+    <string name="mb">م ب</string>
+    <string name="gb">ج ب</string>
+    <string name="app_name">دوائر</string>
+    <string name="time_colon">:</string>
+    <string name="off">إيقاف</string>
+    <string name="unknown">غير معروف</string>
+    <string name="cancel">إلغاء</string>
+    <string name="weather_label_high">H</string>
+    <string name="weather_label_low">L</string>
+    <string name="add_city">إضافة مدن</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">لم يتم تثبيت تطبيق الطقس.</string>
+    <string name="circles_settings">إعدادات دوائر</string>
+    <string name="settings">إعدادات</string>
+    <string name="notifications">التنبيهات</string>
+    <string name="notifications_summary">اختر الإعلامات التي تود أن تظهر في عنصر واجهة المستخدم الدوائر.</string>
+    <string name="show_text">رسالة نصية</string>
+    <string name="show_missed_call">مكالمة فائتة</string>
+    <string name="show_voicemail">بريد صوتي</string>
+    <string name="set_theme">تحديد السمة</string>
+    <string name="show_mobile_data">إظهار استخدام بيانات المحمول</string>
+    <string name="show_mobile_data_summary">عرض استخدام البيانات في الدائرة الصغيرة</string>
+    <string name="show_guideme_circle">إظهار Guide Me</string>
+    <string name="new_voicemail">رسالة صوتية جديدة</string>
+    <string name="multimedia_message">رسالة وسائط متعددة</string>
+    <string name="dial">طلب</string>
+    <string name="private_number">رقم خاص</string>
+    <string name="pay_phone">هاتف الدفع</string>
+    <string name="help_flip_circle">اسحب إلى الأسفل من أجل المزيد</string>
+    <string name="select_app">تحديد دائرة</string>
+    <string name="clock">الساعة</string>
+    <string name="weather">الطقس</string>
+    <string name="battery">البطارية</string>
+    <string name="data">البيانات</string>
+    <string name="not_supported_widget">أداة الدوائر غير معتمدة على الشاشات الرئيسية للجهات الأخرى.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">تعيين</string>
+</resources>

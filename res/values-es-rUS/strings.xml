@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">KB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">Circulos</string>
+    <string name="time_colon">:</string>
+    <string name="off">Apagar</string>
+    <string name="unknown">Desconocido</string>
+    <string name="cancel">Cancelar</string>
+    <string name="weather_label_high">Máx</string>
+    <string name="weather_label_low">Mín</string>
+    <string name="add_city">Agregar ciudades</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Aplicación de clima no instalada.</string>
+    <string name="circles_settings">Configuración de Círculos</string>
+    <string name="settings">Configuración</string>
+    <string name="notifications">NOTIFICACIONES</string>
+    <string name="notifications_summary">Escoger qué notificaciones aparecen en el widget de Círculos.</string>
+    <string name="show_text">Mensaje de texto</string>
+    <string name="show_missed_call">Llamada perdida</string>
+    <string name="show_voicemail">Correo de voz</string>
+    <string name="set_theme">Establecer tema</string>
+    <string name="show_mobile_data">Mostrar uso de datos móviles</string>
+    <string name="show_mobile_data_summary">Mostrar uso de datos en el círculo pequeño</string>
+    <string name="show_guideme_circle">Mostrar Guide Me</string>
+    <string name="new_voicemail">Correo de voz nvo</string>
+    <string name="multimedia_message">Mensaje multimedia</string>
+    <string name="dial">Marcar</string>
+    <string name="private_number">Número privado</string>
+    <string name="pay_phone">Teléfono pago</string>
+    <string name="help_flip_circle">Desliza hacia abajo para más opciones</string>
+    <string name="select_app">Seleccionar un círculo</string>
+    <string name="clock">Reloj</string>
+    <string name="weather">Clima</string>
+    <string name="battery">Batería</string>
+    <string name="data">Datos</string>
+    <string name="not_supported_widget">El widget de Círculos no es soportado en pantallas principales de terceros.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Establecer</string>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">Кб</string>
+    <string name="mb">Мб</string>
+    <string name="gb">" Гб"</string>
+    <string name="app_name">Кола</string>
+    <string name="time_colon">:</string>
+    <string name="off">Вимкнено</string>
+    <string name="unknown">Невідомо</string>
+    <string name="cancel">Скасувати</string>
+    <string name="weather_label_high">В</string>
+    <string name="weather_label_low">Н</string>
+    <string name="add_city">Додати міста</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Програму \"Погода\" не встановлено.</string>
+    <string name="circles_settings">Налаштування віджета \"Кола\"</string>
+    <string name="settings">Налаштування</string>
+    <string name="notifications">СПОВІЩЕННЯ</string>
+    <string name="notifications_summary">"Вибрати сповіщення, які з'являтимуться у віджеті \"Кола\"."</string>
+    <string name="show_text">Текстове повідомлення</string>
+    <string name="show_missed_call">Пропущений виклик</string>
+    <string name="show_voicemail">Голосова пошта</string>
+    <string name="set_theme">Встановити тему</string>
+    <string name="show_mobile_data">Показати використання мобільних даних</string>
+    <string name="show_mobile_data_summary">Відображати використання даних у малому колі</string>
+    <string name="show_guideme_circle">Показати Guide Me</string>
+    <string name="new_voicemail">Нова голос. пошта</string>
+    <string name="multimedia_message">Мультимедійне повідомлення</string>
+    <string name="dial">Набрати</string>
+    <string name="private_number">Приватний номер</string>
+    <string name="pay_phone">Таксофон</string>
+    <string name="help_flip_circle">Проведіть пальцем донизу, щоб дізнатися більше</string>
+    <string name="select_app">Виберіть коло</string>
+    <string name="clock">Годинник</string>
+    <string name="weather">Погода</string>
+    <string name="battery">Батарея</string>
+    <string name="data">Дані</string>
+    <string name="not_supported_widget">Віджет \"Кола\" не підтримується на головних екранах інших розробників.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Устан.</string>
+</resources>

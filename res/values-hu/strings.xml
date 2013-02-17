@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">KB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">Körök</string>
+    <string name="time_colon">:</string>
+    <string name="off">KI</string>
+    <string name="unknown">Ismeretlen</string>
+    <string name="cancel">Mégse</string>
+    <string name="weather_label_high">H</string>
+    <string name="weather_label_low">L</string>
+    <string name="add_city">Városok felvétele</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Időjárás alkalmazás nincs telepítve.</string>
+    <string name="circles_settings">Körök beállításai</string>
+    <string name="settings">Beállítások</string>
+    <string name="notifications">ÉRTESÍTÉSEK</string>
+    <string name="notifications_summary">A Körök widgetben megjelenítendő értesítések kiválasztása.</string>
+    <string name="show_text">Szöveges üzenet</string>
+    <string name="show_missed_call">Nem fogadott hívás</string>
+    <string name="show_voicemail">Hangposta</string>
+    <string name="set_theme">Téma beállítása</string>
+    <string name="show_mobile_data">Mobil adathasználat megjelenítése</string>
+    <string name="show_mobile_data_summary">Adatforgalom megjelenítése a kis körben</string>
+    <string name="show_guideme_circle">Guide me megjelenítése</string>
+    <string name="new_voicemail">Új hangüzenet</string>
+    <string name="multimedia_message">Multimédiás üzenet</string>
+    <string name="dial">Hívás</string>
+    <string name="private_number">Privát telefonszám</string>
+    <string name="pay_phone">Nyilvános telefon</string>
+    <string name="help_flip_circle">Simítson lefele a továbbiakért</string>
+    <string name="select_app">Válasszon ki egy kört</string>
+    <string name="clock">Óra</string>
+    <string name="weather">Időjárás</string>
+    <string name="battery">Akkumulátor</string>
+    <string name="data">Adatok</string>
+    <string name="not_supported_widget">A Circles widget nem támogatott külső féltől származó kezdőlapokon.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Beállítás</string>
+</resources>

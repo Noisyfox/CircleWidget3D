@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">KB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">Krogi</string>
+    <string name="time_colon">.</string>
+    <string name="off">Izklopljeno</string>
+    <string name="unknown">Neznano</string>
+    <string name="cancel">Prekliči</string>
+    <string name="weather_label_high">H</string>
+    <string name="weather_label_low">L</string>
+    <string name="add_city">Dodaj mesta</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Vremenska aplikacija ni nameščena.</string>
+    <string name="circles_settings">Nastavitve krogov</string>
+    <string name="settings">Nastavitve</string>
+    <string name="notifications">OBVESTILA</string>
+    <string name="notifications_summary">Izberite obvestila, ki naj bodo prikazana v pripomočku Krogi.</string>
+    <string name="show_text">SMS/MMS</string>
+    <string name="show_missed_call">Neodgovorjen klic</string>
+    <string name="show_voicemail">Odzivnik</string>
+    <string name="set_theme">Nastavi temo</string>
+    <string name="show_mobile_data">Prikaz uporabe podatkov v mobilni napravi</string>
+    <string name="show_mobile_data_summary">Prikaz uporabe podatkov v malem krogu</string>
+    <string name="show_guideme_circle">Pokaži Guide Me</string>
+    <string name="new_voicemail">Novo sporočilo v odzivniku</string>
+    <string name="multimedia_message">Večpredstavnostno sporočilo</string>
+    <string name="dial">Pokliči</string>
+    <string name="private_number">Zasebna številka</string>
+    <string name="pay_phone">Telefonska govorilnica</string>
+    <string name="help_flip_circle">Pomakni navzdol za več</string>
+    <string name="select_app">Izberite krog</string>
+    <string name="clock">Ura</string>
+    <string name="weather">Vreme</string>
+    <string name="battery">Baterija</string>
+    <string name="data">Podatki</string>
+    <string name="not_supported_widget">Pripomoček Krogi ni podprt na začetnih zaslonih drugih ponudnikov.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Nastavi</string>
+</resources>

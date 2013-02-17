@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/dialer_front" android:background="@drawable/dialer_front" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/caller_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/dialer_icon_margin_top" android:src="@drawable/ic_circle_widget_phone" android:contentDescription="@string/empty" />
+        <TextView android:textSize="@dimen/dialer_name_size" android:textStyle="bold" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/caller_namenumber" android:layout_width="fill_parent" style="@style/CircleText" />
+        <TextView android:textSize="@dimen/dialer_city_size" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/caller_city" android:layout_width="fill_parent" style="@style/CircleText" />
+    </LinearLayout>
+</merge>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">קילו בייט</string>
+    <string name="mb">מגה בייט</string>
+    <string name="gb">"ג'יגה בייט"</string>
+    <string name="app_name">מעגלים</string>
+    <string name="time_colon">:</string>
+    <string name="off">מכובה</string>
+    <string name="unknown">לא ידוע</string>
+    <string name="cancel">בטל</string>
+    <string name="weather_label_high">ג</string>
+    <string name="weather_label_low">נ</string>
+    <string name="add_city">הוסף ערים</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">יישום מזג אוויר אינו מותקן</string>
+    <string name="circles_settings">"הגדרות 'מעגלים'"</string>
+    <string name="settings">הגדרות</string>
+    <string name="notifications">הודעות</string>
+    <string name="notifications_summary">"בחר אילו הודעות יופיעו ב-Widget של 'מעגלים'."</string>
+    <string name="show_text">הודעת טקסט</string>
+    <string name="show_missed_call">שיחה שלא נענתה</string>
+    <string name="show_voicemail">דואר קולי</string>
+    <string name="set_theme">הגדר נושא</string>
+    <string name="show_mobile_data">הצג שימוש בנתונים לנייד</string>
+    <string name="show_mobile_data_summary">הצג שימוש בנתונים בעיגול הקטן</string>
+    <string name="show_guideme_circle">הצג את Guide Me</string>
+    <string name="new_voicemail">דואר קולי חדש</string>
+    <string name="multimedia_message">הודעת מולטימדיה</string>
+    <string name="dial">חייג</string>
+    <string name="private_number">מספר פרטי</string>
+    <string name="pay_phone">טלפון ציבורי</string>
+    <string name="help_flip_circle">החלק למטה לפרטים נוספים</string>
+    <string name="select_app">בחר עיגול</string>
+    <string name="clock">שעון</string>
+    <string name="weather">מזג אוויר</string>
+    <string name="battery">סוללה</string>
+    <string name="data">נתונים</string>
+    <string name="not_supported_widget">"ה-Widget 'מעגלים' אינו נתמך במסכי פתיחה של צד שלישי."</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">הגדר</string>
+</resources>

@@ -1,0 +1,4 @@
+<shader
+	features="TexCoords,Texture0,Material,"
+	vertex="hackpngoverbright_vertex"
+	fragment="hackpngoverbright_fragment"/> 

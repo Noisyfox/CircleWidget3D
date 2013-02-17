@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">" KB"</string>
+    <string name="mb">" MB"</string>
+    <string name="gb">" GB"</string>
+    <string name="app_name">Okręgi</string>
+    <string name="time_colon">:</string>
+    <string name="off">Wył.</string>
+    <string name="unknown">Nieznany</string>
+    <string name="cancel">Anuluj</string>
+    <string name="weather_label_high">Maks.</string>
+    <string name="weather_label_low">Min.</string>
+    <string name="add_city">Dodaj miasta</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Aplikacja Pogoda nie została zainstalowana.</string>
+    <string name="circles_settings">Ustawienia widżetu Okręgi</string>
+    <string name="settings">Ustawienia</string>
+    <string name="notifications">POWIADOMIENIA</string>
+    <string name="notifications_summary">Wybierz powiadomienia, które będą pojawiać się w widżecie Okręgi.</string>
+    <string name="show_text">SMS</string>
+    <string name="show_missed_call">Połączenie nieodebrane</string>
+    <string name="show_voicemail">Poczta głosowa</string>
+    <string name="set_theme">Ustaw motyw</string>
+    <string name="show_mobile_data">Pokaż statystyki przesyłu danych</string>
+    <string name="show_mobile_data_summary">Wyświetl użycie danych w małym okręgu</string>
+    <string name="show_guideme_circle">Pokaż Guide Me</string>
+    <string name="new_voicemail">Nowa poczta głosowa</string>
+    <string name="multimedia_message">MMS</string>
+    <string name="dial">Wybierz numer</string>
+    <string name="private_number">Numer prywatny</string>
+    <string name="pay_phone">Płatny telefon</string>
+    <string name="help_flip_circle">Przesuń w dół, aby uzyskać więcej</string>
+    <string name="select_app">Wybierz okrąg</string>
+    <string name="clock">Zegar</string>
+    <string name="weather">Prognoza pogody</string>
+    <string name="battery">Bateria</string>
+    <string name="data">Dane</string>
+    <string name="not_supported_widget">Widżet Okręgi nie jest obsługiwany przez ekrany główne innych firm.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Ustaw</string>
+</resources>

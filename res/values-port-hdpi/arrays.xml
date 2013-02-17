@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="collapse_clock_pos">
+        <item>90</item>
+        <item>-22</item>
+        <item>-100</item>
+    </integer-array>
+    <integer-array name="collapse_weather_pos">
+        <item>-130</item>
+        <item>150</item>
+        <item>-150</item>
+    </integer-array>
+    <integer-array name="collapse_battery_pos">
+        <item>-300</item>
+        <item>-100</item>
+        <item>-120</item>
+    </integer-array>
+    <integer-array name="collapse_help_pos">
+        <item>320</item>
+        <item>-120</item>
+        <item>0</item>
+    </integer-array>
+    <integer-array name="collapse_expand_pos">
+        <item>-350</item>
+        <item>-120</item>
+        <item>0</item>
+    </integer-array>
+    <integer-array name="expand_clock_pos">
+        <item>-25</item>
+        <item>-22</item>
+        <item>-100</item>
+    </integer-array>
+    <integer-array name="expand_weather_pos">
+        <item>30</item>
+        <item>50</item>
+        <item>-150</item>
+    </integer-array>
+    <integer-array name="expand_battery_pos">
+        <item>30</item>
+        <item>33</item>
+        <item>-120</item>
+    </integer-array>
+    <integer-array name="expand_help_pos">
+        <item>-5</item>
+        <item>-120</item>
+        <item>0</item>
+    </integer-array>
+    <integer-array name="expand_expand_pos">
+        <item>-15</item>
+        <item>-120</item>
+        <item>0</item>
+    </integer-array>
+</resources>

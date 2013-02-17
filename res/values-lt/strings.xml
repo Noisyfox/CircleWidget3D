@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0,1</string>
+    <string name="kb">" kB"</string>
+    <string name="mb">" MB"</string>
+    <string name="gb">" GB"</string>
+    <string name="app_name">Ratai</string>
+    <string name="time_colon">:</string>
+    <string name="off">Išjungti</string>
+    <string name="unknown">Nežinomas</string>
+    <string name="cancel">Atšaukti</string>
+    <string name="weather_label_high">A</string>
+    <string name="weather_label_low">Ž</string>
+    <string name="add_city">Pridėti miestų</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Orų programa neįdiegta.</string>
+    <string name="circles_settings">Ratų nustatos</string>
+    <string name="settings">Nuostatos</string>
+    <string name="notifications">PRANEŠIMAI</string>
+    <string name="notifications_summary">Pasirinkite, kurie perspėjimai bus rodomi Ratų valdiklyje.</string>
+    <string name="show_text">Tekstinė žimutė</string>
+    <string name="show_missed_call">Praleistas skambutis</string>
+    <string name="show_voicemail">Balso paštas</string>
+    <string name="set_theme">Nustatyti temą</string>
+    <string name="show_mobile_data">Rodyti mobiliųjų duomenų naudojimą</string>
+    <string name="show_mobile_data_summary">Rodyti duomenų naudojimą mažame apskritime</string>
+    <string name="show_guideme_circle">Rodyti „Guide Me“</string>
+    <string name="new_voicemail">Naujas balso pašto pranešimas</string>
+    <string name="multimedia_message">Multimedijos žinutė</string>
+    <string name="dial">Rinkti numerį</string>
+    <string name="private_number">Privatus numeris</string>
+    <string name="pay_phone">Mokamas telefonas</string>
+    <string name="help_flip_circle">Brūkštelėkite žemyn, kad sužinotumėte daugiau</string>
+    <string name="select_app">Pasirinkti apskritimą</string>
+    <string name="clock">Laikrodis</string>
+    <string name="weather">Orai</string>
+    <string name="battery">Akumuliatorius</string>
+    <string name="data">Duomenys</string>
+    <string name="not_supported_widget">Ratų valdiklis nepalaikomas 3-iosios šalies pradžios rodiniuose.</string>
+    <string name="battery_level_format">%1$d %%</string>
+    <string name="set">Nustatyti</string>
+</resources>

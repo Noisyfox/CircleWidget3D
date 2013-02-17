@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">KB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">Circles</string>
+    <string name="time_colon">:</string>
+    <string name="off">ปิด</string>
+    <string name="unknown">ไม่รู้จัก</string>
+    <string name="cancel">ยกเลิก</string>
+    <string name="weather_label_high">H</string>
+    <string name="weather_label_low">L</string>
+    <string name="add_city">เพิ่มเมือง</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">ไม่ได้ติดตั้งแอปฯ พยากรณ์อากาศ</string>
+    <string name="circles_settings">การตั้งค่า Circles</string>
+    <string name="settings">การตั้งค่า</string>
+    <string name="notifications">การแจ้งเตือน</string>
+    <string name="notifications_summary">เลือกว่าจะให้การแจ้งเตือนใดปรากฏในวิดเจ็ต วงกลม</string>
+    <string name="show_text">ข้อความตัวอักษร</string>
+    <string name="show_missed_call">สายที่ไม่ได้รับ</string>
+    <string name="show_voicemail">ข้อความเสียง</string>
+    <string name="set_theme">ตั้งธีม</string>
+    <string name="show_mobile_data">แสดงการใช้ข้อมูลมือถือ</string>
+    <string name="show_mobile_data_summary">แสดงการใช้ข้อมูลในวงกลมเล็ก</string>
+    <string name="show_guideme_circle">แสดง ชี้แนะฉัน</string>
+    <string name="new_voicemail">ข้อความเสียงใหม่</string>
+    <string name="multimedia_message">ข้อความมัลติมีเดีย</string>
+    <string name="dial">โทร</string>
+    <string name="private_number">หมายเลขส่วนตัว</string>
+    <string name="pay_phone">โทรศัพท์สาธารณะ</string>
+    <string name="help_flip_circle">กวาดลงเพื่อดูเพิ่มเติม</string>
+    <string name="select_app">เลือกวงกลม</string>
+    <string name="clock">นาฬิกา</string>
+    <string name="weather">สภาพอากาศ</string>
+    <string name="battery">แบตเตอรี่</string>
+    <string name="data">ข้อมูล</string>
+    <string name="not_supported_widget">ไม่สามารถใช้วิดเจ็ต Circles ในหน้าจอหลักของผู้ให้บริการรายอื่น</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">ตั้งค่า</string>
+</resources>

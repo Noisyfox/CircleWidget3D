@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/data_front" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/layout_data_setup" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/data_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/data_image_margin_top" android:src="@drawable/ic_circle_widget_data" android:layout_centerHorizontal="true" android:contentDescription="@string/empty" />
+        <TextView android:gravity="center" android:id="@id/data_set" android:layout_width="fill_parent" android:text="@string/set" android:layout_below="@id/data_image" style="@style/CircleText" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/layout_data_usage" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="@dimen/data_current_usage_size" android:textStyle="bold" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/data_current_usage" android:layout_width="fill_parent" android:layout_marginTop="@dimen/data_current_usage_margin_top" style="@style/CircleText" />
+        <View android:id="@id/data_line" android:background="#ccffffff" android:layout_width="fill_parent" android:layout_height="2.0px" android:layout_marginLeft="@dimen/data_line_margin" android:layout_marginRight="@dimen/data_line_margin" android:layout_below="@id/data_current_usage" />
+        <TextView android:textSize="@dimen/data_max_usage_size" android:textStyle="bold" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/data_max_limit" android:layout_width="fill_parent" android:layout_below="@id/data_line" style="@style/CircleText" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/layout_data_off" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/data_off_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_circle_widget_data_off" android:layout_centerInParent="true" android:contentDescription="@string/empty" />
+    </RelativeLayout>
+</RelativeLayout>

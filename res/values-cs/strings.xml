@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">kB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">Kruhy</string>
+    <string name="time_colon">:</string>
+    <string name="off">Vypnuto</string>
+    <string name="unknown">Neznámý</string>
+    <string name="cancel">Zrušit</string>
+    <string name="weather_label_high">V</string>
+    <string name="weather_label_low">N</string>
+    <string name="add_city">Přidat města</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Aplikace Počasí není nainstalována.</string>
+    <string name="circles_settings">Nastavení widgetu Kruhy</string>
+    <string name="settings">Nastavení</string>
+    <string name="notifications">OZNÁMENÍ</string>
+    <string name="notifications_summary">Vyberte, která oznámení se mají zobrazovat ve widgetu Kruhy.</string>
+    <string name="show_text">Textová zpráva</string>
+    <string name="show_missed_call">Zmeškaný hovor</string>
+    <string name="show_voicemail">Hlasová zpráva</string>
+    <string name="set_theme">Nastavit profil</string>
+    <string name="show_mobile_data">Zobrazit využití mobilních dat</string>
+    <string name="show_mobile_data_summary">Zobrazit využití dat v menším kruhu</string>
+    <string name="show_guideme_circle">Zobrazit službu Guide Me</string>
+    <string name="new_voicemail">Nová hlasová zpráva</string>
+    <string name="multimedia_message">Multimediální zpráva</string>
+    <string name="dial">Vytočit</string>
+    <string name="private_number">Soukromé číslo</string>
+    <string name="pay_phone">Veřejný telefon</string>
+    <string name="help_flip_circle">Tahem prstu získáte další informace.</string>
+    <string name="select_app">Vybrat kruh</string>
+    <string name="clock">Hodiny</string>
+    <string name="weather">Počasí</string>
+    <string name="battery">Baterie</string>
+    <string name="data">Data</string>
+    <string name="not_supported_widget">Widget Kruhy není podporován na plochách jiných společností.</string>
+    <string name="battery_level_format">%1$d %%</string>
+    <string name="set">Nastavit</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/theme_gallery_item" android:layout_width="146.0dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/gallery_image" android:focusable="true" android:layout_width="fill_parent" android:layout_height="110.0dip" android:scaleType="fitXY" android:adjustViewBounds="true" android:contentDescription="@string/empty" />
+    <TextView android:textSize="@dimen/theme_name_size" android:textStyle="bold" android:gravity="center" android:id="@id/gallery_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/gallery_image" />
+</RelativeLayout>

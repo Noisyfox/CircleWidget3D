@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">" KB"</string>
+    <string name="mb">" MB"</string>
+    <string name="gb">" GB"</string>
+    <string name="app_name">Círculos</string>
+    <string name="time_colon">:</string>
+    <string name="off">Desactivado</string>
+    <string name="unknown">Desconocido</string>
+    <string name="cancel">Cancelar</string>
+    <string name="weather_label_high">Máx</string>
+    <string name="weather_label_low">Mín</string>
+    <string name="add_city">Añadir ciudades</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">La aplicación del tiempo no está instalada.</string>
+    <string name="circles_settings">Ajustes de círculos</string>
+    <string name="settings">Ajustes</string>
+    <string name="notifications">NOTIFICACIONES</string>
+    <string name="notifications_summary">Selecciona las notificaciones que aparecerán en el widget Círculos.</string>
+    <string name="show_text">SMS/MMS</string>
+    <string name="show_missed_call">Llamada perdida</string>
+    <string name="show_voicemail">Buzón de voz</string>
+    <string name="set_theme">Establecer tema</string>
+    <string name="show_mobile_data">Mostrar uso de datos móviles</string>
+    <string name="show_mobile_data_summary">Mostrar uso de datos en el círculo pequeño</string>
+    <string name="show_guideme_circle">Mostrar Guide Me</string>
+    <string name="new_voicemail">Nuevo mensaje de voz</string>
+    <string name="multimedia_message">Mensaje multimedia</string>
+    <string name="dial">Marcar</string>
+    <string name="private_number">Número privado</string>
+    <string name="pay_phone">Teléfono público</string>
+    <string name="help_flip_circle">Para ver más, desliza el dedo hacia abajo</string>
+    <string name="select_app">Selecciona un círculo</string>
+    <string name="clock">Reloj</string>
+    <string name="weather">Tiempo</string>
+    <string name="battery">Batería</string>
+    <string name="data">Datos</string>
+    <string name="not_supported_widget">El widget Círculos no se admite en escritorios de terceros.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Establecer</string>
+</resources>

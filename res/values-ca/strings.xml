@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0,1</string>
+    <string name="kb">" kB"</string>
+    <string name="mb">" MB"</string>
+    <string name="gb">" GB"</string>
+    <string name="app_name">Cercles</string>
+    <string name="time_colon">:</string>
+    <string name="off">Desactiva</string>
+    <string name="unknown">Desconegut</string>
+    <string name="cancel">Cancel·la</string>
+    <string name="weather_label_high">Màx.</string>
+    <string name="weather_label_low">Mín.</string>
+    <string name="add_city">Afegeix ciutats</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">"No s'ha instal·lat l'aplicació Temps."</string>
+    <string name="circles_settings">Paràmetres de Cercles</string>
+    <string name="settings">Paràmetres</string>
+    <string name="notifications">NOTIFICACIONS</string>
+    <string name="notifications_summary">"Trieu les notificacions que han d'aparèixer al giny Cercles."</string>
+    <string name="show_text">Missatge de text</string>
+    <string name="show_missed_call">Trucada perduda</string>
+    <string name="show_voicemail">Correu de veu</string>
+    <string name="set_theme">Defineix el perfil</string>
+    <string name="show_mobile_data">"Mostra l'ús de dades mòbils"</string>
+    <string name="show_mobile_data_summary">"Mostra les dades d'ús al cercle petit"</string>
+    <string name="show_guideme_circle">Mostra Guide Me</string>
+    <string name="new_voicemail">Nou missatge de correu de veu</string>
+    <string name="multimedia_message">Missatge multimèdia</string>
+    <string name="dial">Marca</string>
+    <string name="private_number">Número privat</string>
+    <string name="pay_phone">Telèfon de monedes</string>
+    <string name="help_flip_circle">Passeu el dit cap avall per veure més informació</string>
+    <string name="select_app">Selecciona un cercle</string>
+    <string name="clock">Rellotge</string>
+    <string name="weather">Temps</string>
+    <string name="battery">Bateria</string>
+    <string name="data">Dades</string>
+    <string name="not_supported_widget">"El giny Cercles no és compatible amb les pantalles d'inici de tercers."</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Estableix</string>
+</resources>

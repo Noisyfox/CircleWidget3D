@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scene_files>
+	<scene_file name="shape_map_common" />
+</scene_files>
+
+<shapes>
+	<!--  Clock Circle -->
+	<shape name="circle_time">
+		<transform>
+			<translate x="-30" y="-22.0" z="-100"/>
+		</transform>
+	</shape>
+
+	<!-- Weather Circle -->
+	<shape name="circle_weather">
+		<transform>
+			<translate x="30" y="50" z="-150"/>
+		</transform>
+	</shape>
+
+	<!--  Battery Circle -->
+	<shape name="circle_battery">
+		<transform>
+			<translate x="35" y="31" z="-120"/>		
+		</transform>
+	</shape>
+	
+	<shape name="circle_help" visible="false">
+        <transform>
+            <translate x="40" y="-150" z="-120"/>     
+            <scale value="0.85"/>
+        </transform>
+    </shape>
+    
+    <shape name="circle_help/halo">
+        <shader name="NO_TEXTURE" />
+        <property_map attribute="material" follow="circle_help">
+            <mapping attribute="alpha" index="5">
+                <input low="0.4875" high="0.6175"/>
+                <output low="0" high="1"/>
+            </mapping>
+            <mapping attribute="alpha2" index="0">
+                <input low="0.624" high="0.6435"/>
+                <output low="0" high="1"/>
+            </mapping>
+        </property_map>
+    </shape>
+    
+     <shape name="circle_expand">
+        <transform>
+            <translate x="-15" y="-120" z="0"/>
+        </transform>
+    </shape>
+
+	<!-- Music Circle -->
+	<!--shape_map name="circle_music" visible="false" transform="20, 30, 0, 1, 0, 0, 0, 1"/-->
+	
+	<!-- Dialer Circle -->
+	<!--shape_map name="circle_dialer" visible="false" transform="20, 30, 0, 1, 0, 0, 0, 1"/-->
+</shapes>
+

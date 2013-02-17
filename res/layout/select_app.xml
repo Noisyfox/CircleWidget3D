@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <Button android:id="@id/button_cancel" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/cancel" android:layout_below="@android:id/list" android:onClick="onClickCancel" />
+</RelativeLayout>

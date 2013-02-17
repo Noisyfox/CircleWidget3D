@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0,1</string>
+    <string name="kb">KB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">Balonlar</string>
+    <string name="time_colon">:</string>
+    <string name="off">Kapalı</string>
+    <string name="unknown">Bilinmiyor</string>
+    <string name="cancel">İptal</string>
+    <string name="weather_label_high">Y</string>
+    <string name="weather_label_low">D</string>
+    <string name="add_city">Şehir ekle</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Hava durumu uygulaması yüklü değil.</string>
+    <string name="circles_settings">Balon ayarları</string>
+    <string name="settings">Ayarlar</string>
+    <string name="notifications">BİLDİRİMLER</string>
+    <string name="notifications_summary">"Balonlar widget'ında hangi bildirimlerin görüneceğini seçin."</string>
+    <string name="show_text">Kısa mesaj</string>
+    <string name="show_missed_call">Cevapsız çağrı</string>
+    <string name="show_voicemail">Sesli mesaj</string>
+    <string name="set_theme">Profil Ayarla</string>
+    <string name="show_mobile_data">Mobil veri kullanımını görüntüle</string>
+    <string name="show_mobile_data_summary">Küçük balonda veri kullanımını görüntüle</string>
+    <string name="show_guideme_circle">Guide Me bölümünü göster</string>
+    <string name="new_voicemail">Yeni sesli mesaj</string>
+    <string name="multimedia_message">Multimedya mesajı</string>
+    <string name="dial">Çevir</string>
+    <string name="private_number">Özel numara</string>
+    <string name="pay_phone">Ankesörlü telefon</string>
+    <string name="help_flip_circle">Diğerleri için aşağı kaydırın</string>
+    <string name="select_app">Bir balon seçin</string>
+    <string name="clock">Saat</string>
+    <string name="weather">Hava Durumu</string>
+    <string name="battery">Pil</string>
+    <string name="data">Veri</string>
+    <string name="not_supported_widget">"Balonlar widget'ı 3. taraflarca sağlanan ana ekranlarda desteklenmez."</string>
+    <string name="battery_level_format">%%%1$d</string>
+    <string name="set">Ayarla</string>
+</resources>

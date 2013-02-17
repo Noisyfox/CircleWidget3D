@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/clock_date_size" android:textColor="#d5ffffff" android:gravity="center" android:id="@id/clock_date" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/clock_day_margin_top" android:layout_alignParentTop="true" style="@style/CircleText" />
+    <TextView android:textSize="@dimen/clock_time_size" android:gravity="center" android:id="@id/clock_time" android:layout_width="fill_parent" android:layout_height="wrap_content" android:includeFontPadding="false" android:layout_centerInParent="true" style="@style/CircleText" />
+    <ImageView android:id="@id/clock_alarm_image" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/clock_alarm_margin" android:layout_marginTop="@dimen/clock_date_margin_top" android:layout_marginRight="@dimen/clock_alarm_margin" android:src="@drawable/ic_circle_widget_alarm_indicator" android:layout_below="@id/clock_time" android:layout_centerHorizontal="true" android:contentDescription="@string/empty" />
+</RelativeLayout>

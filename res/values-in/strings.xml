@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0,1</string>
+    <string name="kb">KB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">Circles</string>
+    <string name="time_colon">:</string>
+    <string name="off">Mati</string>
+    <string name="unknown">Tidak diketahui</string>
+    <string name="cancel">Batal</string>
+    <string name="weather_label_high">H</string>
+    <string name="weather_label_low">L</string>
+    <string name="add_city">Tambah kota</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Aplikasi Weather tidak terinstal.</string>
+    <string name="circles_settings">Pengaturan Circles</string>
+    <string name="settings">Pengaturan</string>
+    <string name="notifications">PEMBERITAHUAN</string>
+    <string name="notifications_summary">Pilih pemberitahuan mana yang muncul di widget Lingkaran.</string>
+    <string name="show_text">Pesan teks</string>
+    <string name="show_missed_call">Panggilan tidak terjawab</string>
+    <string name="show_voicemail">Pesan suara</string>
+    <string name="set_theme">Atur Tema</string>
+    <string name="show_mobile_data">Tampilkan penggunaan data seluler</string>
+    <string name="show_mobile_data_summary">Tampilkan penggunaan data di lingkaran kecil</string>
+    <string name="show_guideme_circle">Tampilkan panduan kepada saya</string>
+    <string name="new_voicemail">Pesan suara baru</string>
+    <string name="multimedia_message">Pesan multimedia</string>
+    <string name="dial">Putar nomor</string>
+    <string name="private_number">Nomor pribadi</string>
+    <string name="pay_phone">Pay phone</string>
+    <string name="help_flip_circle">Gesek ke bawah untuk lebih banyak</string>
+    <string name="select_app">Pilih circle</string>
+    <string name="clock">Clock</string>
+    <string name="weather">Weather</string>
+    <string name="battery">Baterai</string>
+    <string name="data">Data</string>
+    <string name="not_supported_widget">Widget Circles tidak didukung di layar home pihak ketiga.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Atur</string>
+</resources>

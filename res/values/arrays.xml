@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="data_units">
+        <item>@string/kb</item>
+        <item>@string/mb</item>
+        <item>@string/gb</item>
+    </array>
+    <array name="circle_app_names">
+        <item>@string/clock</item>
+        <item>@string/weather</item>
+        <item>@string/battery</item>
+        <item>@string/settings</item>
+        <item>@string/data</item>
+    </array>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">kB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">Cirkels</string>
+    <string name="time_colon">:</string>
+    <string name="off">Uit</string>
+    <string name="unknown">Onbekend</string>
+    <string name="cancel">Annuleren</string>
+    <string name="weather_label_high">H</string>
+    <string name="weather_label_low">L</string>
+    <string name="add_city">Plaats toevoegen</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Weerapp niet geïnstalleerd.</string>
+    <string name="circles_settings">Cirkels-instellingen</string>
+    <string name="settings">Instellingen</string>
+    <string name="notifications">MELDINGEN</string>
+    <string name="notifications_summary">Kies welke meldingen worden weergegeven in de Cirkels-widget.</string>
+    <string name="show_text">Sms/mms</string>
+    <string name="show_missed_call">Gemiste oproep</string>
+    <string name="show_voicemail">Voicemail</string>
+    <string name="set_theme">Thema instellen</string>
+    <string name="show_mobile_data">Mobiele-gegevensverbruik weergeven</string>
+    <string name="show_mobile_data_summary">Gegevensverbruik in de kleine cirkel weergeven</string>
+    <string name="show_guideme_circle">Guide Me weergeven</string>
+    <string name="new_voicemail">Nieuwe voicemail</string>
+    <string name="multimedia_message">Mms</string>
+    <string name="dial">Bellen</string>
+    <string name="private_number">Privénummer</string>
+    <string name="pay_phone">Betaaltelefoon</string>
+    <string name="help_flip_circle">Veeg omlaag voor meer</string>
+    <string name="select_app">Selecteer een cirkel</string>
+    <string name="clock">Klok</string>
+    <string name="weather">Weer</string>
+    <string name="battery">Accu</string>
+    <string name="data">Gegevens</string>
+    <string name="not_supported_widget">De Cirkels-widget wordt niet ondersteund op startschermen van derden.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Instellen</string>
+</resources>

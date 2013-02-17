@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">KB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">円</string>
+    <string name="time_colon">:</string>
+    <string name="off">OFF</string>
+    <string name="unknown">非通知</string>
+    <string name="cancel">キャンセル</string>
+    <string name="weather_label_high">自宅</string>
+    <string name="weather_label_low">職場</string>
+    <string name="add_city">都市を追加</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">天気予報アプリはインストールされていません。</string>
+    <string name="circles_settings">円設定</string>
+    <string name="settings">設定</string>
+    <string name="notifications">通知</string>
+    <string name="notifications_summary">サークルウィジェットにどの通知を表示させるかを選択してください。</string>
+    <string name="show_text">テキストメッセージ</string>
+    <string name="show_missed_call">不在着信</string>
+    <string name="show_voicemail">留守番電話</string>
+    <string name="set_theme">テーマを設定</string>
+    <string name="show_mobile_data">モバイルデータ使用量を表示</string>
+    <string name="show_mobile_data_summary">小さな円内にデータ使用量を表示する</string>
+    <string name="show_guideme_circle">ガイド･ミーを表示</string>
+    <string name="new_voicemail">新しいボイスメール</string>
+    <string name="multimedia_message">マルチメディアメッセージ</string>
+    <string name="dial">発信</string>
+    <string name="private_number">非通知</string>
+    <string name="pay_phone">公衆電話発信</string>
+    <string name="help_flip_circle">詳細はスワイプ</string>
+    <string name="select_app">サークルを選択します。</string>
+    <string name="clock">時計</string>
+    <string name="weather">天気</string>
+    <string name="battery">電池</string>
+    <string name="data">データ</string>
+    <string name="not_supported_widget">サークルウィジェットはサードパーティのホーム画面でサポートされていません。</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">設定</string>
+</resources>

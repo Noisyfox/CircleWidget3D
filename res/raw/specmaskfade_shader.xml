@@ -1,0 +1,4 @@
+<shader
+	features="VertexNormals,VertexColors,TexCoords,Texture0,Texture1,Texture2,Texture3,ModelViewMatrix,ModelViewITMatrix,Material,Lighting"
+	vertex="specmask_vertex"
+	fragment="specmaskfade_fragment"/>

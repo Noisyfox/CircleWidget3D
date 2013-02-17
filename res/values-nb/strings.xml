@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0,1</string>
+    <string name="kb">kB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">Sirkler</string>
+    <string name="time_colon">:</string>
+    <string name="off">AV</string>
+    <string name="unknown">Ukjent</string>
+    <string name="cancel">Avbryt</string>
+    <string name="weather_label_high">H</string>
+    <string name="weather_label_low">L</string>
+    <string name="add_city">Legg til byer</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Værprogrammet er ikke installert.</string>
+    <string name="circles_settings">Sirkelinnstillinger</string>
+    <string name="settings">Innstillinger</string>
+    <string name="notifications">VARSLINGER</string>
+    <string name="notifications_summary">Vis hvilke varsler som skal vises i miniprogrammet Sirkler.</string>
+    <string name="show_text">SMS</string>
+    <string name="show_missed_call">Tapt anrop</string>
+    <string name="show_voicemail">Talepost</string>
+    <string name="set_theme">Angi tema</string>
+    <string name="show_mobile_data">Vis mobildatabruk</string>
+    <string name="show_mobile_data_summary">Vis databruk i den lille sirkelen</string>
+    <string name="show_guideme_circle">Vis Guide Me</string>
+    <string name="new_voicemail">Ny talepost</string>
+    <string name="multimedia_message">Multimediemelding</string>
+    <string name="dial">Ring</string>
+    <string name="private_number">Hemmelig nummer</string>
+    <string name="pay_phone">Telefonkiosk</string>
+    <string name="help_flip_circle">Dra ned for å se mer</string>
+    <string name="select_app">Velg en sirkel</string>
+    <string name="clock">Klokke</string>
+    <string name="weather">Været</string>
+    <string name="battery">Batteri</string>
+    <string name="data">Data</string>
+    <string name="not_supported_widget">Miniprogrammet Sirkler støttes ikke på tredjepartsstartsider.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Angi</string>
+</resources>

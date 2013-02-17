@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/music_front" android:background="@drawable/circles_weather" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/album_art" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/music_circle_mp3_no_artwork" android:layout_centerInParent="true" android:contentDescription="@string/empty" />
+        <ImageView android:id="@id/play_pause" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/circles_musiccontrol2" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@string/empty" />
+        <TextView android:textSize="@dimen/clock_date_size" android:textStyle="bold" android:textColor="#ffffffff" android:gravity="center" android:id="@id/album_pod_station_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true" style="@style/CircleText" />
+        <TextView android:textStyle="bold" android:textColor="#ffffffff" android:gravity="center" android:id="@id/song_episode_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/album_pod_station_name" style="@style/CircleText" />
+    </RelativeLayout>
+</merge>

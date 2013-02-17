@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0,1</string>
+    <string name="kb">kt</string>
+    <string name="mb">Mt</string>
+    <string name="gb">Gt</string>
+    <string name="app_name">Ympyrät</string>
+    <string name="time_colon">:</string>
+    <string name="off">Ei käytössä</string>
+    <string name="unknown">Tuntematon</string>
+    <string name="cancel">Peruuta</string>
+    <string name="weather_label_high">K</string>
+    <string name="weather_label_low">M</string>
+    <string name="add_city">Lisää kaupunkeja</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Sääsovellusta ei ole asennettu.</string>
+    <string name="circles_settings">Ympyräasetukset</string>
+    <string name="settings">Asetukset</string>
+    <string name="notifications">ILMOITUKSET</string>
+    <string name="notifications_summary">Valitse, mitkä ilmoitukset näkyvät Ympyräwidgetissä.</string>
+    <string name="show_text">Tekstiviesti</string>
+    <string name="show_missed_call">Vastaamaton puhelu</string>
+    <string name="show_voicemail">Ääniviesti</string>
+    <string name="set_theme">Aseta teema</string>
+    <string name="show_mobile_data">Näytä mobiilidatan käyttö</string>
+    <string name="show_mobile_data_summary">Näytä tiedonkäyttö pienessä ympyrässä</string>
+    <string name="show_guideme_circle">Näytä Guide Me -ohje</string>
+    <string name="new_voicemail">Uusi vastaajaviesti</string>
+    <string name="multimedia_message">Multimediaviesti</string>
+    <string name="dial">Soita</string>
+    <string name="private_number">Salainen numero</string>
+    <string name="pay_phone">Puhelinautomaatti</string>
+    <string name="help_flip_circle">Katso lisätietoja pyyhkäisemällä alaspäin</string>
+    <string name="select_app">Valitse ympyrä</string>
+    <string name="clock">Kello</string>
+    <string name="weather">Sää</string>
+    <string name="battery">Akku</string>
+    <string name="data">Tiedot</string>
+    <string name="not_supported_widget">Kolmannen osapuolen aloitusnäytöt eivät tue Ympyräwidgetiä.</string>
+    <string name="battery_level_format">%1$d %%</string>
+    <string name="set">Aseta</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/battery_front" layout="@layout/battery_front" />
+    <include android:id="@id/battery_back" layout="@layout/battery_back" />
+</merge>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0,1</string>
+    <string name="kb">KB</string>
+    <string name="mb">MB</string>
+    <string name="gb">" GB"</string>
+    <string name="app_name">Cercuri</string>
+    <string name="time_colon">:</string>
+    <string name="off">DEZACTIVAT</string>
+    <string name="unknown">Necunoscut</string>
+    <string name="cancel">Anulare</string>
+    <string name="weather_label_high">Max.</string>
+    <string name="weather_label_low">Min.</string>
+    <string name="add_city">Adăugare oraşe</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Aplicaţie Meteo neinstalată.</string>
+    <string name="circles_settings">Setări Cercuri</string>
+    <string name="settings">Setări</string>
+    <string name="notifications">NOTIFICĂRI</string>
+    <string name="notifications_summary">Afişaţi ce notificări apar în widgetul Cercuri.</string>
+    <string name="show_text">Mesaj text</string>
+    <string name="show_missed_call">Apel pierdut</string>
+    <string name="show_voicemail">Mesagerie vocală</string>
+    <string name="set_theme">Temă setată</string>
+    <string name="show_mobile_data">Afişare utilizare date mobile</string>
+    <string name="show_mobile_data_summary">Afişaţi utilizarea datelor în cercul mic</string>
+    <string name="show_guideme_circle">Afişare aplicaţie Guide me</string>
+    <string name="new_voicemail">Mesaj vocal nou</string>
+    <string name="multimedia_message">Mesaj multimedia</string>
+    <string name="dial">Apelare</string>
+    <string name="private_number">Număr privat</string>
+    <string name="pay_phone">Telefon public</string>
+    <string name="help_flip_circle">Glisaţi în jos pentru mai multe</string>
+    <string name="select_app">Selectaţi un cerc</string>
+    <string name="clock">Ceas</string>
+    <string name="weather">Meteo</string>
+    <string name="battery">Baterie</string>
+    <string name="data">Date</string>
+    <string name="not_supported_widget">Widgetul Cercuri nu este acceptat pe ecrane de pornire de la terţi.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Setare</string>
+</resources>

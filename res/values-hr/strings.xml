@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0,1</string>
+    <string name="kb">KB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">Krugovi</string>
+    <string name="time_colon">:</string>
+    <string name="off">Isključeno</string>
+    <string name="unknown">Nepoznat</string>
+    <string name="cancel">Odustani</string>
+    <string name="weather_label_high">H</string>
+    <string name="weather_label_low">L</string>
+    <string name="add_city">Dodaj gradove</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Aplikacija za vremensku prognozu nije instalirana.</string>
+    <string name="circles_settings">Postavke za Krugove</string>
+    <string name="settings">Postavke</string>
+    <string name="notifications">OBAVIJESTI</string>
+    <string name="notifications_summary">Odaberite obavijesti koje se prikazuju u widgetu Krugovi.</string>
+    <string name="show_text">Tekstna poruka</string>
+    <string name="show_missed_call">Propušteni poziv</string>
+    <string name="show_voicemail">Govorna pošta</string>
+    <string name="set_theme">Postavi temu</string>
+    <string name="show_mobile_data">Prikaži korištenja podataka mobilne mreže</string>
+    <string name="show_mobile_data_summary">Prikaz korištenja podataka u malom krugu</string>
+    <string name="show_guideme_circle">Prikaži Guide Me</string>
+    <string name="new_voicemail">Nova govorna pošta</string>
+    <string name="multimedia_message">Multimedijska poruka</string>
+    <string name="dial">Biraj</string>
+    <string name="private_number">Privatni broj</string>
+    <string name="pay_phone">Telefonska govornica</string>
+    <string name="help_flip_circle">Prijeđite prstom prema dolje za više</string>
+    <string name="select_app">Odabir kruga</string>
+    <string name="clock">Sat</string>
+    <string name="weather">Vrijeme</string>
+    <string name="battery">Baterija</string>
+    <string name="data">Podaci</string>
+    <string name="not_supported_widget">Widget Krugovi ne podržavaju početni zasloni treće strane.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Postavi</string>
+</resources>

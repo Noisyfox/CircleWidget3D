@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">KB</string>
+    <string name="mb">MB</string>
+    <string name="gb">GB</string>
+    <string name="app_name">Кръгове</string>
+    <string name="time_colon">:</string>
+    <string name="off">Изкл.</string>
+    <string name="unknown">Непознат</string>
+    <string name="cancel">Отказ</string>
+    <string name="weather_label_high">Макс.</string>
+    <string name="weather_label_low">Мин.</string>
+    <string name="add_city">Добавяне на градове</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Приложението за времето не е инсталирано.</string>
+    <string name="circles_settings">Настройки Кръгове</string>
+    <string name="settings">Настройки</string>
+    <string name="notifications">ИЗВЕСТЯВАНИЯ</string>
+    <string name="notifications_summary">Изберете кои известявания да се показват в джаджата Кръгове.</string>
+    <string name="show_text">Текстово съобщение</string>
+    <string name="show_missed_call">Пропуснато обаждане</string>
+    <string name="show_voicemail">Гласова поща</string>
+    <string name="set_theme">Задаване на тема</string>
+    <string name="show_mobile_data">Показване на използването на мобилни данни</string>
+    <string name="show_mobile_data_summary">Показване на данни за използването в малкия кръг</string>
+    <string name="show_guideme_circle">Покажи Guide Me</string>
+    <string name="new_voicemail">Нова гласова поща</string>
+    <string name="multimedia_message">Мултимедийно съобщение</string>
+    <string name="dial">Набиране</string>
+    <string name="private_number">Скрит номер</string>
+    <string name="pay_phone">Импулсен телефон</string>
+    <string name="help_flip_circle">Плъзнете надолу за още</string>
+    <string name="select_app">Изберете кръг</string>
+    <string name="clock">Часовник</string>
+    <string name="weather">Времето</string>
+    <string name="battery">Батерия</string>
+    <string name="data">Данни</string>
+    <string name="not_supported_widget">Джаджата Кръгове не се поддържа на началните екрани на 3-ти страни.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Задаване</string>
+</resources>

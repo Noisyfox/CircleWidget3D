@@ -1,0 +1,4 @@
+<shader
+	features="VertexColors,TexCoords,Texture0,Material"
+	vertex="defaultnomaterial_vertex"
+	fragment="defaultnomaterial_fragment"/>

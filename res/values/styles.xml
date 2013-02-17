@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CircleText">
+        <item name="android:typeface">sans</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:shadowColor">#40000000</item>
+        <item name="android:shadowDy">1.0</item>
+        <item name="android:shadowRadius">2.0</item>
+    </style>
+    <style name="WeatherTempText" parent="@style/CircleText">
+        <item name="android:textSize">@dimen/weather_highlow_temp_size</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:gravity">right</item>
+    </style>
+    <style name="ThemeButton">
+        <item name="android:textSize">@dimen/theme_set_size</item>
+        <item name="android:paddingLeft">30.0dip</item>
+        <item name="android:paddingRight">30.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+</resources>

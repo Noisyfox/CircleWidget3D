@@ -1,0 +1,4 @@
+<shader
+	features="VertexNormals,VertexColors,TexCoords,Texture0,ModelViewMatrix,ModelViewITMatrix,Material,Lighting,UVMatrix"
+	vertex="fontshadow_vetrtex"
+	fragment="fontshadow_fragment"/>

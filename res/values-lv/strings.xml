@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="less_then_1">&lt; 0.1</string>
+    <string name="kb">" KB"</string>
+    <string name="mb">" MB"</string>
+    <string name="gb">" GB"</string>
+    <string name="app_name">Apļi</string>
+    <string name="time_colon">:</string>
+    <string name="off">Izslēgts</string>
+    <string name="unknown">Nezināms</string>
+    <string name="cancel">Atcelt</string>
+    <string name="weather_label_high">Maks.</string>
+    <string name="weather_label_low">Min.</string>
+    <string name="add_city">Pievienot pilsētas</string>
+    <string name="add_sign">+</string>
+    <string name="weather_app_not_installed">Programma Laika apstākļi nav instalēta.</string>
+    <string name="circles_settings">Apļu iestatījumi</string>
+    <string name="settings">Iestatījumi</string>
+    <string name="notifications">PAZIŅOJUMI</string>
+    <string name="notifications_summary">Izvēlieties, kuri paziņojumi tiek parādīti logrīkā Apļi.</string>
+    <string name="show_text">Īsziņa</string>
+    <string name="show_missed_call">Neatbildēts zvans</string>
+    <string name="show_voicemail">Balss pasts</string>
+    <string name="set_theme">Iestatīt dizainu</string>
+    <string name="show_mobile_data">Rādīt mobilo datu lietošanu</string>
+    <string name="show_mobile_data_summary">Parādīt datu lietojumu mazā aplītī</string>
+    <string name="show_guideme_circle">Rādīt programmu Guide Me</string>
+    <string name="new_voicemail">Jauns balss pasts</string>
+    <string name="multimedia_message">Multiziņa</string>
+    <string name="dial">Sastādīt numuru</string>
+    <string name="private_number">Privāts numurs</string>
+    <string name="pay_phone">Taksofons</string>
+    <string name="help_flip_circle">Lai iegūtu plašāku informāciju, velciet virzienā uz leju</string>
+    <string name="select_app">Atlasīt apli</string>
+    <string name="clock">Pulkstenis</string>
+    <string name="weather">Laika apstākļi</string>
+    <string name="battery">Akumulators</string>
+    <string name="data">Dati</string>
+    <string name="not_supported_widget">Logrīks Apļi trešo pušu izstrādātos sākuma ekrānos netiek atbalstīts.</string>
+    <string name="battery_level_format">%1$d%%</string>
+    <string name="set">Iestatīt</string>
+</resources>
