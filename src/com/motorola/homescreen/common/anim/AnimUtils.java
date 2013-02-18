@@ -96,26 +96,22 @@ public class AnimUtils {
 					localJSONObject.put("start_value", paramInt4);
 				localJSONObject.put("end_value", paramInt5);
 			}
-			while (true) {
-				if (paramInt6 > 0) {
-					localJSONObject.put("repeat", paramInt6);
-					localJSONObject.put("repeat_mode", paramInt7);
-				}
-				if (paramLong2 > 0L)
-					localJSONObject.put("start_delay", paramLong2);
-				if (paramLong3 > 0L)
-					localJSONObject.put("frame_delay", paramLong3);
-				if (paramInt8 > 0)
-					localJSONObject.put("interpolator", paramInt8);
-				if (paramFloat3 <= 0.0F)
-					break;
-				localJSONObject.put("interpolator_factor", paramFloat3);
-				if (paramFloat1 > 0.0F)
-					localJSONObject.put("start_value", paramFloat1);
-				localJSONObject.put("end_value", paramFloat2);
-
-				return localJSONObject;
+			if (paramInt6 > 0) {
+				localJSONObject.put("repeat", paramInt6);
+				localJSONObject.put("repeat_mode", paramInt7);
 			}
+			if (paramLong2 > 0L)
+				localJSONObject.put("start_delay", paramLong2);
+			if (paramLong3 > 0L)
+				localJSONObject.put("frame_delay", paramLong3);
+			if (paramInt8 > 0)
+				localJSONObject.put("interpolator", paramInt8);
+			if (paramFloat3 > 0.0F)
+				localJSONObject.put("interpolator_factor", paramFloat3);
+			if (paramFloat1 > 0.0F)
+				localJSONObject.put("start_value", paramFloat1);
+			localJSONObject.put("end_value", paramFloat2);
+
 		} catch (Exception localException) {
 			Log.d("AnimUtils", "JSON Error: " + localException);
 		}
@@ -457,22 +453,21 @@ public class AnimUtils {
 	public static JSONObject createJSONData3D(String paramString1,
 			String paramString2, String paramString3,
 			float[] paramArrayOfFloat, float paramFloat, boolean paramBoolean) {
-			JSONObject localJSONObject = new JSONObject();
-			try {
-				localJSONObject.put("target", paramString1);
-				localJSONObject.put("property_name", paramString2);
-				for (int i = 0; i < paramArrayOfFloat.length; i++)
-					localJSONObject.put("target_value" + i,
-							paramArrayOfFloat[i]);
-				localJSONObject.put("duration", paramFloat);
-				localJSONObject.put("additive", paramBoolean);
-				localJSONObject.put("value_type", 2);
-				localJSONObject.put("anim_id", paramString3);
-				return localJSONObject;
-			} catch (Exception localException) {
-					Log.d("AnimUtils", "JSON Error: " + localException);
-			}
+		JSONObject localJSONObject = new JSONObject();
+		try {
+			localJSONObject.put("target", paramString1);
+			localJSONObject.put("property_name", paramString2);
+			for (int i = 0; i < paramArrayOfFloat.length; i++)
+				localJSONObject.put("target_value" + i, paramArrayOfFloat[i]);
+			localJSONObject.put("duration", paramFloat);
+			localJSONObject.put("additive", paramBoolean);
+			localJSONObject.put("value_type", 2);
+			localJSONObject.put("anim_id", paramString3);
 			return localJSONObject;
+		} catch (Exception localException) {
+			Log.d("AnimUtils", "JSON Error: " + localException);
+		}
+		return localJSONObject;
 	}
 
 	public static JSONObject createJSONData3D(String paramString1,
