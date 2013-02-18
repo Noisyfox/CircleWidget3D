@@ -55,11 +55,12 @@ public class CircleWeather extends Circle {
 		this.mContext = paramContext;
 		this.mCurrentId = 0;
 		mTopCityId = -1;
-		this.mWeatherInfo = new HashMap();
-		this.mWeatherOrder = new HashMap();
+		this.mWeatherInfo = new HashMap<Integer, JSONObject>();
+		this.mWeatherOrder = new HashMap<Integer, Integer>();
 		this.mSetupFlipThreadStarted = false;
 		retrieveWeatherInfo();
-		prepareCircle(R.layout.weather_circle, CircleConsts.WEATHER_BITMAP_SIZE.intValue());
+		prepareCircle(R.layout.weather_circle,
+				CircleConsts.WEATHER_BITMAP_SIZE.intValue());
 		startWeatherService();
 		Resources localResources = this.mContext.getResources();
 		this.mCurrentTempTextSize = localResources
@@ -68,113 +69,110 @@ public class CircleWeather extends Circle {
 				.getDimensionPixelSize(R.dimen.weather_current_temp_size_small);
 	}
 
-	private void fetchWeatherInfoFromJSON(JSONArray paramJSONArray) {
-		int i = paramJSONArray.length();
+	private void fetchWeatherInfoFromJSON(JSONArray jsonarray) {
+		int i = jsonarray.length();
 		int j = 0;
-		while (true)
-			if (j < i)
-				try {
-					JSONObject localJSONObject = paramJSONArray
-							.getJSONObject(j);
-					Integer localInteger = Integer.valueOf(localJSONObject
-							.optInt("id"));
-					if (this.mWeatherInfo.put(localInteger, localJSONObject) == null)
-						this.mWeatherOrder
-								.put(Integer.valueOf(j), localInteger);
-					j++;
-				} catch (JSONException localJSONException) {
-					while (true)
-						Log.w("Circle",
-								"fetchWeatherInfoFromJSON Info Exception : ",
-								localJSONException);
-				}
-	}
-
-	private void flipWeatherToCity(Messenger paramMessenger,
-			Message paramMessage, Float paramFloat, long paramLong) {
-		boolean bool1;
-		float f;
-		if (!this.mIsFlipped) {
-			bool1 = true;
-			this.mIsFlipped = bool1;
-			Utility.changeVisibility(paramMessenger, new String[] {
-					"circle_weather/weathereffects/pointLight",
-					"circle_weather/weathereffects/planetfront",
-					"circle_weather/weathereffects/conditionfront",
-					"circle_weather/weathereffects/clouds2front" },
-					new boolean[] { 0, 0, 0, 0 });
-			f = paramFloat.floatValue();
-			if (this.mIsFlipped)
-				break label108;
-		}
-		label108: for (boolean bool2 = true;; bool2 = false) {
-			Utility.flipCircle(paramMessenger, "circle_weather", f, paramLong,
-					bool2, "weather_fling_id");
-			preUpdateCircle();
-			return;
-			bool1 = false;
-			break;
-		}
-	}
-
-	private Bitmap getCityScreen(int paramInt) {
-		int j;
-		if (isCitiesAvailable())
-			j = -1;
-		while (true) {
+		while (j < i) {
 			try {
-				j = ((Integer) this.mWeatherOrder
-						.get(Integer.valueOf(paramInt))).intValue();
-				localJSONObject = (JSONObject) this.mWeatherInfo.get(Integer
-						.valueOf(j));
-				if (localJSONObject != null) {
-					mTopCityId = j;
-					this.mFrontLayout.setVisibility(0);
-					this.mBackLayout.setVisibility(8);
-					String str = localJSONObject.optString("curr");
-					this.mCurrentTemp.setText(str);
-					if (!TextUtils.isEmpty(str)) {
-						int m = str.length();
-						TextView localTextView2 = this.mCurrentTemp;
-						if (m > 2) {
-							f = this.mCurrentTempSmallTextSize;
-							localTextView2.setTextSize(0, f);
-						}
-					} else {
-						this.mCity.setText(localJSONObject.optString("city"));
-						int k = localJSONObject.optInt("error_id");
-						i = 0;
-						if (k == 0) {
-							if (this.mTodayHigh != null)
-								this.mTodayHigh.setText(localJSONObject
-										.optString("high") + '°');
-							TextView localTextView1 = this.mTodayLow;
-							i = 0;
-							if (localTextView1 != null)
-								this.mTodayLow.setText(localJSONObject
-										.optString("low") + '°');
-						}
-						if (i != 0) {
-							this.mFrontLayout.setVisibility(8);
-							this.mBackLayout.setVisibility(0);
-							this.mCurrentId = -1;
-						}
-						this.mBitmap.eraseColor(0);
-						this.mLayout.draw(this.mCanvas);
-						return this.mBitmap;
+				JSONObject jsonobject = jsonarray.getJSONObject(j);
+				Integer integer = Integer.valueOf(jsonobject.optInt("id"));
+				if (mWeatherInfo.put(integer, jsonobject) == null)
+					mWeatherOrder.put(Integer.valueOf(j), integer);
+			} catch (JSONException jsonexception) {
+				Log.w("Circle", "fetchWeatherInfoFromJSON Info Exception : ",
+						jsonexception);
+			}
+			j++;
+		}
+	}
+
+	private void flipWeatherToCity(Messenger messenger, Message message,
+			float float1, long l) {
+		boolean flag;
+		boolean flag1;
+		if (!mIsFlipped)
+			flag = true;
+		else
+			flag = false;
+		mIsFlipped = flag;
+		Utility.changeVisibility(messenger, new String[] {
+				"circle_weather/weathereffects/pointLight",
+				"circle_weather/weathereffects/planetfront",
+				"circle_weather/weathereffects/conditionfront",
+				"circle_weather/weathereffects/clouds2front" }, new boolean[] {
+				false, false, false, false });
+		if (!mIsFlipped)
+			flag1 = true;
+		else
+			flag1 = false;
+		Utility.flipCircle(messenger, "circle_weather", float1, l, flag1,
+				"weather_fling_id");
+		preUpdateCircle();
+	}
+
+	private Bitmap getCityScreen(int i) {
+		boolean flag;
+		if (isCitiesAvailable()) {
+			int j = -1;
+			JSONObject jsonobject;
+			try {
+				j = ((Integer) mWeatherOrder.get(Integer.valueOf(i)))
+						.intValue();
+				jsonobject = (JSONObject) mWeatherInfo.get(Integer.valueOf(j));
+			} catch (Exception exception) {
+				Log.e("Circle",
+						(new StringBuilder())
+								.append("exception because no data: ")
+								.append(exception).toString());
+				jsonobject = null;
+			}
+			if (jsonobject != null) {
+				mTopCityId = j;
+				mFrontLayout.setVisibility(0);
+				mBackLayout.setVisibility(8);
+				String s = jsonobject.optString("curr");
+				mCurrentTemp.setText(s);
+				if (!TextUtils.isEmpty(s)) {
+					int l = s.length();
+					TextView textview1 = mCurrentTemp;
+					int k;
+					TextView textview;
+					float f;
+					if (l > 2)
+						f = mCurrentTempSmallTextSize;
+					else
+						f = mCurrentTempTextSize;
+					textview1.setTextSize(0, f);
+					mCity.setText(jsonobject.optString("city"));
+					k = jsonobject.optInt("error_id");
+					flag = false;
+					if (k == 0) {
+						if (mTodayHigh != null)
+							mTodayHigh.setText((new StringBuilder())
+									.append(jsonobject.optString("high"))
+									.append('\260').toString());
+						textview = mTodayLow;
+						flag = false;
+						if (textview != null)
+							mTodayLow.setText((new StringBuilder())
+									.append(jsonobject.optString("low"))
+									.append('\260').toString());
 					}
 				}
-			} catch (Exception localException) {
-				Log.e("Circle", "exception because no data: " + localException);
-				JSONObject localJSONObject = null;
-				continue;
-				float f = this.mCurrentTempTextSize;
-				continue;
-				i = 1;
-				continue;
+			} else {
+				flag = true;
 			}
-			int i = 1;
+		} else {
+			flag = true;
 		}
+		if (flag) {
+			mFrontLayout.setVisibility(8);
+			mBackLayout.setVisibility(0);
+			mCurrentId = -1;
+		}
+		mBitmap.eraseColor(0);
+		mLayout.draw(mCanvas);
+		return mBitmap;
 	}
 
 	public static CircleWeather getInstance(Context paramContext) {
@@ -231,8 +229,8 @@ public class CircleWeather extends Circle {
 		SharedPreferences localSharedPreferences = PreferenceManager
 				.getDefaultSharedPreferences(this.mContext);
 		String str = localSharedPreferences.getString("weather_info", null);
-		if (str != null)
-			;
+		if (str == null)
+			return;
 		try {
 			JSONArray localJSONArray = new JSONArray(str);
 			if (localJSONArray.length() > 0) {
@@ -273,23 +271,24 @@ public class CircleWeather extends Circle {
 	private void startWeatherApp() {
 		Intent localIntent = new Intent(
 				"com.motorola.weather.action.START_WEATHER_APPLICATION");
-		localIntent.setFlags(337674240);
+		localIntent.setFlags(0x14208000);
 		localIntent.putExtra("city_id", mTopCityId);
 		try {
 			this.mContext.startActivity(localIntent);
 			return;
 		} catch (Exception localException) {
-			do {
-				Log.e("Circle", "Couldn't start Weather activity"
-						+ localException);
-				Toast.makeText(this.mContext,
-						this.mContext.getResources().getString(R.string.weather_app_not_installed), 1)
-						.show();
-			} while (!isCitiesAvailable());
-			this.mWeatherInfo.clear();
-			this.mWeatherOrder.clear();
-			storeWeatherInfo(null);
-			updateCircle();
+			Log.e("Circle", "Couldn't start Weather activity" + localException);
+			Toast.makeText(
+					this.mContext,
+					this.mContext.getResources().getString(
+							R.string.weather_app_not_installed),
+					Toast.LENGTH_LONG).show();
+			if (isCitiesAvailable()) {
+				this.mWeatherInfo.clear();
+				this.mWeatherOrder.clear();
+				storeWeatherInfo(null);
+				updateCircle();
+			}
 		}
 	}
 
@@ -303,9 +302,11 @@ public class CircleWeather extends Circle {
 			return;
 		} catch (Exception localException) {
 			Log.e("Circle", "Couldn't start Weather activity" + localException);
-			Toast.makeText(this.mContext,
-					this.mContext.getResources().getString(R.string.weather_app_not_installed), 1)
-					.show();
+			Toast.makeText(
+					this.mContext,
+					this.mContext.getResources().getString(
+							R.string.weather_app_not_installed),
+					Toast.LENGTH_LONG).show();
 		}
 	}
 
@@ -337,23 +338,19 @@ public class CircleWeather extends Circle {
 		localEditor.apply();
 	}
 
-	public void flingWeatherCircle(Messenger paramMessenger,
-			Message paramMessage, Float paramFloat, long paramLong) {
-		int i = this.mWeatherInfo.size();
-		if (paramFloat.floatValue() > 0.0F)
-			if (this.mCurrentId < i - 1)
-				this.mCurrentId = (1 + this.mCurrentId);
-		while (true) {
-			flipWeatherToCity(paramMessenger, paramMessage, paramFloat,
-					paramLong);
-			return;
-			this.mCurrentId = -1;
-			continue;
-			if (this.mCurrentId > -1)
-				this.mCurrentId = (-1 + this.mCurrentId);
+	public void flingWeatherCircle(Messenger messenger, Message message,
+			Float float1, long l) {
+		int i = mWeatherInfo.size();
+		if (float1.floatValue() > 0.0F) {
+			if (mCurrentId < i - 1)
+				mCurrentId = 1 + mCurrentId;
 			else
-				this.mCurrentId = (i - 1);
-		}
+				mCurrentId = -1;
+		} else if (mCurrentId > -1)
+			mCurrentId = -1 + mCurrentId;
+		else
+			mCurrentId = i - 1;
+		flipWeatherToCity(messenger, message, float1, l);
 	}
 
 	public Bitmap getBackTexture(Bundle paramBundle) {
@@ -364,140 +361,129 @@ public class CircleWeather extends Circle {
 		return null;
 	}
 
-	public boolean[] getShapeVisibilities(WeatherCondition paramWeatherCondition)
-  {
-    int i;
-    int j;
-    label22: int k;
-    label36: int m;
-    label46: int n;
-    if (paramWeatherCondition.rainName != null)
-    {
-      i = 1;
-      if ((this.mIsFlipped) || (i == 0))
-        break label105;
-      j = 1;
-      if ((!this.mIsFlipped) || (i == 0))
-        break label110;
-      k = 1;
-      if (paramWeatherCondition.conditionName == null)
-        break label116;
-      m = 1;
-      if (paramWeatherCondition.condition2Name == null)
-        break label122;
-      n = 1;
-      label56: if (paramWeatherCondition.planetName == null)
-        break label128;
-    }
-    label128: for (int i1 = 1; ; i1 = 0)
-    {
-      return new boolean[] { m, n, j, k, i1, i1 };
-      i = 0;
-      break;
-      label105: j = 0;
-      break label22;
-      label110: k = 0;
-      break label36;
-      label116: m = 0;
-      break label46;
-      label122: n = 0;
-      break label56;
-    }
-  }
+	public boolean[] getShapeVisibilities(WeatherCondition weathercondition) {
+		boolean flag;
+		boolean flag1;
+		boolean flag2;
+		boolean flag3;
+		boolean flag4;
+		boolean flag5;
+		if (weathercondition.rainName != null)
+			flag = true;
+		else
+			flag = false;
+		if (!mIsFlipped && flag)
+			flag1 = true;
+		else
+			flag1 = false;
+		if (mIsFlipped && flag)
+			flag2 = true;
+		else
+			flag2 = false;
+		if (weathercondition.conditionName != null)
+			flag3 = true;
+		else
+			flag3 = false;
+		if (weathercondition.condition2Name != null)
+			flag4 = true;
+		else
+			flag4 = false;
+		if (weathercondition.planetName != null)
+			flag5 = true;
+		else
+			flag5 = false;
+		return (new boolean[] { flag3, flag4, flag1, flag2, flag5, flag5 });
+	}
 
 	public WeatherCondition getWeatherCondition() {
 		WeatherCondition localWeatherCondition = new WeatherCondition();
+
+		// 默认情况
 		localWeatherCondition.dayNightName = "weather_day";
+		localWeatherCondition.planetName = CircleConsts.WEATHER_SUN_ID;
+		localWeatherCondition.conditionName = CircleConsts.WEATHER_CLOUDS_ID;
+		localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
+
 		if ((isCitiesAvailable()) && (this.mCurrentId != -1)) {
 			try {
 				int i = ((Integer) this.mWeatherOrder.get(Integer
 						.valueOf(this.mCurrentId))).intValue();
-				localJSONObject = (JSONObject) this.mWeatherInfo.get(Integer
-						.valueOf(i));
-				if (localJSONObject != null)
-					;
-				switch (localJSONObject.optInt("cond_id")) {
-				default:
-					return localWeatherCondition;
-				case 0:
-				case 6:
-				case 1:
-				case 7:
-				case 2:
-				case 8:
-				case 3:
-				case 9:
-				case 4:
-				case 10:
-				case 5:
-				case 11:
+				JSONObject localJSONObject = (JSONObject) this.mWeatherInfo
+						.get(Integer.valueOf(i));
+				if (localJSONObject != null) {
+					switch (localJSONObject.optInt("cond_id")) {
+					default:
+					case 0:
+						break;
+					case 1:
+						localWeatherCondition.dayNightName = "weather_night";
+						localWeatherCondition.planetName = CircleConsts.WEATHER_MOON_ID;
+						break;
+					case 2:
+						localWeatherCondition.dayNightName = "weather_day";
+						localWeatherCondition.planetName = CircleConsts.WEATHER_SUN_ID;
+						localWeatherCondition.conditionName = CircleConsts.WEATHER_CLOUDS_ID;
+						localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
+						break;
+					case 3:
+						localWeatherCondition.dayNightName = "weather_night";
+						localWeatherCondition.planetName = CircleConsts.WEATHER_MOON_ID;
+						localWeatherCondition.conditionName = CircleConsts.WEATHER_CLOUDS_ID;
+						localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
+						break;
+					case 4:
+						localWeatherCondition.dayNightName = "weather_day_cloudy";
+						localWeatherCondition.conditionName = CircleConsts.WEATHER_CLOUDS_ID;
+						localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
+						break;
+					case 5:
+						localWeatherCondition.dayNightName = "weather_night_cloudy";
+						localWeatherCondition.conditionName = CircleConsts.WEATHER_CLOUDS_ID;
+						localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
+						break;
+					case 6:
+						localWeatherCondition.dayNightName = "weather_day_cloudy";
+						localWeatherCondition.conditionName = CircleConsts.WEATHER_DEFAULT_CLOUDS1_ID;
+						localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
+						localWeatherCondition.rainName = CircleConsts.WEATHER_RAIN_ID;
+						break;
+					case 7:
+						localWeatherCondition.dayNightName = "weather_night_cloudy";
+						localWeatherCondition.conditionName = CircleConsts.WEATHER_DEFAULT_CLOUDS1_ID;
+						localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
+						localWeatherCondition.rainName = CircleConsts.WEATHER_RAIN_ID;
+						break;
+					case 8:
+						localWeatherCondition.dayNightName = "weather_day_cloudy";
+						localWeatherCondition.conditionName = CircleConsts.WEATHER_DEFAULT_CLOUDS1_ID;
+						localWeatherCondition.condition2Name = CircleConsts.WEATHER_CLOUDS_LIGHTNING_ID;
+						localWeatherCondition.rainName = CircleConsts.WEATHER_RAIN_ID;
+						break;
+					case 9:
+						localWeatherCondition.dayNightName = "weather_night_cloudy";
+						localWeatherCondition.conditionName = CircleConsts.WEATHER_DEFAULT_CLOUDS1_ID;
+						localWeatherCondition.condition2Name = CircleConsts.WEATHER_CLOUDS_LIGHTNING_ID;
+						localWeatherCondition.rainName = CircleConsts.WEATHER_RAIN_ID;
+						break;
+					case 10:
+						localWeatherCondition.dayNightName = "weather_day_cloudy";
+						localWeatherCondition.conditionName = CircleConsts.WEATHER_DEFAULT_CLOUDS1_ID;
+						localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
+						localWeatherCondition.rainName = CircleConsts.WEATHER_SNOW_ID;
+						break;
+					case 11:
+						localWeatherCondition.dayNightName = "weather_night_cloudy";
+						localWeatherCondition.conditionName = CircleConsts.WEATHER_DEFAULT_CLOUDS1_ID;
+						localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
+						localWeatherCondition.rainName = CircleConsts.WEATHER_SNOW_ID;
+						break;
+					}
 				}
 			} catch (Exception localException) {
-				while (true) {
-					localWeatherCondition.planetName = CircleConsts.WEATHER_SUN_ID;
-					localWeatherCondition.conditionName = CircleConsts.WEATHER_CLOUDS_ID;
-					localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
-					JSONObject localJSONObject = null;
-				}
-				localWeatherCondition.dayNightName = "weather_day";
-				localWeatherCondition.planetName = CircleConsts.WEATHER_SUN_ID;
-				return localWeatherCondition;
+				localException.printStackTrace();
 			}
-			localWeatherCondition.dayNightName = "weather_night";
-			localWeatherCondition.planetName = CircleConsts.WEATHER_MOON_ID;
-			return localWeatherCondition;
-			localWeatherCondition.dayNightName = "weather_day";
-			localWeatherCondition.planetName = CircleConsts.WEATHER_SUN_ID;
-			localWeatherCondition.conditionName = CircleConsts.WEATHER_CLOUDS_ID;
-			localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
-			return localWeatherCondition;
-			localWeatherCondition.dayNightName = "weather_night";
-			localWeatherCondition.planetName = CircleConsts.WEATHER_MOON_ID;
-			localWeatherCondition.conditionName = CircleConsts.WEATHER_CLOUDS_ID;
-			localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
-			return localWeatherCondition;
-			localWeatherCondition.dayNightName = "weather_day_cloudy";
-			localWeatherCondition.conditionName = CircleConsts.WEATHER_CLOUDS_ID;
-			localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
-			return localWeatherCondition;
-			localWeatherCondition.dayNightName = "weather_night_cloudy";
-			localWeatherCondition.conditionName = CircleConsts.WEATHER_CLOUDS_ID;
-			localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
-			return localWeatherCondition;
-			localWeatherCondition.dayNightName = "weather_day_cloudy";
-			localWeatherCondition.conditionName = CircleConsts.WEATHER_DEFAULT_CLOUDS1_ID;
-			localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
-			localWeatherCondition.rainName = CircleConsts.WEATHER_RAIN_ID;
-			return localWeatherCondition;
-			localWeatherCondition.dayNightName = "weather_night_cloudy";
-			localWeatherCondition.conditionName = CircleConsts.WEATHER_DEFAULT_CLOUDS1_ID;
-			localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
-			localWeatherCondition.rainName = CircleConsts.WEATHER_RAIN_ID;
-			return localWeatherCondition;
-			localWeatherCondition.dayNightName = "weather_day_cloudy";
-			localWeatherCondition.conditionName = CircleConsts.WEATHER_DEFAULT_CLOUDS1_ID;
-			localWeatherCondition.condition2Name = CircleConsts.WEATHER_CLOUDS_LIGHTNING_ID;
-			localWeatherCondition.rainName = CircleConsts.WEATHER_RAIN_ID;
-			return localWeatherCondition;
-			localWeatherCondition.dayNightName = "weather_night_cloudy";
-			localWeatherCondition.conditionName = CircleConsts.WEATHER_DEFAULT_CLOUDS1_ID;
-			localWeatherCondition.condition2Name = CircleConsts.WEATHER_CLOUDS_LIGHTNING_ID;
-			localWeatherCondition.rainName = CircleConsts.WEATHER_RAIN_ID;
-			return localWeatherCondition;
-			localWeatherCondition.dayNightName = "weather_day_cloudy";
-			localWeatherCondition.conditionName = CircleConsts.WEATHER_DEFAULT_CLOUDS1_ID;
-			localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
-			localWeatherCondition.rainName = CircleConsts.WEATHER_SNOW_ID;
-			return localWeatherCondition;
-			localWeatherCondition.dayNightName = "weather_night_cloudy";
-			localWeatherCondition.conditionName = CircleConsts.WEATHER_DEFAULT_CLOUDS1_ID;
-			localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
-			localWeatherCondition.rainName = CircleConsts.WEATHER_SNOW_ID;
-			return localWeatherCondition;
 		}
-		localWeatherCondition.planetName = CircleConsts.WEATHER_SUN_ID;
-		localWeatherCondition.conditionName = CircleConsts.WEATHER_CLOUDS_ID;
-		localWeatherCondition.condition2Name = CircleConsts.WEATHER_DEFAULT_CLOUDS2_ID;
+
 		return localWeatherCondition;
 	}
 
@@ -511,32 +497,34 @@ public class CircleWeather extends Circle {
 		return paramWeatherCondition;
 	}
 
-	public boolean handleAnimationComplete(String paramString) {
-		boolean bool1 = paramString.equals("weather_fling_id");
-		boolean bool2 = false;
-		if (bool1) {
-			bool2 = true;
-			if (this.mIsFlipped)
-				break label57;
-		}
-		label57: for (boolean bool3 = true;; bool3 = false) {
+	public boolean handleAnimationComplete(String s) {
+		boolean flag = s.equals("weather_fling_id");
+		boolean flag1 = false;
+		if (flag) {
+			flag1 = true;
+			boolean flag2;
+			if (!mIsFlipped)
+				flag2 = true;
+			else
+				flag2 = false;
 			Utility.flipCircle(null, "circle_weather/weathereffects", 0.0F, 0L,
-					bool3, null);
-			new Thread(new Runnable() {
+					flag2, null);
+			(new Thread(new Runnable() {
+
 				public void run() {
 					try {
-						CircleWeather.this.postUpdateCircle(true);
+						postUpdateCircle(true);
 						Thread.sleep(100L);
-						CircleWeather.this
-								.topCityChanged(CircleWeather.this.mCurrentId);
+						topCityChanged(mCurrentId);
 						return;
-					} catch (InterruptedException localInterruptedException) {
-						localInterruptedException.printStackTrace();
+					} catch (InterruptedException interruptedexception) {
+						interruptedexception.printStackTrace();
 					}
 				}
-			}).start();
-			return bool2;
+
+			})).start();
 		}
+		return flag1;
 	}
 
 	public void handleDestroy() {
@@ -550,166 +538,155 @@ public class CircleWeather extends Circle {
 		return false;
 	}
 
-	public boolean handleSingleTap(Bundle paramBundle) {
-		if ((this.mWeatherOrder.isEmpty()) || (this.mCurrentId == -1))
+	public boolean handleSingleTap(Bundle bundle) {
+		if (mWeatherOrder.isEmpty() || mCurrentId == -1)
 			startWeatherSetup();
-		while (true) {
-			return true;
+		else
 			startWeatherApp();
-		}
+		return true;
 	}
 
 	public void handleTopCityChanged(Context paramContext, Intent paramIntent) {
-		if (paramIntent.getBooleanExtra("from_circle", false))
-			;
-		int i;
-		do {
+		if (!paramIntent.getBooleanExtra("from_circle", false))
 			return;
-			i = paramIntent.getIntExtra("city_id", mTopCityId);
-		} while ((i == mTopCityId) || (!isCitiesAvailable()));
+
+		int i = paramIntent.getIntExtra("city_id", mTopCityId);
+		if (i == mTopCityId || !isCitiesAvailable())
+			return;
+
 		int j = this.mWeatherInfo.size();
-		for (int k = 0;; k++) {
-			int m = 0;
-			if (k < j) {
-				if (((Integer) this.mWeatherOrder.get(Integer.valueOf(k)))
-						.intValue() == i) {
-					this.mCurrentId = k;
-					m = 1;
+		boolean found = false;
+		for (int k = 0; k < j; k++) {
+			if (((Integer) this.mWeatherOrder.get(Integer.valueOf(k)))
+					.intValue() == i) {
+				this.mCurrentId = k;
+				found = true;
+				break;
+			}
+		}
+
+		if (found) {
+			flipWeatherToCity(null, null, 1000.0F, 2000L);
+		}
+	}
+
+	public void postUpdateCircle(boolean flag) {
+		WeatherDisplayIds weatherdisplayids = mCurrentDisplayIds;
+		WeatherCondition weathercondition = mCurrentCondition;
+		if (weathercondition != null && weatherdisplayids != null) {
+			if (flag) {
+				Utility.playFrames(null, 120, 180, 2500L, "condition_id");
+				if (weathercondition.rainName != null) {
+					String s = weatherdisplayids.rainId;
+					float f = weathercondition.rainName[0];
+					float f1;
+					if (weathercondition.rainName == CircleConsts.WEATHER_RAIN_ID)
+						f1 = 3F;
+					else
+						f1 = 0.6F;
+					Utility.moveTexture(null, s, 0, f - f1,
+							weathercondition.rainName[1], 0.0F, 2500L);
 				}
-			} else {
-				if (m == 0)
-					break;
-				flipWeatherToCity(null, null, Float.valueOf(1000.0F), 2000L);
+			}
+			Utility.changeVisibility(null, VISIBILITY_SHAPE_NAMES,
+					getShapeVisibilities(weathercondition));
+			if (weathercondition.planetName != null)
+				Utility.moveTexture(null, weatherdisplayids.planetId, 0,
+						weathercondition.planetName[0],
+						weathercondition.planetName[1], 0.0F, 0L);
+			if (weathercondition.conditionName != null)
+				Utility.moveTexture(null, weatherdisplayids.conditionId, 0,
+						weathercondition.conditionName[0],
+						weathercondition.conditionName[1], 0.0F, 0L);
+			if (weathercondition.condition2Name != null) {
+				Utility.moveTexture(null, weatherdisplayids.condition2Id, 0,
+						weathercondition.condition2Name[0],
+						weathercondition.condition2Name[1], 0.0F, 0L);
 				return;
 			}
 		}
 	}
 
-	public void postUpdateCircle(boolean paramBoolean) {
-		WeatherDisplayIds localWeatherDisplayIds = this.mCurrentDisplayIds;
-		WeatherCondition localWeatherCondition = mCurrentCondition;
-		if ((localWeatherCondition == null) || (localWeatherDisplayIds == null))
-			return;
-		String str;
-		float f1;
-		if (paramBoolean) {
-			Utility.playFrames(null, 120, 180, 2500L, "condition_id");
-			if (localWeatherCondition.rainName != null) {
-				str = localWeatherDisplayIds.rainId;
-				f1 = localWeatherCondition.rainName[0];
-				if (localWeatherCondition.rainName != CircleConsts.WEATHER_RAIN_ID)
-					break label198;
-			}
-		}
-		label198: for (float f2 = 3.0F;; f2 = 0.6F) {
-			Utility.moveTexture(null, str, 0, f1 - f2,
-					localWeatherCondition.rainName[1], 0.0F, 2500L);
-			Utility.changeVisibility(null, VISIBILITY_SHAPE_NAMES,
-					getShapeVisibilities(localWeatherCondition));
-			if (localWeatherCondition.planetName != null)
-				Utility.moveTexture(null, localWeatherDisplayIds.planetId, 0,
-						localWeatherCondition.planetName[0],
-						localWeatherCondition.planetName[1], 0.0F, 0L);
-			if (localWeatherCondition.conditionName != null)
-				Utility.moveTexture(null, localWeatherDisplayIds.conditionId,
-						0, localWeatherCondition.conditionName[0],
-						localWeatherCondition.conditionName[1], 0.0F, 0L);
-			if (localWeatherCondition.condition2Name == null)
-				break;
-			Utility.moveTexture(null, localWeatherDisplayIds.condition2Id, 0,
-					localWeatherCondition.condition2Name[0],
-					localWeatherCondition.condition2Name[1], 0.0F, 0L);
-			return;
-		}
-	}
-
 	public void preUpdateCircle() {
-		this.mCurrentDisplayIds = getWeatherDisplayIds();
+		mCurrentDisplayIds = getWeatherDisplayIds();
 		mCurrentCondition = getWeatherCondition();
-		WeatherDisplayIds localWeatherDisplayIds = this.mCurrentDisplayIds;
-		WeatherCondition localWeatherCondition = mCurrentCondition;
-		Utility.updateTexture(null, this.mContext, this.mThemePackage,
-				localWeatherDisplayIds.sideId,
-				localWeatherCondition.dayNightName, true, true);
-		String str = localWeatherDisplayIds.textId;
-		if (this.mCurrentId != -1)
-			;
-		for (Bitmap localBitmap = getCityScreen(this.mCurrentId);; localBitmap = getSetupScreen()) {
-			Utility.updateTexture(null, str, localBitmap);
-			Utility.moveTexture(null, localWeatherDisplayIds.sideId, 0, -1.0F,
-					0.0F, 0.0F, 2500L);
-			if (localWeatherCondition.rainName != null)
-				Utility.moveTexture(null, localWeatherDisplayIds.rainId, 0,
-						localWeatherCondition.rainName[0],
-						localWeatherCondition.rainName[1], 0.0F, 0L);
-			return;
-		}
+		WeatherDisplayIds weatherdisplayids = mCurrentDisplayIds;
+		WeatherCondition weathercondition = mCurrentCondition;
+		Utility.updateTexture(null, mContext, mThemePackage,
+				weatherdisplayids.sideId, weathercondition.dayNightName, true,
+				true);
+		String s = weatherdisplayids.textId;
+		Bitmap bitmap;
+		if (mCurrentId != -1)
+			bitmap = getCityScreen(mCurrentId);
+		else
+			bitmap = getSetupScreen();
+		Utility.updateTexture(null, s, bitmap);
+		Utility.moveTexture(null, weatherdisplayids.sideId, 0, -1F, 0.0F, 0.0F,
+				2500L);
+		if (weathercondition.rainName != null)
+			Utility.moveTexture(null, weatherdisplayids.rainId, 0,
+					weathercondition.rainName[0], weathercondition.rainName[1],
+					0.0F, 0L);
 	}
 
-	public View prepareCircle(int paramInt1, int paramInt2)
-  {
-    int i = 1;
-    View localView = super.prepareCircle(paramInt1, paramInt2);
-    this.mFrontLayout = localView.findViewById(R.id.weather_front);
-    this.mBackLayout = localView.findViewById(R.id.weather_setup);
-    this.mCurrentTemp = ((TextView)localView.findViewById(R.id.weather_current));
-    this.mCity = ((TextView)localView.findViewById(R.id.weather_city));
-    this.mTodayHigh = ((TextView)localView.findViewById(R.id.weather_high));
-    this.mTodayLow = ((TextView)localView.findViewById(R.id.weather_low));
-    this.mTodayHighLabel = ((TextView)localView.findViewById(R.id.weather_high_label));
-    this.mTodayLowLabel = ((TextView)localView.findViewById(R.id.weather_low_label));
-    this.mTodayHighImageView = ((ImageView)localView.findViewById(R.id.weather_high_image));
-    this.mTodayLowImageView = ((ImageView)localView.findViewById(R.id.weather_low_image));
-    Resources localResources = this.mContext.getResources();
-    String str1 = localResources.getString(R.string.weather_label_high);
-    String str2 = localResources.getString(R.string.weather_label_low);
-    int j;
-    label215: int k;
-    label236: int m;
-    label256: ImageView localImageView2;
-    int n;
-    if ((str1.length() > i) || (str2.length() > i))
-    {
-      TextView localTextView1 = this.mTodayLowLabel;
-      if (i == 0)
-        break label313;
-      j = 8;
-      localTextView1.setVisibility(j);
-      TextView localTextView2 = this.mTodayHighLabel;
-      if (i == 0)
-        break label319;
-      k = 8;
-      localTextView2.setVisibility(k);
-      ImageView localImageView1 = this.mTodayHighImageView;
-      if (i == 0)
-        break label325;
-      m = 0;
-      localImageView1.setVisibility(m);
-      localImageView2 = this.mTodayLowImageView;
-      n = 0;
-      if (i == 0)
-        break label332;
-    }
-    while (true)
-    {
-      localImageView2.setVisibility(n);
-      if (i == 0)
-      {
-        this.mTodayHighLabel.setText(str1);
-        this.mTodayLowLabel.setText(str2);
-      }
-      return localView;
-      i = 0;
-      break;
-      label313: j = 0;
-      break label215;
-      label319: k = 0;
-      break label236;
-      label325: m = 8;
-      break label256;
-      label332: n = 8;
-    }
-  }
+	public View prepareCircle(int i, int j) {
+		int k = 1;
+		View view = super.prepareCircle(i, j);
+		mFrontLayout = view.findViewById(R.id.weather_front);
+		mBackLayout = view.findViewById(R.id.weather_setup);
+		mCurrentTemp = (TextView) view.findViewById(R.id.weather_current);
+		mCity = (TextView) view.findViewById(R.id.weather_city);
+		mTodayHigh = (TextView) view.findViewById(R.id.weather_high);
+		mTodayLow = (TextView) view.findViewById(R.id.weather_low);
+		mTodayHighLabel = (TextView) view.findViewById(R.id.weather_high_label);
+		mTodayLowLabel = (TextView) view.findViewById(R.id.weather_low_label);
+		mTodayHighImageView = (ImageView) view
+				.findViewById(R.id.weather_high_image);
+		mTodayLowImageView = (ImageView) view
+				.findViewById(R.id.weather_low_image);
+		Resources resources = mContext.getResources();
+		String s = resources.getString(R.string.weather_label_high);
+		String s1 = resources.getString(R.string.weather_label_low);
+		TextView textview;
+		byte byte0;
+		TextView textview1;
+		byte byte1;
+		ImageView imageview;
+		int l;
+		ImageView imageview1;
+		int i1;
+		if (s.length() <= k && s1.length() <= k)
+			k = 0;
+		textview = mTodayLowLabel;
+		if (k != 0)
+			byte0 = 8;
+		else
+			byte0 = 0;
+		textview.setVisibility(byte0);
+		textview1 = mTodayHighLabel;
+		if (k != 0)
+			byte1 = 8;
+		else
+			byte1 = 0;
+		textview1.setVisibility(byte1);
+		imageview = mTodayHighImageView;
+		if (k != 0)
+			l = 0;
+		else
+			l = 8;
+		imageview.setVisibility(l);
+		imageview1 = mTodayLowImageView;
+		i1 = 0;
+		if (k == 0)
+			i1 = 8;
+		imageview1.setVisibility(i1);
+		if (k == 0) {
+			mTodayHighLabel.setText(s);
+			mTodayLowLabel.setText(s1);
+		}
+		return view;
+	}
 
 	public void sendIntentToGetWeatherInfo() {
 		Intent localIntent = new Intent(

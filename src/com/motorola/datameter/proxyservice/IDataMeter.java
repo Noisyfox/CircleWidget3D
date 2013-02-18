@@ -28,8 +28,7 @@ public abstract interface IDataMeter extends IInterface {
 		static final int TRANSACTION_setPolicyLimitBytes = 4;
 
 		public Stub() {
-			attachInterface(this,
-					"com.motorola.datameter.proxyservice.IDataMeter");
+			attachInterface(this, DESCRIPTOR);
 		}
 
 		public static IDataMeter asInterface(IBinder paramIBinder) {
@@ -37,7 +36,7 @@ public abstract interface IDataMeter extends IInterface {
 				return null;
 			}
 			IInterface localIInterface = paramIBinder
-					.queryLocalInterface("com.motorola.datameter.proxyservice.IDataMeter");
+					.queryLocalInterface(DESCRIPTOR);
 			if ((localIInterface != null)
 					&& ((localIInterface instanceof IDataMeter))) {
 				return (IDataMeter) localIInterface;
@@ -57,19 +56,16 @@ public abstract interface IDataMeter extends IInterface {
 				return super.onTransact(paramInt1, paramParcel1, paramParcel2,
 						paramInt2);
 			case 1598968902:
-				paramParcel2
-						.writeString("com.motorola.datameter.proxyservice.IDataMeter");
+				paramParcel2.writeString(DESCRIPTOR);
 				return true;
 			case 1:
-				paramParcel1
-						.enforceInterface("com.motorola.datameter.proxyservice.IDataMeter");
+				paramParcel1.enforceInterface(DESCRIPTOR);
 				int k = getPolicyCycleDay();
 				paramParcel2.writeNoException();
 				paramParcel2.writeInt(k);
 				return true;
 			case 2:
-				paramParcel1
-						.enforceInterface("com.motorola.datameter.proxyservice.IDataMeter");
+				paramParcel1.enforceInterface(DESCRIPTOR);
 				boolean bool2 = setPolicyCycleDay(paramParcel1.readInt());
 				paramParcel2.writeNoException();
 				int j = 0;
@@ -79,15 +75,13 @@ public abstract interface IDataMeter extends IInterface {
 				paramParcel2.writeInt(j);
 				return true;
 			case 3:
-				paramParcel1
-						.enforceInterface("com.motorola.datameter.proxyservice.IDataMeter");
+				paramParcel1.enforceInterface(DESCRIPTOR);
 				long l2 = getPolicyLimitBytes();
 				paramParcel2.writeNoException();
 				paramParcel2.writeLong(l2);
 				return true;
 			case 4:
-				paramParcel1
-						.enforceInterface("com.motorola.datameter.proxyservice.IDataMeter");
+				paramParcel1.enforceInterface(DESCRIPTOR);
 				boolean bool1 = setPolicyLimitBytes(paramParcel1.readLong());
 				paramParcel2.writeNoException();
 				int i = 0;
@@ -97,8 +91,7 @@ public abstract interface IDataMeter extends IInterface {
 				paramParcel2.writeInt(i);
 				return true;
 			case 5:
-				paramParcel1
-						.enforceInterface("com.motorola.datameter.proxyservice.IDataMeter");
+				paramParcel1.enforceInterface(DESCRIPTOR);
 				long l1 = getCurrentUsageBytes();
 				paramParcel2.writeNoException();
 				paramParcel2.writeLong(l1);
@@ -121,8 +114,7 @@ public abstract interface IDataMeter extends IInterface {
 				Parcel localParcel1 = Parcel.obtain();
 				Parcel localParcel2 = Parcel.obtain();
 				try {
-					localParcel1
-							.writeInterfaceToken("com.motorola.datameter.proxyservice.IDataMeter");
+					localParcel1.writeInterfaceToken(DESCRIPTOR);
 					mRemote.transact(5, localParcel1, localParcel2, 0);
 					localParcel2.readException();
 					long l = localParcel2.readLong();
@@ -133,16 +125,15 @@ public abstract interface IDataMeter extends IInterface {
 				}
 			}
 
-			public String getInterfaceDescriptor() {
-				return "com.motorola.datameter.proxyservice.IDataMeter";
-			}
+			// public String getInterfaceDescriptor() {
+			// return DESCRIPTOR;
+			// }
 
 			public int getPolicyCycleDay() throws RemoteException {
 				Parcel localParcel1 = Parcel.obtain();
 				Parcel localParcel2 = Parcel.obtain();
 				try {
-					localParcel1
-							.writeInterfaceToken("com.motorola.datameter.proxyservice.IDataMeter");
+					localParcel1.writeInterfaceToken(DESCRIPTOR);
 					mRemote.transact(1, localParcel1, localParcel2, 0);
 					localParcel2.readException();
 					int i = localParcel2.readInt();
@@ -157,8 +148,7 @@ public abstract interface IDataMeter extends IInterface {
 				Parcel localParcel1 = Parcel.obtain();
 				Parcel localParcel2 = Parcel.obtain();
 				try {
-					localParcel1
-							.writeInterfaceToken("com.motorola.datameter.proxyservice.IDataMeter");
+					localParcel1.writeInterfaceToken(DESCRIPTOR);
 					mRemote.transact(3, localParcel1, localParcel2, 0);
 					localParcel2.readException();
 					long l = localParcel2.readLong();
@@ -174,8 +164,7 @@ public abstract interface IDataMeter extends IInterface {
 				Parcel localParcel1 = Parcel.obtain();
 				Parcel localParcel2 = Parcel.obtain();
 				try {
-					localParcel1
-							.writeInterfaceToken("com.motorola.datameter.proxyservice.IDataMeter");
+					localParcel1.writeInterfaceToken(DESCRIPTOR);
 					localParcel1.writeInt(paramInt);
 					mRemote.transact(2, localParcel1, localParcel2, 0);
 					localParcel2.readException();
@@ -196,8 +185,7 @@ public abstract interface IDataMeter extends IInterface {
 				Parcel localParcel1 = Parcel.obtain();
 				Parcel localParcel2 = Parcel.obtain();
 				try {
-					localParcel1
-							.writeInterfaceToken("com.motorola.datameter.proxyservice.IDataMeter");
+					localParcel1.writeInterfaceToken(DESCRIPTOR);
 					localParcel1.writeLong(paramLong);
 					mRemote.transact(4, localParcel1, localParcel2, 0);
 					localParcel2.readException();

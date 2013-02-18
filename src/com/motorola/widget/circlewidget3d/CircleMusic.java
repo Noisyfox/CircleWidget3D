@@ -4,31 +4,21 @@ import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
-import android.graphics.BitmapFactory.Options;
-import android.media.AudioManager;
 import android.net.Uri;
-import android.net.Uri.Builder;
 import android.os.Bundle;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.ParcelFileDescriptor;
-import android.provider.MediaStore.Audio.Media;
-import android.util.Log;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Iterator;
-import java.util.Set;
 
 public class CircleMusic extends Circle {
 	private static CircleMusic mInstance;
@@ -47,7 +37,8 @@ public class CircleMusic extends Circle {
 	private CircleMusic(Context paramContext) {
 		this.mContext = paramContext;
 		this.mCurrentId = 0;
-		prepareCircle(R.layout.music_circle, CircleConsts.WEATHER_BITMAP_SIZE.intValue());
+		prepareCircle(R.layout.music_circle,
+				CircleConsts.WEATHER_BITMAP_SIZE.intValue());
 		this.mAlbumPodStationName = this.mContext.getResources().getString(
 				R.string.unknown);
 		// ((AudioManager)paramContext.getSystemService("audio"));
@@ -56,8 +47,8 @@ public class CircleMusic extends Circle {
 
 	private long getAlbumIdFromTrackId(long paramLong) {
 		long l1 = -1L;
-		Uri localUri;
-		Cursor localCursor;
+		Uri localUri = null;
+		Cursor localCursor = null;
 		if (paramLong >= 1L) {
 			long l2 = paramLong - 1L;
 			localUri = android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
@@ -71,18 +62,17 @@ public class CircleMusic extends Circle {
 			if (localCursor != null) {
 				localCursor.moveToFirst();
 				if (!localCursor.isAfterLast()) {
-					long l3 = localCursor.getLong(localCursor
+					l1 = localCursor.getLong(localCursor
 							.getColumnIndex("album_id"));
-					l1 = l3;
 				}
 			}
-			return l1;
 		} catch (Exception localException) {
-			return l1;
 		} finally {
 			if (localCursor != null)
 				localCursor.close();
 		}
+
+		return l1;
 	}
 
 	private long getAlbumIdFromTrackName(String paramString) {
@@ -102,96 +92,74 @@ public class CircleMusic extends Circle {
 
 	private Bitmap getArtworkFromDB(Uri paramUri,
 			ContentResolver paramContentResolver) {
+		if (paramUri == null)
+			return null;
+
 		BitmapFactory.Options localOptions = new BitmapFactory.Options();
 		localOptions.inSampleSize = 1;
 		localOptions.inPreferredConfig = Bitmap.Config.ARGB_8888;
 		localOptions.inDither = false;
 		localOptions.inPurgeable = true;
-		Object localObject1 = null;
-		if (paramUri == null)
-			;
-		InputStream localInputStream;
-		while (true) {
-			return localObject1;
-			localInputStream = null;
-			try {
-				localInputStream = paramContentResolver
-						.openInputStream(paramUri);
-				if (localInputStream != null) {
-					Bitmap localBitmap = BitmapFactory.decodeStream(
-							localInputStream, null, localOptions);
-					localObject1 = localBitmap;
-					if (localInputStream != null)
-						try {
-							localInputStream.close();
-							return localObject1;
-						} catch (IOException localIOException3) {
-							return localObject1;
-						}
-				} else {
-					localObject1 = null;
-					if (localInputStream != null)
-						try {
-							localInputStream.close();
-							return null;
-						} catch (IOException localIOException4) {
-							return null;
-						}
+		InputStream localInputStream = null;
+
+		try {
+			localInputStream = paramContentResolver.openInputStream(paramUri);
+			return BitmapFactory.decodeStream(localInputStream, null,
+					localOptions);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			if (localInputStream != null) {
+				try {
+					localInputStream.close();
+				} catch (IOException e) {
+					e.printStackTrace();
 				}
-			} catch (FileNotFoundException localFileNotFoundException) {
-				localObject1 = null;
-				if (localInputStream != null)
-					try {
-						localInputStream.close();
-						return null;
-					} catch (IOException localIOException2) {
-						return null;
-					}
-			} finally {
-				if (localInputStream == null)
-					;
 			}
 		}
-		try {
-			localInputStream.close();
-			label138: throw localObject2;
-		} catch (IOException localIOException1) {
-			break label138;
-		}
+
+		return null;
 	}
 
 	private static Bitmap getArtworkFromFile(Context paramContext,
 			long paramLong1, long paramLong2) {
-		if ((paramLong2 < 0L) && (paramLong1 < 0L))
+
+		if ((paramLong2 < 0L) && (paramLong1 < 0L)) {
 			throw new IllegalArgumentException(
 					"Must specify an album or a song id");
-		if (paramLong2 < 0L)
-			;
+		}
+
 		try {
-			Uri localUri2 = Uri.parse("content://media/external/audio/media/"
-					+ paramLong1 + "/albumart");
-			ParcelFileDescriptor localParcelFileDescriptor2 = paramContext
-					.getContentResolver().openFileDescriptor(localUri2, "r");
-			if (localParcelFileDescriptor2 != null) {
-				return BitmapFactory
-						.decodeFileDescriptor(localParcelFileDescriptor2
-								.getFileDescriptor());
+			if (paramLong2 < 0L) {
+				Uri localUri2 = Uri
+						.parse("content://media/external/audio/media/"
+								+ paramLong1 + "/albumart");
+				ParcelFileDescriptor localParcelFileDescriptor2 = paramContext
+						.getContentResolver()
+						.openFileDescriptor(localUri2, "r");
+				if (localParcelFileDescriptor2 != null) {
+					return BitmapFactory
+							.decodeFileDescriptor(localParcelFileDescriptor2
+									.getFileDescriptor());
+				}
+			} else {
 				Uri localUri1 = ContentUris.withAppendedId(sGoogleArtworkUri,
 						paramLong2);
 				ParcelFileDescriptor localParcelFileDescriptor1 = paramContext
 						.getContentResolver()
 						.openFileDescriptor(localUri1, "r");
 				if (localParcelFileDescriptor1 != null) {
-					Bitmap localBitmap = BitmapFactory
+					return BitmapFactory
 							.decodeFileDescriptor(localParcelFileDescriptor1
 									.getFileDescriptor());
-					return localBitmap;
 				}
 			}
-		} catch (FileNotFoundException localFileNotFoundException) {
-			return null;
-		} catch (IllegalStateException localIllegalStateException) {
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+
 		return null;
 	}
 
@@ -254,7 +222,8 @@ public class CircleMusic extends Circle {
 							if (bitmap2 != null)
 								mAlbumArt.setImageBitmap(bitmap2);
 						} else {
-							mAlbumArt.setImageResource(R.drawable.music_circle_mp3_no_artwork);
+							mAlbumArt
+									.setImageResource(R.drawable.music_circle_mp3_no_artwork);
 						}
 					}
 				}
@@ -346,7 +315,7 @@ public class CircleMusic extends Circle {
 		if (str1.startsWith("circle_music/albumfront")) {
 			Intent localIntent1 = new Intent(
 					"android.intent.action.MUSIC_PLAYER");
-			localIntent1.setFlags(337641472);
+			localIntent1.setFlags(0x14200000);
 			this.mContext.startActivity(localIntent1);
 			return true;
 		}
@@ -409,7 +378,8 @@ public class CircleMusic extends Circle {
 		this.mAlbumArt = ((ImageView) localView.findViewById(R.id.album_art));
 		this.mAlbumNameTextView = ((TextView) localView
 				.findViewById(R.id.album_pod_station_name));
-		this.mTrackTxtView = ((TextView) localView.findViewById(R.id.song_episode_name));
+		this.mTrackTxtView = ((TextView) localView
+				.findViewById(R.id.song_episode_name));
 		return localView;
 	}
 
@@ -435,43 +405,48 @@ public class CircleMusic extends Circle {
 		localBundle2.putString("shape_name", "circle_music");
 		Message localMessage = Message.obtain(null, 9);
 		localMessage.setData(localBundle2);
-		if ((paramIntent != null) && (paramIntent.getExtras() != null)) {
-			Iterator localIterator = paramIntent.getExtras().keySet()
-					.iterator();
-			while (localIterator.hasNext()) {
-				String str3 = (String) localIterator.next();
-				Object localObject = localBundle1.get(str3);
-				if (localObject != null)
-					Log.d("Circle",
-							"Key:" + str3 + " Val: " + localObject.toString());
-			}
-		}
-		if (paramIntent != null)
+
+		// if ((paramIntent != null) && (paramIntent.getExtras() != null)) {
+		// Iterator localIterator = paramIntent.getExtras().keySet()
+		// .iterator();
+		// while (localIterator.hasNext()) {
+		// String str3 = (String) localIterator.next();
+		// Object localObject = localBundle1.get(str3);
+		// if (localObject != null)
+		// Log.d("Circle",
+		// "Key:" + str3 + " Val: " + localObject.toString());
+		// }
+		//
+		// }
+
+		if (paramIntent != null) {
 			if ((paramIntent.getAction()
 					.equals("com.android.music.playbackcomplete"))
 					&& (isMusicInFront())) {
 				this.ignorePlayState = true;
 				hideCircle(localMessage);
-			}
-		do {
-			return;
-			if ((paramIntent.getAction()
+				return;
+			} else if ((paramIntent.getAction()
 					.equals("com.android.music.playstatechanged"))
 					&& (this.ignorePlayState)) {
 				this.ignorePlayState = false;
 				setPlayState(localBundle1.getBoolean("playstate"));
 				return;
 			}
-			if (isFlipped()) {
-				str1 = "circle_music/albumback";
-				str2 = "circle_music/buttonback";
-			}
-			Utility.updateTexture(null, str1, getFrontTexture(localBundle1));
-			Utility.updateTexture(null, str2, "music_pause");
-			Utility.changeVisibility(null, getNamesOfShape(),
-					getShapeVisibilities());
-		} while (this.ignorePlayState);
-		bringCircleToFront(localMessage);
+
+		}
+
+		if (isFlipped()) {
+			str1 = "circle_music/albumback";
+			str2 = "circle_music/buttonback";
+		}
+		Utility.updateTexture(null, str1, getFrontTexture(localBundle1));
+		Utility.updateTexture(null, str2, "music_pause");
+		Utility.changeVisibility(null, getNamesOfShape(),
+				getShapeVisibilities());
+		if (!this.ignorePlayState) {
+			bringCircleToFront(localMessage);
+		}
 	}
 
 	public void updateValues(Context paramContext, Intent paramIntent) {
