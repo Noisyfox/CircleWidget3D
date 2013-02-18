@@ -3,7 +3,6 @@ package com.motorola.widget.circlewidget3d;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -13,7 +12,6 @@ import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,7 +33,7 @@ public class CircleWeather extends Circle {
 	private static WeatherCondition mCurrentCondition = null;
 	private static CircleWeather mInstance;
 	private static int mTopCityId;
-	private final boolean DEBUG_WEATHER_CONDITION = false;
+	// private final boolean DEBUG_WEATHER_CONDITION = false;
 	TextView mCity;
 	private WeatherDisplayIds mCurrentDisplayIds = null;
 	TextView mCurrentTemp;
@@ -71,8 +69,7 @@ public class CircleWeather extends Circle {
 
 	private void fetchWeatherInfoFromJSON(JSONArray jsonarray) {
 		int i = jsonarray.length();
-		int j = 0;
-		while (j < i) {
+		for (int j = 0; j < i; j++) {
 			try {
 				JSONObject jsonobject = jsonarray.getJSONObject(j);
 				Integer integer = Integer.valueOf(jsonobject.optInt("id"));
@@ -82,7 +79,6 @@ public class CircleWeather extends Circle {
 				Log.w("Circle", "fetchWeatherInfoFromJSON Info Exception : ",
 						jsonexception);
 			}
-			j++;
 		}
 	}
 
@@ -110,62 +106,55 @@ public class CircleWeather extends Circle {
 		preUpdateCircle();
 	}
 
-	private Bitmap getCityScreen(int i) {
-		boolean flag;
+	private Bitmap getCityScreen(int index) {
+		boolean noData = false;
+
 		if (isCitiesAvailable()) {
-			int j = -1;
-			JSONObject jsonobject;
+			JSONObject data = null;
+			Integer j = -1;
 			try {
-				j = ((Integer) mWeatherOrder.get(Integer.valueOf(i)))
-						.intValue();
-				jsonobject = (JSONObject) mWeatherInfo.get(Integer.valueOf(j));
-			} catch (Exception exception) {
-				Log.e("Circle",
-						(new StringBuilder())
-								.append("exception because no data: ")
-								.append(exception).toString());
-				jsonobject = null;
+				j = mWeatherOrder.get(Integer.valueOf(index));
+				data = mWeatherInfo.get(j);
+			} catch (Exception ex) {
+				Log.e("Circle", "exception because no data: " + ex);
+				data = null;
 			}
-			if (jsonobject != null) {
+			if (data != null) {
 				mTopCityId = j;
 				mFrontLayout.setVisibility(0);
 				mBackLayout.setVisibility(8);
-				String s = jsonobject.optString("curr");
+				String s = data.optString("curr");
 				mCurrentTemp.setText(s);
 				if (!TextUtils.isEmpty(s)) {
 					int l = s.length();
 					TextView textview1 = mCurrentTemp;
-					int k;
-					TextView textview;
 					float f;
 					if (l > 2)
 						f = mCurrentTempSmallTextSize;
 					else
 						f = mCurrentTempTextSize;
 					textview1.setTextSize(0, f);
-					mCity.setText(jsonobject.optString("city"));
-					k = jsonobject.optInt("error_id");
-					flag = false;
-					if (k == 0) {
-						if (mTodayHigh != null)
-							mTodayHigh.setText((new StringBuilder())
-									.append(jsonobject.optString("high"))
-									.append('\260').toString());
-						textview = mTodayLow;
-						flag = false;
-						if (textview != null)
-							mTodayLow.setText((new StringBuilder())
-									.append(jsonobject.optString("low"))
-									.append('\260').toString());
+				}
+				mCity.setText(data.optString("city"));
+				int k = data.optInt("error_id");
+				if (k == 0) {
+					if (mTodayHigh != null) {
+						mTodayHigh.setText(data.optString("high") + '\260');
 					}
+					if (mTodayLow != null) {
+						mTodayLow.setText(data.optString("low") + '\260');
+					}
+				} else {
+					noData = true;
 				}
 			} else {
-				flag = true;
+				noData = true;
 			}
 		} else {
-			flag = true;
+			noData = true;
 		}
-		if (flag) {
+
+		if (noData) {
 			mFrontLayout.setVisibility(8);
 			mBackLayout.setVisibility(0);
 			mCurrentId = -1;
@@ -256,9 +245,9 @@ public class CircleWeather extends Circle {
 			public void run() {
 				CircleWeather.this.mSetupFlipThreadStarted = true;
 				try {
-					Thread.sleep(1400L);
+					Thread.sleep(DELAY_FIRST_TIME_FLIP);
 					CircleWeather.this.flingWeatherCircle(null, null,
-							Float.valueOf(1000.0F), 2000L);
+							Float.valueOf(1000.0F), DURATION_FIRST_TIME_FLIP);
 					CircleWeather.this.mSetupFlipThreadStarted = false;
 					return;
 				} catch (InterruptedException localInterruptedException) {
@@ -566,7 +555,7 @@ public class CircleWeather extends Circle {
 		}
 
 		if (found) {
-			flipWeatherToCity(null, null, 1000.0F, 2000L);
+			flipWeatherToCity(null, null, 1000.0F, DURATION_FIRST_TIME_FLIP);
 		}
 	}
 
@@ -741,75 +730,76 @@ public class CircleWeather extends Circle {
 		updateCircle(false);
 	}
 
-	public void updateCircle(Context paramContext, Intent paramIntent) {
-		String str = paramIntent.getStringExtra("weather_info");
-		int i = paramIntent.getIntExtra("city_id", mTopCityId);
-		boolean bool1 = paramIntent.getBooleanExtra("update_all", true);
-		if ((str == null) || (bool1))
-			;
-		try {
-			if (this.mWeatherInfo != null)
-				this.mWeatherInfo.clear();
-			if (this.mWeatherOrder != null)
-				this.mWeatherOrder.clear();
-			JSONArray localJSONArray = new JSONArray(str);
-			if (localJSONArray.length() > 0)
-				fetchWeatherInfoFromJSON(localJSONArray);
-			storeWeatherInfo();
-			if ((bool1) || ((i != -1) && (i != mTopCityId))) {
-				boolean bool2 = isCitiesAvailable();
-				j = 0;
-				if (bool2) {
-					int n = this.mWeatherInfo.size();
-					i1 = 0;
-					j = 0;
-					if (i1 < n) {
-						if (((Integer) this.mWeatherOrder.get(Integer
-								.valueOf(i1))).intValue() != i)
-							break label256;
-						if ((i == mTopCityId) && (this.mCurrentId == i1)) {
-							preUpdateCircle();
-							return;
+	public void updateCircle(Context context, Intent i) {
+		String weatherInfo = i.getStringExtra("weather_info");
+		int topCityId = i.getIntExtra("city_id", mTopCityId);
+		boolean fling = false;
+		boolean updateAll = i.getBooleanExtra("update_all", true);
+
+		if (weatherInfo != null) {
+			try {
+				if (updateAll) {
+					if (this.mWeatherInfo != null)
+						this.mWeatherInfo.clear();
+					if (this.mWeatherOrder != null)
+						this.mWeatherOrder.clear();
+				}
+				JSONArray infos = new JSONArray(weatherInfo);
+				int size = infos.length();
+				if (size > 0) {
+					fetchWeatherInfoFromJSON(infos);
+				}
+				storeWeatherInfo();
+			} catch (JSONException e) {
+				Log.e("Circle", "Exception " + weatherInfo);
+			}
+		}
+
+		boolean found = false;
+		if (updateAll || !(topCityId == -1 || topCityId == mTopCityId)) {
+			if (isCitiesAvailable()) {
+				int size = mWeatherInfo.size();
+				for (int j = 0; j < size; j++) {
+					int cId = mWeatherOrder.get(j);
+					if (cId == topCityId) {
+						if (topCityId != mTopCityId || mCurrentId != j) {
+							mCurrentId = j;
+							found = true;
+							break;
 						}
+						preUpdateCircle();
+						return;
 					}
 				}
 			}
-		} catch (Exception localException) {
-			label256: do {
-				int m;
-				do {
-					while (true) {
-						int i1;
-						Log.e("Circle", "Exception " + str);
-						continue;
-						this.mCurrentId = i1;
-						int j = 1;
-						if (j == 0)
-							break;
-						flipWeatherToCity(null, null, Float.valueOf(1000.0F),
-								2000L);
-						return;
-						i1++;
+		}
+
+		if (!found) {
+			if (topCityId != -1) {
+				if (fling) {
+					if (isCitiesAvailable() && !mSetupFlipThreadStarted) {
+						startFirstTimeFlipThread();
 					}
-					if (i != -1)
-						break;
-					int k = this.mCurrentId;
-					m = 0;
-					if (k != -1) {
-						m = 1;
-						this.mCurrentId = -1;
-					}
-					mTopCityId = -1;
-				} while (m == 0);
-				flipWeatherToCity(null, null, Float.valueOf(1000.0F), 2000L);
-				return;
-				if (0 == 0) {
+				} else {
 					updateCircle();
+				}
+				return;
+			} else {
+				boolean update = false;
+				if (mCurrentId != -1) {
+					update = true;
+					mCurrentId = -1;
+				}
+				mTopCityId = -1;
+				if (!update) {
 					return;
 				}
-			} while ((!isCitiesAvailable()) || (this.mSetupFlipThreadStarted));
-			startFirstTimeFlipThread();
+			}
 		}
+
+		flipWeatherToCity(null, null, Float.valueOf(1000.0F),
+				DURATION_FIRST_TIME_FLIP);
+
 	}
 
 	public void updateCircle(boolean paramBoolean) {
