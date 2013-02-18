@@ -4,6 +4,8 @@ import android.content.Context;
 import android.util.Log;
 import java.text.DecimalFormat;
 
+import com.motorola.widget.circlewidget3d.R;
+
 public class DataMeterDataInfo {
 	public static final int DIVIDE_NUMBER = 1000;
 	public static final int GB = 2;
@@ -40,10 +42,10 @@ public class DataMeterDataInfo {
 				datameterdatainfo.unit = 1;
 			}
 			datameterdatainfo.unitStr = context.getResources().getStringArray(
-					com.motorola.homelib.R.array.data_units)[datameterdatainfo.unit];
+					R.array.data_units)[datameterdatainfo.unit];
 			if ((double) datameterdatainfo.data.floatValue() < 0.10000000000000001D)
 				datameterdatainfo.dataStr = context.getResources().getString(
-						com.motorola.homelib.R.string.less_then_1);
+						R.string.less_then_1);
 			else
 				datameterdatainfo.dataStr = getFormattedLimitStr(
 						datameterdatainfo.data, datameterdatainfo.unit);
@@ -74,7 +76,7 @@ public class DataMeterDataInfo {
 			}
 		}
 		localDataMeterDataInfo.unitStr = paramContext.getResources()
-				.getStringArray(com.motorola.homelib.R.array.data_units)[localDataMeterDataInfo.unit];
+				.getStringArray(R.array.data_units)[localDataMeterDataInfo.unit];
 		localDataMeterDataInfo.data = paramFloat;
 		if (localDataMeterDataInfo.data.floatValue() != -1.0F)
 			localDataMeterDataInfo.dataStr = getFormattedLimitStr(
